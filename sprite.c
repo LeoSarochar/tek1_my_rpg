@@ -16,6 +16,7 @@ sfIntRect *init_rect(sfTexture *texture)
     rect->width = sfTexture_getSize(texture).y;
     return (rect);
 }
+
 sprite_t *load_sprite(char const *file_name)
 {
     sprite_t *item = malloc(sizeof(sprite_t));
