@@ -20,5 +20,6 @@ typedef struct main_s
     sfEvent event;
 } main_t;
 
+void close_window(main_t *main_struct, UNUSED sfEvent event);
 
 #endif //MY_MAIN_H_
