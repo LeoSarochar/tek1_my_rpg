@@ -10,8 +10,15 @@
 
 void game_event(sfRenderWindow *window, main_t *main_struct)
 {
-    if (main_struct->event.type == sfEvtClosed)
+    if (main_struct->event.type == sfEvtClosed) {
         sfRenderWindow_destroy(window);
+        return;
+    }
+    for (int i = 0; events_funcs[i].event != sfEvtCount; i++)
+        if (events_funcs[i].event == main_struct->event.type) {
+            events_funcs[i].ptr(main_struct, event);
+            break;
+        }
 }
 
 int main(int ac, char **av)
