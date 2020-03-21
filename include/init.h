@@ -11,6 +11,8 @@
 #include "include_all.h"
 #include "main.h"
 
+#include "story/story.h"
+
 ////////INCLUDES OF FUNCS/////////
 
 
@@ -26,6 +28,7 @@ typedef struct init_s {
 
 //////////FUNCS//////////////
 init_t init_funcs[] = {
+    {init_story},
     {NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////
