@@ -29,9 +29,8 @@ compile_debug:	CFLAGS += $(CFLAGS_DEBUG)
 compile_debug:	fclean	$(OBJ)
 	$(CC) -o $(OUT) $(OBJ) $(CFLAGS)
 
-
 clean:
-	$(RM) -rf *.o
+	$(shell find . -name '*.o' -delete)
 
 fclean:	clean
 	$(RM) -rf $(OUT)
