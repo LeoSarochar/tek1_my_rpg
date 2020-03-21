@@ -11,7 +11,6 @@
 void close_window(main_t *main_struct, UNUSED sfEvent event)
 {
     sfRenderWindow_close(main_struct->window);
-    sfRenderWindow_destroy(main_struct->window);
 }
 
 void game_event(main_t *main_struct)
@@ -34,7 +33,8 @@ int main(UNUSED int ac, UNUSED char **av)
     while (sfRenderWindow_isOpen(main_struct.window)) {
         while (RWPE(main_struct.window, &main_struct.event))
             game_event(&main_struct);
+        render(&main_struct);
     }
-    render(&main_struct);
+    sfRenderWindow_destroy(main_struct.window);
     return (0);
 }
