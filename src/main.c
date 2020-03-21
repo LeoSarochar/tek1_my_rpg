@@ -5,7 +5,25 @@
 ** main.c
 */
 
+#include "include_all.h"
+#include "main.h"
+
+void game_event(sfRenderWindow *window, main_t *main_struct)
+{
+    if (main_struct->event.type == sfEvtClosed)
+        sfRenderWindow_destroy(window);
+}
+
 int main(int ac, char **av)
 {
+    main_t main_struct;
+    sfVideoMode mode = {1920, 1080, 32};
+    main_struct.window = SFWC(mode, "Road 4 GPA", sfDefaultStyle, NULL);
+    sfRenderWindow_setFramerateLimit(main_struct.window, 64);
+     while (sfRenderWindow_isOpen(main_struct.window))
+    {
+        while (sfRenderWindow_pollEvent(main_struct.window, &main_struct.event))
+            game_event(main_struct.window, &main_struct);
+    }
     return (0);
 }
