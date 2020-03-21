@@ -6,6 +6,7 @@
 */
 
 #include "main.h"
+#include "events.h"
 
 void game_event(sfRenderWindow *window, main_t *main_struct)
 {
