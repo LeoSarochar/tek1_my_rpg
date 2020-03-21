@@ -11,6 +11,7 @@
 void game_event(sfRenderWindow *window, main_t *main_struct)
 {
     if (main_struct->event.type == sfEvtClosed) {
+        sfRenderWindow_close(window);
         sfRenderWindow_destroy(window);
         return;
     }
