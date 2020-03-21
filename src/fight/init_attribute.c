@@ -15,7 +15,9 @@ void init_character(main_t *main)
     main->player->guard = 10;
     main->player->xp = 0;
     main->player->intellect = 10;
-    main->player->speed = 10;
+    main->player->speed = 2;
     main->player->height = 64;
     main->player->width = 64;
+    main->player->posiion = (sfVector2f){0, 0};
 }
+

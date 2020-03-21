@@ -9,6 +9,7 @@
 #define INIT_ATTRIBUTE_H_
 #include "include_all.h"
 #include "main.h"
+#include "sprite.h"
 
 typedef struct main_s main_t;
 
@@ -19,13 +20,15 @@ typedef struct character_s {
     int xp;
     float gpa;
     int speed;
-    int posiion;
+    sfVector2f posiion;
     int width;
     int height;
 }character_t;
 
 typedef struct scene_s {
-} scene_t;
+    sprite_t *back_sprite;
+    sfVector2f back_pos;
+}scene_t;
 
 
 ///////////////////////////////////

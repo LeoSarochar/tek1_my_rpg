@@ -10,12 +10,15 @@
 
 #include "include_all.h"
 #include "fight/init_attribute.h"
+#include "fight/fight.h"
+#include "fight/linked_list_library/basing_functions.h"
 
 #define SFWC(A, B, C, D) sfRenderWindow_create(A, B, C, D)
 #define RWPE(A, B) sfRenderWindow_pollEvent(A, B)
 #define UNUSED __attribute__((unused))
 
 typedef struct character_s character_t;
+typedef struct scene_s scene_t;
 
 typedef struct main_s
 {
