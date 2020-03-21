@@ -8,9 +8,11 @@
 #ifndef MY_MAIN_H_
 #define MY_MAIN_H_
 
-#include "main.h"
+#include "include_all.h"
 
 #define SFWC(A, B, C, D) sfRenderWindow_create(A, B, C, D)
+#define RWPE(A, B) sfRenderWindow_pollEvent(A, B)
+#define UNUSED __attribute__((unused))
 
 typedef struct main_s
 {
