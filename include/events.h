@@ -9,6 +9,7 @@
 #define MY_EVENTS_H_
 
 #include "include_all.h"
+#include "main.h"
 
 ////////INCLUDES OF FUNCS/////////
 

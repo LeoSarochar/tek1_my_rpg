@@ -9,6 +9,7 @@
 #define MY_MAIN_H_
 
 #include "include_all.h"
+#include "events.h"
 
 #define SFWC(A, B, C, D) sfRenderWindow_create(A, B, C, D)
 #define RWPE(A, B) sfRenderWindow_pollEvent(A, B)
