@@ -34,5 +34,6 @@ int main(UNUSED int ac, UNUSED char **av)
         while (RWPE(main_struct.window, &main_struct.event))
             game_event(&main_struct);
     }
+    render(&main_struct);
     return (0);
 }

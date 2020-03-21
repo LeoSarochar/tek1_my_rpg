@@ -21,5 +21,6 @@ typedef struct main_s
 } main_t;
 
 void close_window(main_t *main_struct, UNUSED sfEvent event);
+void render(main_t *main_struct);
 
 #endif //MY_MAIN_H_
