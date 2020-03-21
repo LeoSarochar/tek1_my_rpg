@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2019
-** .H
+** EPITECH PROJECT, 2020
+** RPG
 ** File description:
-** call all .h
+** call all lib
 */
 
 #ifndef MY_MAIN_H_
