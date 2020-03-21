@@ -8,7 +8,7 @@
 #ifndef MY_EVENTS_H_
 #define MY_EVENTS_H_
 
-#include "main.h"
+#include "include_all.h"
 
 ////////INCLUDES OF FUNCS/////////
 
