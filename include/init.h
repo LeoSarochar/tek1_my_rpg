@@ -14,7 +14,7 @@
 #include "story/story.h"
 
 ////////INCLUDES OF FUNCS/////////
-
+#include "sprite.h"
 
 ////////////////////////////////
 
@@ -23,12 +23,15 @@ typedef struct init_s {
 } init_t;
 
 //////////PROTOTYPE//////////
-//void func_name(main_t *main);
+void init_player(main_t *main_struct);
+void init_map(main_t *main_struct);
 /////////////////////////////
 
 //////////FUNCS//////////////
 init_t init_funcs[] = {
     {init_story},
+    {init_map},
+    {init_player},
     {NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////

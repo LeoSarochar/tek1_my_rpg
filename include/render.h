@@ -13,8 +13,7 @@
 #include "story/story.h"
 
 ////////INCLUDES OF FUNCS/////////
-
-
+#include "sprite.h"
 ////////////////////////////////
 
 typedef struct render_s {
@@ -22,11 +21,14 @@ typedef struct render_s {
 } render_t;
 
 //////////PROTOTYPE//////////
-//void func_name(main_t *main);
+void put_map_sm1(main_t *main_struct);
+void put_player(main_t *main_struct);
 /////////////////////////////
 
 //////////FUNCS//////////////
 render_t render_funcs[] = {
+    {put_map_sm1},
+    {put_player},
     {render_pnjs},
     {NULL} //Don't touch, is the mark of the end of the array
 };
