@@ -13,8 +13,10 @@
 
 #define SFWC(A, B, C, D) sfRenderWindow_create(A, B, C, D)
 #define RWPE(A, B) sfRenderWindow_pollEvent(A, B)
+#define RWDS(A, B, C) sfRenderWindow_drawSprite(A, B, C)
 #define UNUSED __attribute__((unused))
 
+#define vec (sfVector2f)
 typedef struct story story_t;
 
 typedef struct main_s

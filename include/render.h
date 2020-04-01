@@ -10,6 +10,7 @@
 
 #include "include_all.h"
 #include "main.h"
+#include "story/story.h"
 
 ////////INCLUDES OF FUNCS/////////
 
@@ -26,6 +27,7 @@ typedef struct render_s {
 
 //////////FUNCS//////////////
 render_t render_funcs[] = {
+    {render_pnjs},
     {NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////

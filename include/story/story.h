@@ -23,6 +23,7 @@ typedef struct pnj
 {
     char *name;
     sprite_t *sprite;
+    sfVector2i pos;
     void (*onclick)(story_t *story);
 } pnj_t;
 
@@ -33,5 +34,6 @@ typedef struct story
 } story_t;
 
 void init_story(main_t *main_struct);
+void render_pnjs(main_t *main);
 
 #endif //MY_STORY_H_

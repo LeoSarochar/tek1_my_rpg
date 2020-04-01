@@ -7,13 +7,13 @@
 
 #include "story/story.h"
 
-void init_story(main_t *main_struct)
+void init_story(main_t *main)
 {
-    story_t story;
+    story_t *story = malloc(sizeof(story_t));
 
-    story.pnjs = NULL;
-    story.nb_pnjs = 0;
-    main_struct->story = &story;
+    story->pnjs = NULL;
+    story->nb_pnjs = 0;
+    main->story = story;
 
-    create_pnj(main_struct->story, "Louis", "ressources/test.png", NULL);
+    create_pnj(main->story, "Louis", "ressources/test.png", NULL);
 }
