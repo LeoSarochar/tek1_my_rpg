@@ -20,4 +20,3 @@ void init_character(main_t *main)
     main->player->width = 64;
     main->player->posiion = (sfVector2f){0, 0};
 }
-

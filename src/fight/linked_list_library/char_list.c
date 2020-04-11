@@ -7,7 +7,7 @@
 
 #include "main.h"
 
-void add_element(list_t **list, character_t *character)
+void add_element_char(list_t **list, character_t *character)
 {
     list_t *elem = malloc(sizeof(*elem));
     list_t *tmp = (*list);
@@ -23,7 +23,7 @@ void add_element(list_t **list, character_t *character)
     tmp->next = elem;
 }
 
-void remove_element(list_t **list, int position)
+void remove_element_char(list_t **list, int position)
 {
     list_t *tmp1 = NULL;
     list_t *tmp2 = (*list);
@@ -43,7 +43,7 @@ void remove_element(list_t **list, int position)
     free(tmp_to_free);
 }
 
-void insert_element(list_t **list, int position, character_t *character)
+void insert_element_char(list_t **list, int position, character_t *character)
 {
     list_t *elem = malloc(sizeof(*elem));
     list_t *tmp1 = (*list);

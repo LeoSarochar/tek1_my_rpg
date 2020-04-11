@@ -11,7 +11,7 @@
 #include "include_all.h"
 #include "fight/init_attribute.h"
 #include "fight/fight.h"
-#include "fight/linked_list_library/basing_functions.h"
+#include "fight/linked_list_library/char_list.h"
 
 #define SFWC(A, B, C, D) sfRenderWindow_create(A, B, C, D)
 #define RWPE(A, B) sfRenderWindow_pollEvent(A, B)

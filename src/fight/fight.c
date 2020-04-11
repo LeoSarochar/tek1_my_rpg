@@ -33,7 +33,7 @@ void init_enemy(main_t *main, list_t **enemy)
 
     for (int i = 0; i < nb_enem; i += 1) {
         enem = load_enemy(main);
-        add_element(enemy, enem);
+        add_element_char(enemy, enem);
     }
 }
 
