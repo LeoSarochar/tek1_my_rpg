@@ -12,6 +12,10 @@
 #include "fight/init_attribute.h"
 #include "fight/fight.h"
 #include "fight/linked_list_library/char_list.h"
+#include "fight/linked_list_library/att_list.h"
+#include "fight/all_attack/flistattack.h"
+#include "fight/linked_list_library/preset_list.h"
+#include "fight/all_attack/preset.h"
 
 #define SFWC(A, B, C, D) sfRenderWindow_create(A, B, C, D)
 #define RWPE(A, B) sfRenderWindow_pollEvent(A, B)

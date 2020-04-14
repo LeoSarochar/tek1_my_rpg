@@ -23,6 +23,7 @@ debug:	compile_debug
 
 compile:	$(OBJ)
 	$(CC) -o $(OUT) $(OBJ) $(CFLAGS)
+	make clean
 
 compile_debug:	CFLAGS += $(CFLAGS_DEBUG)
 

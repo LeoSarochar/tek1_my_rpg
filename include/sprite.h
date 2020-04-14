@@ -12,6 +12,7 @@ typedef struct sprite
     sfSprite *sprite;
     sfIntRect *rect;
     int visible;
+    int offset;
 } sprite_t;
 
 

@@ -7,53 +7,42 @@
 
 #include "main.h"
 
-character_t *load_enemy(main_t *main)
+void is_good(state_t *state)
 {
-    character_t *player = malloc(sizeof(*player));
-    int speed = (rand() % (10 - main->player->speed)) + main->player->speed;
+    int tmp = 0;
 
-    player->commitment = 100;
-    player->gpa = 0.0;
-    player->guard = (rand() % ((main->player->guard + 5) \
-    - (main->player->guard - 5) + 1)) + (main->player->guard - 5);
-    player->height = 64;
-    player->width = 64;
-    player->intellect = (rand() % ((main->player->intellect + 5) \
-    - (main->player->intellect - 5) + 1)) + (main->player->intellect - 5);
-    player->posiion = (sfVector2f){0, 0};
-    player->speed = (speed > main->player->speed) ? 10 : 0;
-    player->xp = 0;
-    return (player);
-}
-
-void init_enemy(main_t *main, list_t **enemy)
-{
-    int nb_enem = rand() % (4) + 1;
-    character_t *enem = NULL;
-
-    for (int i = 0; i < nb_enem; i += 1) {
-        enem = load_enemy(main);
-        add_element_char(enemy, enem);
+    if (state->is_dem == 1) {
+        tmp = rand() % 4;
+        state->can_attack = (tmp < 1) ? 0 : 1;
+        return;
+    }
+    if (state->is_tired == 1) {
+        tmp = rand() % 4;
+        state->can_attack = (tmp < 1) ? 0 : 2;
+        return;
     }
 }
 
-void print_attributes(list_t *enemy)
+int to_inflict(int attack, int intel, int speed)
 {
-    for (int i = 1; enemy; enemy = enemy->next, i += 1) {
-        printf("i = %d\n", i);
-        printf("commitment  = %d\n", enemy->charachter->commitment);
-        printf("gpa = %.1f\n", enemy->charachter->gpa);
-        printf("guard = %d\n", enemy->charachter->guard);
-        printf("intellect = %d\n", enemy->charachter->intellect);
-        printf("speed = %d\n\n", enemy->charachter->speed);
-    }
+    int damage = attack + (intel * 2);
+    int tmp = tmp = (rand() % (speed)) + 1;
+    int check = (speed * 75) / 100;
+
+    damage += (tmp >= check) ? 10 : 0;
+    return (damage);
+}
+
+void to_reduce(int *damage, int defence, int speed)
+{
+    int tmp = (rand() % (100)) + 1;
+    int reducer = (speed * tmp) / 100;
+
+    *damage -= (defence + reducer);
 }
 
 void fight(main_t *main)
 {
     srand(time(NULL));
     list_t *enemy = NULL;
-
-    init_enemy(main, &enemy);
-    print_attributes(enemy);
 }
