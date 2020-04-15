@@ -65,3 +65,11 @@ void insert_element_char(list_t **list, int position, character_t *character)
     tmp1->next = elem;
     elem->next = tmp2;
 }
+
+int get_size_char(list_t *list)
+{
+    int i = 0;
+
+    for (; list; list = list->next, i += 1);
+    return (i);
+}

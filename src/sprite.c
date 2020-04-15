@@ -29,5 +29,6 @@ sprite_t *load_sprite(char const *file_name)
     item->rect = malloc(sizeof(sfIntRect));
     item->rect = init_rect(texture);
     item->visible = sfTrue;
+    item->max = sfTexture_getSize(texture).x;
     return (item);
 }

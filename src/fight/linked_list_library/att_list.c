@@ -65,3 +65,11 @@ void insert_element_attack(att_list_t **list, int pos, attack_t attack)
     tmp1->next = elem;
     elem->next = tmp2;
 }
+
+int get_size_attack(att_list_t *list)
+{
+    int i = 0;
+
+    for (; list; list = list->next, i += 1);
+    return (i);
+}

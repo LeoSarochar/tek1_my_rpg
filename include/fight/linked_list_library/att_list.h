@@ -12,4 +12,5 @@
 void add_element_attack(att_list_t **list, attack_t attack);
 void remove_element_attack(att_list_t **list, int position);
 void insert_element_attack(att_list_t **list, int pos, attack_t attack);
+int get_size_attack(att_list_t *list);
 #endif /* !ATT_LIST_H_ */

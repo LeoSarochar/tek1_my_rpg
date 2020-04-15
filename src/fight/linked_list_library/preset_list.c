@@ -65,3 +65,11 @@ void insert_element_preset(list_attpre_t **list, int pos, attpre_t attack)
     tmp1->next = elem;
     elem->next = tmp2;
 }
+
+int get_size_preset(list_attpre_t *list)
+{
+    int i = 0;
+
+    for (; list; list = list->next, i += 1);
+    return (i);
+}

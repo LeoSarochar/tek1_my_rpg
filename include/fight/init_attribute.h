@@ -78,6 +78,7 @@ typedef struct character_s {
     state_t state;
     att_list_t *list;
     preset_t preset;
+    sprite_t *sprite;
 }character_t;
 
 typedef struct scene_s {

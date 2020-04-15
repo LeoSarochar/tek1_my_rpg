@@ -17,8 +17,8 @@ void init_state(state_t *state)
 void init_character(main_t *main)
 {
     main->player = malloc(sizeof(character_t));
-    main->player->commitment = 100;
-    main->player->gpa = 2.0;
+    main->player->commitment = 500;
+    main->player->gpa = 0.0;
     main->player->guard = 10;
     main->player->xp = 0;
     main->player->intellect = 10;
@@ -26,4 +26,5 @@ void init_character(main_t *main)
     main->player->posiion = (sfVector2f){0, 0};
     init_state(&main->player->state);
     init_preset(&main->player->preset);
+    main->player->sprite = load_sprite("ressources/stance_naruto.png");
 }

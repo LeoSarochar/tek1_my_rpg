@@ -16,6 +16,9 @@
 #include "fight/all_attack/flistattack.h"
 #include "fight/linked_list_library/preset_list.h"
 #include "fight/all_attack/preset.h"
+#include "fight/fight_scene/displayer.h"
+#include "fight/fight_scene/event_fight.h"
+#include "fight/create_fighter.h"
 
 #define SFWC(A, B, C, D) sfRenderWindow_create(A, B, C, D)
 #define RWPE(A, B) sfRenderWindow_pollEvent(A, B)
@@ -26,6 +29,7 @@ typedef struct scene_s scene_t;
 
 typedef struct main_s
 {
+    sfClock *clock;
     sfRenderWindow *window;
     sfEvent event;
     character_t *player;

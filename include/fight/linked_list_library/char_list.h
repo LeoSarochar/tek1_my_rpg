@@ -12,4 +12,5 @@
 void add_element_char(list_t **list, character_t *character);
 void remove_element_char(list_t **list, int position);
 void insert_element_char(list_t **list, int position, character_t *character);
+int get_size_char(list_t *list);
 #endif /* !BASING_FUNCTIONS_H_ */
