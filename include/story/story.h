@@ -29,11 +29,13 @@ typedef struct pnj
 
 typedef struct story
 {
+    pnj_t *current_pnj;
     pnj_t *pnjs;
     int nb_pnjs;
 } story_t;
 
 void init_story(main_t *main_struct);
 void render_pnjs(main_t *main);
+void close_pnj_window(main_t *main, sfEvent event);
 
 #endif //MY_STORY_H_

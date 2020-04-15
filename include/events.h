@@ -28,6 +28,7 @@ typedef struct event_s {
 //////////FUNCS//////////////
 event_t events_funcs[] = {
     {sfEvtClosed, close_window},
+    {sfEvtKeyPressed, close_pnj_window},
     {sfEvtCount, NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////
