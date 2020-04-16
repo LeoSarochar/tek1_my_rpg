@@ -33,8 +33,14 @@ void draw_text(main_t *main, char *to_write, sfVector2f pos)
 void edit_rect(sprite_t *sprite, int offset, char *path)
 {
     sfTexture *texture = sfTexture_createFromFile(path, NULL);
+
+    sfSprite_destroy(sprite->sprite);
     sprite->offset = offset;
+    sprite->rect->left = 0;
+    sprite->rect->top = 0;
     sprite->rect->width = offset;
+    sprite->sprite = sfSprite_create();
+    sfSprite_setTexture(sprite->sprite, texture, sfFalse);
     sfSprite_setTextureRect(sprite->sprite, *(sprite->rect));
 }
 
@@ -46,6 +52,5 @@ void set_position(sfVector2f *pos, int pos_x, int pos_y)
 
 void move_rect(sprite_t *sprite)
 {
-    // printf("%d\n", sprite->max);
     sprite->rect->left = (sprite->rect->left + sprite->offset) % sprite->max;
 }

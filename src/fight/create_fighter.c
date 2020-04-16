@@ -39,12 +39,12 @@ attack_t create_preattack(attpre_t pre)
     attack_t attack;
 
     attack.dama_com = pre.max_deg;
-    attack.life = pre.min_xp * 20;
+    attack.life = 500;
     attack.defen = pre.min_xp * 2;
     attack.name = pre.name;
     attack.req_intel = 0;
     attack.req_logi = 0;
-    attack.speed = pre.min_xp * 10;
+    attack.speed = (pre.min_xp > 0) ? pre.min_xp * 10 : 10;
     attack.sprite = load_sprite("ressources/stance.png");
     init_state(&attack.state);
     return (attack);

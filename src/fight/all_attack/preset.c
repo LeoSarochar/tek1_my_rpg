@@ -20,16 +20,6 @@ void preset_comp(att_list_t **list)
     add_element_attack(list, crte_att((int [4]){10, 0, 25, 0}, "stack", 0));
 }
 
-void print_preset(preset_t *preset)
-{
-    list_attpre_t *tmp1 = preset->attack;
-    att_list_t *tmp2 = preset->comp;
-    for (; tmp1; tmp1 = tmp1->next)
-        printf("name = %s, max_deg = %d, min_xp = %d, fought_already = %d\n", tmp1->attack.name, tmp1->attack.max_deg, tmp1->attack.min_xp, tmp1->attack.fought_already);
-    for (; tmp2; tmp2 = tmp2->next)
-        printf("name = %s, req_intel = %d, req_logi = %d, dama_com = %d, life = %d\n", tmp2->attack.name, tmp2->attack.req_intel, tmp2->attack.req_logi, tmp2->attack.dama_com, tmp2->attack.life);
-}
-
 void init_preset(preset_t *preset)
 {
     preset->attack = NULL;

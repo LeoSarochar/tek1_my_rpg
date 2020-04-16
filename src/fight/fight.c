@@ -26,7 +26,7 @@ void is_good(state_t *state)
 int to_inflict(int attack, int intel, int speed)
 {
     int damage = attack + (intel * 2);
-    int tmp = tmp = (rand() % (speed)) + 1;
+    int tmp = (rand() % (speed - 1 + 1)) + 1;
     int check = (speed * 75) / 100;
 
     damage += (tmp >= check) ? 10 : 0;

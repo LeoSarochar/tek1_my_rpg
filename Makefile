@@ -9,11 +9,11 @@ SRC = $(shell find . -name '*.c')
 
 OUT = my_rpg
 
-CFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window -I./include -Wall -W
+CFLAGS = -lm -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window -I./include -Wall -W
 
-CFLAGS_DEBUG = -g3
+CFLAGS_DEBUG =
 
-CC = gcc
+CC = gcc -g3
 
 OBJ	=	$(SRC:.c=.o)
 

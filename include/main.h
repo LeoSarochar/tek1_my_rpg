@@ -32,6 +32,7 @@ typedef struct main_s
     sfClock *clock;
     sfRenderWindow *window;
     sfEvent event;
+    int scene;
     character_t *player;
 } main_t;
 
