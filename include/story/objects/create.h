@@ -1,0 +1,23 @@
+/*
+** EPITECH PROJECT, 2019
+** MyRPG
+** File description:
+** create.h
+*/
+
+#ifndef MY_CREATE_OBJECT_H_
+#define MY_CREATE_OBJECT_H_
+
+#define STRY_PTR void (*ptr)(story_t *)
+
+#include "include_all.h"
+#include "main.h"
+
+typedef struct main_s main_t;
+typedef struct story story_t;
+typedef struct object object_t;
+
+object_t *create_object(story_t *story, char *name, char *path, STRY_PTR);
+void render_objects(main_t *main);
+
+#endif //MY_CREATE_OBJECT_H_

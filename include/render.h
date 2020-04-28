@@ -11,6 +11,7 @@
 #include "include_all.h"
 #include "main.h"
 #include "story/story.h"
+#include "story/quests.h"
 
 ////////INCLUDES OF FUNCS/////////
 #include "sprite.h"
@@ -28,8 +29,10 @@ void put_player(main_t *main_struct);
 //////////FUNCS//////////////
 render_t render_funcs[] = {
     {put_map_sm1},
-    {put_player},
+    {render_objects},
     {render_pnjs},
+    {put_player},
+    {render_quests},
     {NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////

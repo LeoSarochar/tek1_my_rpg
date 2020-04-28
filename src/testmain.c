@@ -18,7 +18,6 @@ void game_event(main_t *main_struct)
     for (int i = 0; events_funcs[i].event != sfEvtCount; i++)
         if (events_funcs[i].event == main_struct->event.type) {
             events_funcs[i].ptr(main_struct, main_struct->event);
-            break;
         }
 }
 

@@ -20,8 +20,7 @@
 #define vec (sfVector2f)
 typedef struct story story_t;
 
-typedef struct main_s
-{
+typedef struct main_s {
     sfRenderWindow *window;
     sfEvent event;
 
