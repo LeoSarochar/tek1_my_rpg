@@ -13,7 +13,8 @@
 
 typedef struct main_s main_t;
 typedef struct story story_t;
+typedef struct pnj pnj_t;
 
-void create_pnj(story_t *story, char *name, char *path, void (*ptr)(story_t *));
+pnj_t *create_pnj(story_t *story, char *name, char *path, void (*ptr)(story_t *));
 
 #endif //MY_CREATE_PNJ_H_

@@ -7,7 +7,7 @@
 
 #include "story/story.h"
 
-void create_pnj(story_t *story, char *name, char *path, void (*ptr)(story_t *))
+pnj_t *create_pnj(story_t *story, char *name, char *path, void (*ptr)(story_t *))
 {
     int prec_size = sizeof(pnj_t) * (story->nb_pnjs);
     int new_size =  sizeof(pnj_t) * (story->nb_pnjs + 1);
@@ -17,5 +17,7 @@ void create_pnj(story_t *story, char *name, char *path, void (*ptr)(story_t *))
     CUR_PNJ.name = name;
     CUR_PNJ.sprite = load_sprite(path);
     CUR_PNJ.onclick = ptr;
+    CUR_PNJ.path = path;
     printf("[DEBUG] Creating pnj : %s\n", CUR_PNJ.name);
+    return (&(CUR_PNJ));
 }

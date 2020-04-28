@@ -34,6 +34,8 @@ int main(UNUSED int ac, UNUSED char **av)
         while (RWPE(main_struct.window, &main_struct.event))
             game_event(&main_struct);
         render(&main_struct);
+        if (main_struct.story->show_window == 1)
+            continue;
         if (sfKeyboard_isKeyPressed(sfKeyRight))
             main_struct.pm.player.pos.x += 5;
         if (sfKeyboard_isKeyPressed(sfKeyUp))

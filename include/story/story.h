@@ -22,6 +22,7 @@ typedef struct story story_t;
 typedef struct pnj
 {
     char *name;
+    char *path;
     sprite_t *sprite;
     sfVector2f pos;
     void (*onclick)(story_t *story);
@@ -31,13 +32,16 @@ typedef struct story
 {
     pnj_t *current_pnj;
     pnj_t *pnjs;
-    int show_window;
-    sfRectangleShape *shape;
     int nb_pnjs;
+
+    int show_window;
+    char *w_text;
+    sprite_t *w_background;
+    sprite_t *w_avatar;
 } story_t;
 
 void init_story(main_t *main_struct);
 void render_pnjs(main_t *main);
-void close_pnj_window(main_t *main, sfEvent event);
+void handle_pnj_event(main_t *main, sfEvent event);
 
 #endif //MY_STORY_H_
