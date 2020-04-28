@@ -12,9 +12,10 @@ void handle_pnj_event(main_t *main, sfEvent event)
     sfVector2f pos = main->pm.player.pos;
     sfFloatRect bounds;
 
-    if (event.key.code == sfKeyEscape) {
+    if (event.key.code == sfKeyEscape && main->story->show_window) {
         main->story->current_pnj = NULL;
         main->story->show_window = 0;
+        main->story->onclose(main->story);
     }
     if (event.key.code != sfKeyE)
         return;
@@ -42,13 +43,19 @@ void create_window(story_t *story, char *text, void (*ptr)(story_t *))
     sfSprite_setScale(story->w_avatar->sprite, (sfVector2f){0.8, 0.8});
     sfSprite_setPosition(story->w_avatar->sprite, pos_avatar);
     story->w_text = text;
+    story->onclose = ptr;
     story->show_window = 1;
+}
+
+void callback(story_t *story)
+{
+    return;
 }
 
 void test(story_t *story)
 {
     printf("Test\n");
-    create_window(story, "J'aime les fraises\nA la moutarde !", NULL);
+    create_window(story, "J'aime les fraises\nA la moutarde !", callback);
 }
 
 void init_story(main_t *main)

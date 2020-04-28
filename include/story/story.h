@@ -38,6 +38,7 @@ typedef struct story
     char *w_text;
     sprite_t *w_background;
     sprite_t *w_avatar;
+    void (*onclose)(story_t *story);
 } story_t;
 
 void init_story(main_t *main_struct);
