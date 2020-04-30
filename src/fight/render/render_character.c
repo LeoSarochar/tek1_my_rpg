@@ -51,7 +51,7 @@ void draw_bar(main_t *main_struct, fight_scene_t *scene)
         tmp->enemy->sprite->pos.y - 50);
         change_position(scene->black, tmp->enemy->sprite->pos.x, \
         tmp->enemy->sprite->pos.y - 50);
-        change_lifebar(tmp->enemy->com, tmp->enemy->com_max, scene->red);
+        change_lifebar(tmp->enemy->com_max, tmp->enemy->com, scene->red);
         draw_sprite(main_struct, scene->black);
         draw_sprite(main_struct, scene->red);
     }

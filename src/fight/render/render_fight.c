@@ -47,7 +47,7 @@ void analyse_event_fight(main_t *main, fight_scene_t *sc)
     if (main->event.type == sfEvtKeyPressed) {
         if (sc->var.menu == 0 && main->event.key.code == sfKeyEnter)
             analyse_enter_bg(sc);
-        if (sc->var.menu == 1 && main->event.key.code == sfKeyEnter)
+        else if (sc->var.menu == 1 && main->event.key.code == sfKeyEnter)
             analyse_attack(main, sc);
     }
 }
