@@ -12,8 +12,8 @@ sfIntRect *init_rect(sfTexture *texture)
     sfIntRect *rect = malloc(sizeof(sfIntRect));
     rect->top = 0;
     rect->left = 0;
-    rect->height = sfTexture_getSize(texture).x;
-    rect->width = sfTexture_getSize(texture).y;
+    rect->height = sfTexture_getSize(texture).y;
+    rect->width = sfTexture_getSize(texture).x;
     return (rect);
 }
 

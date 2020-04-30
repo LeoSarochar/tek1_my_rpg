@@ -7,16 +7,19 @@
 
 #include "story/story.h"
 
-void after_norme_book(story_t *story)
+void after_norme_book(main_t *main)
 {
+    story_t *story = main->story;
+
     story->current_object->sprite->visible = 0;
     story->quests->text = "Recoder la fonction strlen";
     story->quests->quest_id = 3;
-
+    init_scene(main, 1, NULL);
 }
 
-void after_sanchez(story_t *story)
+void after_sanchez(main_t *main)
 {
+    story_t *story = main->story;
     object_t *obj = NULL;
 
     obj = create_object(story, "Norme", "ressources/objects/book.png", after_norme_book);
@@ -29,8 +32,10 @@ void after_sanchez(story_t *story)
     return;
 }
 
-void pnj_sanchez(story_t *story)
+void pnj_sanchez(main_t *main)
 {
+    story_t *story = main->story;
+
     if (story->quests->quest_id == 1) {
         create_window_pnj(story, "Bienvenue a la Piscine !\nVa falloir\
         t'accrocher\nOn compte sur toi !", after_sanchez);

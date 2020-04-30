@@ -12,11 +12,16 @@ void close_window(main_t *main_struct, UNUSED sfEvent event)
 {
     destoy_menu(main_struct);
     sfRenderWindow_close(main_struct->window);
-    sfRenderWindow_destroy(main_struct->window);
 }
 
 void game_event(main_t *main_struct)
 {
+    if (main_struct->player->fight_scene) {
+        if (main_struct->player->fight_scene->var.scene == 0)
+            analyse_event_fight(main_struct, main_struct->player->fight_scene);
+        else if (main_struct->player->fight_scene->var.scene == 1)
+            analyse_event_menu(main_struct, main_struct->player->fight_scene);
+    }
     for (int i = 0; events_funcs[i].event != sfEvtCount; i++)
         if (events_funcs[i].event == main_struct->event.type) {
             events_funcs[i].ptr(main_struct, main_struct->event);
@@ -32,11 +37,10 @@ int main(UNUSED int ac, UNUSED char **av)
     main_struct.window = SFWC(mode, "Road 4 GPA", sfDefaultStyle, NULL);
     sfRenderWindow_setFramerateLimit(main_struct.window, 64);
     init(&main_struct);
-    main_struct.story->fixed = sfRenderWindow_getView(main_struct.window);
-    sfView_setSize(main_struct.pm.view, (sfVector2f){960, 540});
     while (sfRenderWindow_isOpen(main_struct.window)) {
-        while (RWPE(main_struct.window, &main_struct.event))
+        while (RWPE(main_struct.window, &main_struct.event)) {
             game_event(&main_struct);
+        }
         (bol == 0) ? (first_process(&main_struct), bol++): 0;
         if (main_struct.s_menu.bol_menu == 1) {
             exec_menu(&main_struct);
@@ -44,6 +48,7 @@ int main(UNUSED int ac, UNUSED char **av)
         }
         render(&main_struct);
         gest_view(&main_struct);
+        render_fight(&main_struct, main_struct.player->fight_scene);
     }
     return (0);
 }

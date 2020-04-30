@@ -31,7 +31,7 @@ void handle_pnj_event(main_t *main, sfEvent event)
 
     if (event.key.code == sfKeyEscape && main->story->show_window) {
         main->story->show_window = 0;
-        main->story->onclose(main->story);
+        main->story->onclose(main);
         main->story->current_pnj = NULL;
     }
     if (event.key.code != sfKeyE)
@@ -42,7 +42,7 @@ void handle_pnj_event(main_t *main, sfEvent event)
         bounds = sfSprite_getGlobalBounds(main->story->pnjs[i].sprite->sprite);
         if (sfFloatRect_contains(&bounds, pos.x, pos.y)) {
             main->story->current_pnj = &(main->story->pnjs[i]);
-            main->story->pnjs[i].onclick(main->story);
+            main->story->pnjs[i].onclick(main);
         }
     }
 }

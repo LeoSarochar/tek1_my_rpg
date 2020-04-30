@@ -13,5 +13,7 @@ void render(main_t *main_struct)
     sfRenderWindow_clear(main_struct->window, sfBlack);
     for (int i = 0; render_funcs[i].ptr != NULL; i++)
         render_funcs[i].ptr(main_struct);
+    gest_view(main_struct);
+    render_fight(main_struct, main_struct->player->fight_scene);
     sfRenderWindow_display(main_struct->window);
 }

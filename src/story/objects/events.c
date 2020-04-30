@@ -20,7 +20,7 @@ void handle_object_event(main_t *main, sfEvent event)
         bds = sfSprite_getGlobalBounds(main->story->objects[i].sprite->sprite);
         if (sfFloatRect_contains(&bds, pos.x, pos.y)) {
             main->story->current_object = &(main->story->objects[i]);
-            main->story->objects[i].onclick(main->story);
+            main->story->objects[i].onclick(main);
         }
     }
 }

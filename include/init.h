@@ -34,6 +34,7 @@ init_t init_funcs[] = {
     {init_map},
     {init_perso},
     {init_corridor},
+    {init_player},
     {NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////

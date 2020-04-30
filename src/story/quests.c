@@ -24,6 +24,8 @@ void render_quests(main_t *main)
 {
     quests_t *quests = main->story->quests;
 
+    if (main->player->fight_scene)
+        return;
     if (!quests->show_quests)
         return;
     sfView_setSize(main->story->fixed, (sfVector2f){1920, 1080});

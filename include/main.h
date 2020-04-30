@@ -13,6 +13,7 @@
 #include "screen_menu.h"
 #include "player_and_map/player_and_map_struct.h"
 #include "player_and_map/player_movement.h"
+#include "fight/init_attribute.h"
 
 #define SFWC(A, B, C, D) sfRenderWindow_create(A, B, C, D)
 #define RWPE(A, B) sfRenderWindow_pollEvent(A, B)
@@ -21,6 +22,7 @@
 
 #define vec (sfVector2f)
 typedef struct story story_t;
+typedef struct player_s player_t;
 
 typedef struct main_s {
     sfRenderWindow *window;
@@ -30,6 +32,7 @@ typedef struct main_s {
     main_menu_t s_menu;
     main_sound_t sound;
     playmap_t pm;
+    player_t *player;
 } main_t;
 
 void close_window(main_t *main_struct, UNUSED sfEvent event);

@@ -20,7 +20,7 @@
 
 #define CUR_PNJ story->pnjs[story->nb_pnjs - 1]
 #define CUR_OBJ story->objects[story->nb_objects - 1]
-#define STRY_PTR void (*ptr)(story_t *)
+#define STRY_PTR void (*ptr)(main_t *)
 
 typedef struct main_s main_t;
 typedef struct story story_t;

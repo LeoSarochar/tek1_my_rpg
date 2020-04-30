@@ -10,6 +10,8 @@
 
 void put_map_sm1(main_t *main_struct)
 {
+    if (main_struct->player->fight_scene)
+        return;
     if (main_struct->pm.player.scene == 0) {
         sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.map.map_sp->sprite, NULL);
         put_player(main_struct);
@@ -33,5 +35,6 @@ void init_perso(main_t *main_struct)
 void init_map(main_t *main_struct)
 {
     main_struct->pm.view = sfView_create();
+    sfView_setSize(main_struct->pm.view, (sfVector2f){960, 540});
     main_struct->pm.map.map_sp = load_sprite("./ressources/maps/sm1.png");
 }

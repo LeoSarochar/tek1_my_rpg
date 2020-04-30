@@ -45,6 +45,8 @@ void render_objects(main_t *main)
 {
     object_t cur_object;
 
+    if (main->player->fight_scene)
+        return;
     gest_norm_book_clock(main->story);
     for (int i = 0; i < main->story->nb_objects; i++) {
         cur_object = main->story->objects[i];

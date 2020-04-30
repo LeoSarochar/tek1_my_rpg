@@ -8,7 +8,7 @@
 #ifndef MY_CREATE_OBJECT_H_
 #define MY_CREATE_OBJECT_H_
 
-#define STRY_PTR void (*ptr)(story_t *)
+#define STRY_PTR void (*ptr)(main_t *)
 
 #include "include_all.h"
 #include "main.h"

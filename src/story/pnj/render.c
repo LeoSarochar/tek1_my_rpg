@@ -7,21 +7,6 @@
 
 #include "story/story.h"
 
-void draw_text(main_t *main, char *to_write, sfVector2f pos, int size)
-{
-    sfText *text = sfText_create();
-    sfFont *font = sfFont_createFromFile("./ressources/BebasNeue-Regular.ttf");
-
-    sfText_setPosition(text, pos);
-    sfText_setFont(text, font);
-    sfText_setString(text, to_write);
-    sfText_setCharacterSize(text, size);
-    sfText_setColor(text, sfWhite);
-    sfRenderWindow_drawText(main->window, text, NULL);
-    sfFont_destroy(font);
-    sfText_destroy(text);
-}
-
 int check_player_talk(pnj_t pnj, main_t *main)
 {
     sfVector2f pos = main->pm.player.pos;
@@ -59,6 +44,8 @@ void render_pnjs(main_t *main)
 {
     pnj_t cur_pnj;
 
+    if (main->player->fight_scene)
+        return;
     for (int i = 0; i < main->story->nb_pnjs; i++) {
         cur_pnj = main->story->pnjs[i];
         if (cur_pnj.sprite->visible == sfFalse)
