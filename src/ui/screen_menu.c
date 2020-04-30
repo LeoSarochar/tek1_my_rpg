@@ -84,7 +84,7 @@ void init_button_menu(main_t *struct_main)
     struct_main->s_menu.text = malloc(sizeof(text_menu_t *) * (9));
     for (int j = 0; j < 8; j += 1)
         struct_main->s_menu.text[j] = malloc(sizeof(text_menu_t));
-    create_text(struct_main->s_menu.text[0], "PLAY", VEC(875, 235), 40);
+    create_text(struct_main->s_menu.text[0], "PLAY", VEC(1580, 235), 40);
     create_text(struct_main->s_menu.text[1], "CREDIT", VEC(1580, 400), 30);
     create_text(struct_main->s_menu.text[2], "OPTION", VEC(1580, 550), 30);
     create_text(struct_main->s_menu.text[3], "EXIT", VEC(1585, 690), 40);
@@ -167,15 +167,13 @@ void disp_menu(main_t *struct_main)
         i = 0;
     struct_main->s_menu.time_menu = sfClock_getElapsedTime(struct_main->s_menu.clock_menu);
     struct_main->s_menu.sec_menu = struct_main->s_menu.time_menu.microseconds / 100000.0;
-    if (struct_main->s_menu.sec_menu > 1)
-    {
+    if (struct_main->s_menu.sec_menu > 1) {
         sfRenderWindow_clear(struct_main->window, sfBlack);
         SST(struct_main->s_menu.bgs_menu, (struct_main->s_menu.bgt_menu[i]), sfTrue);
         sfClock_restart(struct_main->s_menu.clock_menu);
         i++;
         sfRenderWindow_drawSprite(struct_main->window, struct_main->s_menu.bgs_menu, NULL);
-        for (int i = 0; i < 4; i++)
-        {
+        for (int i = 0; i < 4; i++) {
             sfRenderWindow_drawSprite(struct_main->window, struct_main->s_menu.button[i]->sprite, NULL);
             sfRenderWindow_drawText(struct_main->window, struct_main->s_menu.text[i]->txt1, NULL);
         }
@@ -187,13 +185,13 @@ void disp_pause(main_t *struct_main)
 {
     struct_main->s_menu.time_menu = sfClock_getElapsedTime(struct_main->s_menu.clock_menu);
     struct_main->s_menu.sec_menu = struct_main->s_menu.time_menu.microseconds / 100000.0;
-    if (struct_main->s_menu.sec_menu > 1)
-    {
-            sfRenderWindow_clear(struct_main->window, sfBlack);
+    if (struct_main->s_menu.sec_menu > 1) {
+        sfRenderWindow_clear(struct_main->window, sfBlack);
         for (int i = 0; i < 4; i++) {
             sfRenderWindow_drawSprite(struct_main->window, struct_main->s_menu.button_pause[i]->sprite, NULL);
             sfRenderWindow_drawText(struct_main->window, struct_main->s_menu.text_pause[i]->txt1, NULL);
         }
+        sfRenderWindow_display(struct_main->window);
     }
 }
 
@@ -241,9 +239,9 @@ void button_effect_pause(main_t *glob)
 
 void modif_statement(main_t *glob)
 {
-    if(glob->s_menu.state_button == 1)
+    if (glob->s_menu.state_button == 1)
         glob->s_menu.bol_menu = 0;
-    if(glob->s_menu.state_button == 4)
+    if (glob->s_menu.state_button == 4)
         close_window(glob, glob->event);
 }
 
@@ -265,19 +263,18 @@ void screen_menu_order(main_t *glob)
 
 void modif_statement_pause(main_t *glob)
 {
-    if(glob->s_menu.state_button == 1)
+    if (glob->s_menu.state_button == 1)
         glob->s_menu.bol_pause = 0;
-    if(glob->s_menu.state_button == 2)
+    if (glob->s_menu.state_button == 2)
         glob->s_menu.bol_menu = 1;
-    if(glob->s_menu.state_button == 4)
+    if (glob->s_menu.state_button == 4)
         close_window(glob, glob->event);
 }
 
 void mouse_position_pause(main_t *glob, sfRenderWindow *window)
 {
     sfVector2i cursor = sfMouse_getPositionRenderWindow(window);
-    if (cursor.x > 815 && cursor.x < 1095)
-    {
+    if (cursor.x > 815 && cursor.x < 1095) {
         if ((cursor.y > 190 && cursor.y < 330) ||
             (cursor.y > 340 && cursor.y < 480) ||
             (cursor.y > 490 && cursor.y < 630) ||

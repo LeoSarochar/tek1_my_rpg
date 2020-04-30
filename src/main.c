@@ -38,7 +38,6 @@ int main(UNUSED int ac, UNUSED char **av)
             game_event(&main_struct);
         (bol == 0) ? (first_process(&main_struct), bol++): 0;
         (main_struct.s_menu.bol_menu == 1) ? exec_menu(&main_struct) : render(&main_struct);
-
     }
     return (0);
 }
