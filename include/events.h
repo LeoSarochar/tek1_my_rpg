@@ -12,7 +12,7 @@
 #include "main.h"
 
 ////////INCLUDES OF FUNCS/////////
-
+#include "./player_and_map/player_movement.h"
 
 ////////////////////////////////
 
