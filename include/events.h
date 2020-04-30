@@ -29,7 +29,7 @@ void player_move(main_t *main_struct, UNUSED sfEvent);
 //////////FUNCS//////////////
 event_t events_funcs[] = {
     {sfEvtClosed, close_window},
-    {sfEvtKeyPressed, player_move},
+    // {sfEvtKeyPressed, player_move},
     {sfEvtCount, NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////

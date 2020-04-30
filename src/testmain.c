@@ -37,6 +37,34 @@ int main(UNUSED int ac, UNUSED char **av)
         while (RWPE(main_struct.window, &main_struct.event))
             game_event(&main_struct);
         render(&main_struct);
+        if (sfKeyboard_isKeyPressed(sfKeyRight) && main_struct.pm.player.pos.x < 1870)
+            main_struct.pm.player.pos.x += 7;
+        if (sfKeyboard_isKeyPressed(sfKeyUp) && main_struct.pm.player.pos.y > 100)
+            main_struct.pm.player.pos.y -= 7;
+        if (sfKeyboard_isKeyPressed(sfKeyLeft) && main_struct.pm.player.pos.x > 0)
+            main_struct.pm.player.pos.x -= 7;
+        if (sfKeyboard_isKeyPressed(sfKeyDown) && main_struct.pm.player.pos.y < 1000)
+            main_struct.pm.player.pos.y += 7;
+        if (main_struct.pm.player.pos.y <= 100 && main_struct.pm.player.pos.x == 315 && main_struct.pm.player.scene == 0) {
+            main_struct.pm.player.scene = 1;
+            main_struct.pm.player.pos.y = 900;
+            main_struct.pm.player.pos.x = 315;
+            }
+        if (main_struct.pm.player.pos.y <= 100 && main_struct.pm.player.pos.x == 1519 && main_struct.pm.player.scene == 0) {
+            main_struct.pm.player.scene = 1;
+            main_struct.pm.player.pos.y = 900;
+            main_struct.pm.player.pos.x = 1498;
+            }
+        if (main_struct.pm.player.pos.y >= 1000 && main_struct.pm.player.pos.x == 315 && main_struct.pm.player.scene == 1) {
+            main_struct.pm.player.scene = 0;
+            main_struct.pm.player.pos.y = 130;
+            main_struct.pm.player.pos.x = 315;
+            }
+        if (main_struct.pm.player.pos.y >= 1000 && main_struct.pm.player.pos.x == 1498 && main_struct.pm.player.scene == 1) {
+            main_struct.pm.player.scene = 0;
+            main_struct.pm.player.pos.y = 130;
+            main_struct.pm.player.pos.x = 1498;
+        }
         sfVector2f center = {main_struct.pm.player.pos.x + 32, main_struct.pm.player.pos.y + 33};
         sfRenderWindow_setView(main_struct.window, View);
         sfView_setCenter(View, center);
