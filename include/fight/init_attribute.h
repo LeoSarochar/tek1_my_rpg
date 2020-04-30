@@ -12,6 +12,7 @@
 #include "linked_list_library/player_list.h"
 #include "linked_list_library/preset_list.h"
 #include "linked_list_library/enemy_list.h"
+#include "linked_list_library/destroyer.h"
 #include "linked_list_library/getter.h"
 #include "creator/attack_and_preset.h"
 #include "creator/init_sprite_enem.h"
