@@ -84,7 +84,7 @@ void init_button_menu(main_t *struct_main)
     struct_main->s_menu.text = malloc(sizeof(text_menu_t *) * (9));
     for (int j = 0; j < 8; j += 1)
         struct_main->s_menu.text[j] = malloc(sizeof(text_menu_t));
-    create_text(struct_main->s_menu.text[0], "PLAY", VEC(875, 235), 40);
+    create_text(struct_main->s_menu.text[0], "PLAY", VEC(1580, 235), 40);
     create_text(struct_main->s_menu.text[1], "CREDIT", VEC(1580, 400), 30);
     create_text(struct_main->s_menu.text[2], "OPTION", VEC(1580, 550), 30);
     create_text(struct_main->s_menu.text[3], "EXIT", VEC(1585, 690), 40);
@@ -178,6 +178,7 @@ void disp_menu(main_t *struct_main)
             sfRenderWindow_drawSprite(struct_main->window, struct_main->s_menu.button[i]->sprite, NULL);
             sfRenderWindow_drawText(struct_main->window, struct_main->s_menu.text[i]->txt1, NULL);
         }
+        sfRenderWindow_display(struct_main->window);
     }
 }
 
@@ -192,6 +193,7 @@ void disp_pause(main_t *struct_main)
             sfRenderWindow_drawSprite(struct_main->window, struct_main->s_menu.button_pause[i]->sprite, NULL);
             sfRenderWindow_drawText(struct_main->window, struct_main->s_menu.text_pause[i]->txt1, NULL);
         }
+        sfRenderWindow_display(struct_main->window);
     }
 }
 
