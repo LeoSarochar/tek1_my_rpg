@@ -23,7 +23,7 @@ typedef struct init_s {
 } init_t;
 
 //////////PROTOTYPE//////////
-void init_player(main_t *main_struct);
+void init_perso(main_t *main_struct);
 void init_map(main_t *main_struct);
 void init_corridor(main_t *main_struct);
 /////////////////////////////
@@ -32,7 +32,7 @@ void init_corridor(main_t *main_struct);
 init_t init_funcs[] = {
     {init_story},
     {init_map},
-    {init_player},
+    {init_perso},
     {init_corridor},
     {NULL} //Don't touch, is the mark of the end of the array
 };

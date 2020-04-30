@@ -22,7 +22,7 @@ void put_player(main_t *main_struct)
     sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.player.player_sp->sprite, NULL);
 }
 
-void init_player(main_t *main_struct)
+void init_perso(main_t *main_struct)
 {
     main_struct->pm.player.pos.x = 315;
     main_struct->pm.player.pos.y = 130;

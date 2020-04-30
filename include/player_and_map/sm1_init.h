@@ -14,7 +14,7 @@
 void put_map_sm1(main_t *main_struct);
 void put_corridor(main_t *main_struct);
 void put_player(main_t *main_struct);
-void init_player(main_t *main_struct);
+void init_perso(main_t *main_struct);
 void init_map(main_t *main_struct);
 void init_corridor(main_t *main_struct);
 

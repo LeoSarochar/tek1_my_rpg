@@ -22,13 +22,13 @@ typedef struct cam_s {
     float rota;
 } cam_t;
 
-typedef struct player_s {
+typedef struct perso_s {
     sfVector2f pos;
     sprite_t *player_sp;
     sfIntRect rect;
     int scene;
     char **map[3];
-} player_t;
+} perso_t;
 
 typedef struct map_s {
     int **map;
@@ -40,7 +40,7 @@ typedef struct playmap_s {
     cam_t cam;
     map_t map;
     map_t corridor;
-    player_t player;
+    perso_t player;
     int map_scene;
 } playmap_t;
 
