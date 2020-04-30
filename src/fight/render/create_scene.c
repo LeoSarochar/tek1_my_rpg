@@ -7,13 +7,6 @@
 
 #include "fight/render/create_scene.h"
 
-const char *bg = "ressources/scene/test.png";
-const char *cursor = "ressources/scene/cursor.png";
-const char *menu = "ressources/scene/menu.jpg";
-const char *black = "ressources/life/black.png";
-const char *red = "ressources/life/red.png";
-const char *green = "ressources/scene/green.png";
-
 void create_enemy_attack(attack_list_t **list, preset_list_t *pre, int xp)
 {
     preset_list_t *other = otther_pos(pre, xp);
@@ -75,18 +68,8 @@ void init_scene(main_t *main_struct, int visible, char *name)
 
     if (visible != 1)
         return;
-    scene->enemies = NULL;
-    scene->player = main_struct->player;
-    scene->var.menu = 0;
-    scene->var.scene = 0;
-    scene->var.nb = 1;
-    create_all_enemy(&scene->enemies, scene->player->preset, scene->player->xp);
-    init_sprite(&scene->bg, (sfVector2f){0, 0}, bg);
-    init_sprite(&scene->cursor, (sfVector2f){100, 800}, cursor);
-    init_sprite(&scene->black, (sfVector2f){0, 0}, black);
-    init_sprite(&scene->red, (sfVector2f){0, 0}, red);
-    init_sprite(&scene->menu, (sfVector2f){0, 0}, menu);
-    init_sprite(&scene->green, (sfVector2f){790, 200}, green);
-    init_sprite_enem(scene->enemies);
-    render_fight(main_struct, scene);
+    if (name == NULL)
+        init_randomn(main_struct);
+    else
+        init_scene_name(main_struct, name);
 }

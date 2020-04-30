@@ -10,7 +10,7 @@
 
 const enemy_preset_t preset_enemy[] = {
     {"my_putchar", 50, 5, 5, 10, 5, 0},
-    // {"my_strlen", 60, 10, 5, 10, 5, 0},
+    {"my_strlen", 60, 10, 5, 10, 5, 0},
     {"my_putstr", 70, 10, 10, 15, 5, 0},
 };
 

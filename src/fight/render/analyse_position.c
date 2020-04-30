@@ -39,25 +39,24 @@ void draw_stat_attack(int nb, main_t *main, int tab[4])
 
 void analyse_enter_menu(fight_scene_t *scene)
 {
+    int y = scene->green->pos.y;
+
     if (scene->var.menu == 0) {
-        if (scene->green->pos.y == 200) {
-            scene->green->pos.y = 200;
+        if (y == 200) {
+            y = 200;
             scene->var.menu = 1;
         }
-        if (scene->green->pos.y == 300)
-            scene->var.menu = 3;
+        (y == 300) ? scene->var.menu = 3 : 0;
     }
     else if (scene->var.menu == 1) {
-        if (scene->green->pos.y == 200)
-            scene->var.to_print = scene->var.tab[0];
-        if (scene->green->pos.y == 300)
-            scene->var.to_print = scene->var.tab[1];
-        if (scene->green->pos.y == 400)
-            scene->var.to_print = scene->var.tab[2];
-        if (scene->green->pos.y == 500)
-            scene->var.to_print = scene->var.tab[3];
+        (y == 200) ? scene->var.to_print = scene->var.tab[0] : 0;
+        (y == 300) ? scene->var.to_print = scene->var.tab[1] : 0;
+        (y == 400) ? scene->var.to_print = scene->var.tab[2] : 0;
+        (y == 500) ? scene->var.to_print = scene->var.tab[3] : 0;
         scene->var.menu = (scene->var.to_print != -1) ? 2 : 1;
     }
+    (scene->var.menu == 0 && y == 400) ? scene->var.scene = 0 : 0;
+    (scene->var.menu == 0 && y == 500) ? scene->var.scene = -1 : 0;
 }
 
 void printer(attack_t *attack, main_t *main)

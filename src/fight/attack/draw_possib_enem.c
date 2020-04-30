@@ -12,7 +12,6 @@ void is_dead(enemy_list_t *enemy, fight_scene_t *scene)
     enemy_list_t *tmp = enemy;
     int i = 0;
     int max = get_size_enem(tmp);
-    printf("max = %d\n", max);
 
     for (; tmp; tmp = tmp->next)
         if (tmp->enemy->com <= 0)
