@@ -18,6 +18,6 @@ typedef struct story story_t;
 typedef struct object object_t;
 
 object_t *create_object(story_t *story, char *name, char *path, STRY_PTR);
+object_t *get_object_by_name(story_t *story, char *name);
 void render_objects(main_t *main);
-
 #endif //MY_CREATE_OBJECT_H_

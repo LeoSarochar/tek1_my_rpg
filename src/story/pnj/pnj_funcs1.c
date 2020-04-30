@@ -21,6 +21,9 @@ void after_sanchez(story_t *story)
 
     obj = create_object(story, "Norme", "ressources/objects/book.png", after_norme_book);
     obj->pos = (sfVector2f){1000, 500};
+    obj->sprite->rect->top = 4;
+    obj->sprite->rect->width = 26;
+    obj->sprite->rect->height = 30;
     story->quests->text = "Trouver le document de la norme";
     story->quests->quest_id = 2;
     return;

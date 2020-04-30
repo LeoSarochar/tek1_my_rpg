@@ -7,6 +7,14 @@
 
 #include "story/story.h"
 
+object_t *get_object_by_name(story_t *story, char *name)
+{
+    for (int i = 0; i < story->nb_objects; i++)
+        if (!my_strcmp(story->objects[i].name, name))
+            return (&(story->objects[i]));
+    return (NULL);
+}
+
 object_t *create_object(story_t *story, char *name, char *path, STRY_PTR)
 {
     int prec_size = sizeof(object_t) * (story->nb_objects);

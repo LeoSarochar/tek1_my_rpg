@@ -48,6 +48,7 @@ typedef struct story {
     int nb_pnjs;
     object_t *current_object;
     object_t *objects;
+    sfClock *objects_clock;
     int nb_objects;
 
     quests_t *quests;

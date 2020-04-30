@@ -7,10 +7,12 @@
 
 #include "main.h"
 #include "events.h"
+
 void close_window(main_t *main_struct, UNUSED sfEvent event)
 {
     sfRenderWindow_close(main_struct->window);
     sfRenderWindow_destroy(main_struct->window);
+    save_game(main_struct);
 }
 
 void game_event(main_t *main_struct)

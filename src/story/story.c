@@ -37,6 +37,7 @@ void create_objects(story_t *story)
 {
     object_t *obj = NULL;
 
+    story->objects_clock = sfClock_create();
     // obj = create_object(story, "Norme", "ressources/objects/book.png", test);
     // obj->pos = (sfVector2f){1000, 500};
 }
