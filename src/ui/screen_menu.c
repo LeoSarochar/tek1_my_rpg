@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2020
-** main screen menu 
+** main screen menu
 ** File description:
 ** call fonction for go on the menu
 */
@@ -162,6 +162,7 @@ void play_music(main_t *struct_main)
 void disp_menu(main_t *struct_main)
 {
     static int i = 0;
+
     if (struct_main->s_menu.bgt_menu[i + 1] == NULL)
         i = 0;
     struct_main->s_menu.time_menu = sfClock_getElapsedTime(struct_main->s_menu.clock_menu);
@@ -178,6 +179,7 @@ void disp_menu(main_t *struct_main)
             sfRenderWindow_drawSprite(struct_main->window, struct_main->s_menu.button[i]->sprite, NULL);
             sfRenderWindow_drawText(struct_main->window, struct_main->s_menu.text[i]->txt1, NULL);
         }
+        sfRenderWindow_display(struct_main->window);
     }
 }
 
