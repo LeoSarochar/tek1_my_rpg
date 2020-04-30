@@ -23,12 +23,14 @@ typedef struct init_s {
 //////////PROTOTYPE//////////
 void init_player(main_t *main_struct);
 void init_map(main_t *main_struct);
+void init_corridor(main_t *main_struct);
 /////////////////////////////
 
 //////////FUNCS//////////////
 init_t init_funcs[] = {
     {init_map},
     {init_player},
+    {init_corridor},
     {NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////

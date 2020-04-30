@@ -10,7 +10,10 @@
 
 void put_map_sm1(main_t *main_struct)
 {
-    sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.map.map_sp->sprite, NULL);
+    if (main_struct->pm.player.scene == 0) {
+        sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.map.map_sp->sprite, NULL);
+        put_player(main_struct);
+    }
 }
 
 void put_player(main_t *main_struct)
@@ -21,9 +24,11 @@ void put_player(main_t *main_struct)
 
 void init_player(main_t *main_struct)
 {
-    main_struct->pm.player.pos.x = 300;
-    main_struct->pm.player.pos.y = 150;
+    main_struct->pm.player.pos.x = 315;
+    main_struct->pm.player.pos.y = 130;
     main_struct->pm.player.player_sp = load_sprite("./ressources/maps/player.png");
+    main_struct->pm.player.scene = 0;
+    main_struct->
 }
 
 void init_map(main_t *main_struct) 

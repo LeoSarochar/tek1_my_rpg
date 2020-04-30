@@ -22,12 +22,13 @@ typedef struct render_s {
 //////////PROTOTYPE//////////
 void put_map_sm1(main_t *main_struct);
 void put_player(main_t *main_struct);
+void put_corridor(main_t *main_struct);
 /////////////////////////////
 
 //////////FUNCS//////////////
 render_t render_funcs[] = {
     {put_map_sm1},
-    {put_player},
+    {put_corridor},
     {NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////
