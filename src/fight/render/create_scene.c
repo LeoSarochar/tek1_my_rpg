@@ -69,10 +69,12 @@ void create_all_enemy(enemy_list_t **enemy, preset_list_t *pre, int xp)
     }
 }
 
-fight_scene_t *init_scene(main_t *main_struct)
+void init_scene(main_t *main_struct, int visible, char *name)
 {
     fight_scene_t *scene = malloc(sizeof(*scene));
 
+    if (visible != 1)
+        return;
     scene->enemies = NULL;
     scene->player = main_struct->player;
     scene->var.menu = 0;

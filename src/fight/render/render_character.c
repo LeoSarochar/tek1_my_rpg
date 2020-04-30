@@ -39,6 +39,10 @@ void change_lifebar(int life, int new_life, sprite_t *red)
 {
     int offset = (new_life * 100) / life;
 
+    if (new_life < 0) {
+        edit_rect(red, 0, "ressources/life/red.png");
+        return;
+    }
     edit_rect(red, offset, "ressources/life/red.png");
 }
 

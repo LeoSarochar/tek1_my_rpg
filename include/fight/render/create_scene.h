@@ -9,5 +9,5 @@
 #define CREATE_SCENE_H_
 #include "fight/init_attribute.h"
 
-fight_scene_t *init_scene(main_t *main_struct);
+void init_scene(main_t *main_struct, int visible, char *name);
 #endif /* !CREATE_SCENE_H_ */

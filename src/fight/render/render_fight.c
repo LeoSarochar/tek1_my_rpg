@@ -67,6 +67,8 @@ void render_fight(main_t *main_struct, fight_scene_t *scene)
         (scene->var.scene == 0) ? draw_enemy(main_struct, scene) : 0;
         (scene->var.scene == 0) ? draw_bar(main_struct, scene) : 0;
         (scene->var.scene == 1) ? drawer_menu_char(main_struct, scene) : 0;
+        scene->var.menu = (scene->player->com <= 0) ? -1 : scene->var.menu;
+        is_dead(scene->enemies, scene);
         sfRenderWindow_display(main_struct->window);
     }
 }
