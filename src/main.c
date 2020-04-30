@@ -32,6 +32,7 @@ int main(UNUSED int ac, UNUSED char **av)
     main_struct.window = SFWC(mode, "Road 4 GPA", sfDefaultStyle, NULL);
     sfRenderWindow_setFramerateLimit(main_struct.window, 64);
     init(&main_struct);
+    main_struct.story->fixed = sfRenderWindow_getView(main_struct.window);
     sfView_setSize(main_struct.pm.view, (sfVector2f){960, 540});
     while (sfRenderWindow_isOpen(main_struct.window)) {
         while (RWPE(main_struct.window, &main_struct.event))

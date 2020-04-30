@@ -43,6 +43,7 @@ typedef struct object {
 } object_t;
 
 typedef struct story {
+    sfView *fixed;
     pnj_t *current_pnj;
     pnj_t *pnjs;
     int nb_pnjs;

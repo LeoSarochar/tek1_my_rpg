@@ -26,6 +26,9 @@ void render_quests(main_t *main)
 
     if (!quests->show_quests)
         return;
+    sfView_setSize(main->story->fixed, (sfVector2f){1920, 1080});
+    sfView_setCenter(main->story->fixed, (sfVector2f){960, 530});
+    sfRenderWindow_setView(main->window, main->story->fixed);
     sfRenderWindow_drawSprite(main->window, quests->background->sprite, NULL);
     draw_text(main, quests->text, (sfVector2f){30, 20}, 25);
 }

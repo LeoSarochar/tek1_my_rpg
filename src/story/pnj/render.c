@@ -45,6 +45,9 @@ void renderPNJWindow(main_t *main)
     sfVector2f pos = (sfVector2f){pnj->pos.x + 720, pnj->pos.y + 165};
     sfVector2f pos_echap = (sfVector2f){pnj->pos.x + 280, pnj->pos.y + 180};
 
+    sfView_setSize(main->story->fixed, (sfVector2f){1920, 1080});
+    sfView_setCenter(main->story->fixed, (sfVector2f){960, 530});
+    sfRenderWindow_setView(main->window, main->story->fixed);
     sfRenderWindow_drawSprite(main->window, story->w_background->sprite, NULL);
     sfRenderWindow_drawSprite(main->window, story->w_avatar->sprite, NULL);
     draw_text(main, story->w_text, pos_text, 35);
