@@ -11,6 +11,6 @@
 #include "../include_all.h"
 #include "main.h"
 
-void player_move(main_t *main_struct, UNUSED sfEvent);
+void player_move(main_t *main_struct);
 
 #endif //MY_PLAYER_MOVEMENT_H_
