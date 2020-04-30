@@ -29,22 +29,21 @@ int main(UNUSED int ac, UNUSED char **av)
     int bol = 0;
     main_t main_struct;
     sfVideoMode mode = {1920, 1080, 32};
-    sfView *View = sfView_create();
 
     main_struct.window = SFWC(mode, "Road 4 GPA", sfDefaultStyle, NULL);
     sfRenderWindow_setFramerateLimit(main_struct.window, 64);
     init(&main_struct);
-    sfView_setSize(View, (sfVector2f){960, 540});
+    sfView_setSize(main_struct.pm.view, (sfVector2f){960, 540});
     while (sfRenderWindow_isOpen(main_struct.window)) {
         while (RWPE(main_struct.window, &main_struct.event))
             game_event(&main_struct);
         (bol == 0) ? (first_process(&main_struct), bol++): 0;
-        (main_struct.s_menu.bol_menu == 1) ? exec_menu(&main_struct) : render(&main_struct);
+        if (main_struct.s_menu.bol_menu == 1) {
+            exec_menu(&main_struct);
+            continue;
+        }
         render(&main_struct);
-        player_move(&main_struct);
-        sfVector2f center = {main_struct.pm.player.pos.x + 32, main_struct.pm.player.pos.y + 33};
-        sfRenderWindow_setView(main_struct.window, View);
-        sfView_setCenter(View, center);
+        gest_view(&main_struct);
     }
     return (0);
 }

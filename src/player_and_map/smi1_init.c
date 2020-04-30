@@ -5,7 +5,7 @@
 ** sm1_init.c
 */
 
-#include "./player_and_map/sm1_init.h"
+#include "player_and_map/sm1_init.h"
 #include "main.h"
 
 void put_map_sm1(main_t *main_struct)
@@ -30,7 +30,8 @@ void init_player(main_t *main_struct)
     main_struct->pm.player.scene = 0;
 }
 
-void init_map(main_t *main_struct) 
+void init_map(main_t *main_struct)
 {
-    main_struct->pm.map.map_sp = load_sprite("./ressources/maps/sm1.png");   
+    main_struct->pm.view = sfView_create();
+    main_struct->pm.map.map_sp = load_sprite("./ressources/maps/sm1.png");
 }

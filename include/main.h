@@ -11,6 +11,7 @@
 #include "include_all.h"
 #include "screen_menu.h"
 #include "player_and_map/player_and_map_struct.h"
+#include "player_and_map/player_movement.h"
 
 #define SFWC(A, B, C, D) sfRenderWindow_create(A, B, C, D)
 #define RWPE(A, B) sfRenderWindow_pollEvent(A, B)
