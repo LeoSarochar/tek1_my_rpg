@@ -44,11 +44,10 @@ int main(UNUSED int ac, UNUSED char **av)
         (bol == 0) ? (first_process(&main_struct), bol++): 0;
         if (main_struct.s_menu.bol_menu == 1) {
             exec_menu(&main_struct);
-            continue;
-        }
-        render(&main_struct);
-        gest_view(&main_struct);
-        render_fight(&main_struct, main_struct.player->fight_scene);
+        } else if (main_struct.s_menu.bol_pause == 1) {
+            exec_pause(&main_struct);
+        } else
+            render(&main_struct);
     }
     return (0);
 }

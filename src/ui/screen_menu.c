@@ -187,6 +187,9 @@ void disp_pause(main_t *struct_main)
     struct_main->s_menu.sec_menu = struct_main->s_menu.time_menu.microseconds / 100000.0;
     if (struct_main->s_menu.sec_menu > 1) {
         sfRenderWindow_clear(struct_main->window, sfBlack);
+        sfView_setSize(struct_main->story->fixed, (sfVector2f){1920, 1080});
+        sfView_setCenter(struct_main->story->fixed, (sfVector2f){960, 530});
+        sfRenderWindow_setView(struct_main->window, struct_main->story->fixed);
         for (int i = 0; i < 4; i++) {
             sfRenderWindow_drawSprite(struct_main->window, struct_main->s_menu.button_pause[i]->sprite, NULL);
             sfRenderWindow_drawText(struct_main->window, struct_main->s_menu.text_pause[i]->txt1, NULL);
@@ -290,6 +293,7 @@ void mouse_position_pause(main_t *glob, sfRenderWindow *window)
 void exec_pause(main_t *struct_main)
 {
     static int bol = 0;
+
     mouse_position_pause(struct_main, struct_main->window);
     if (struct_main->s_menu.state_button != 0) {
         (bol == 0) ? sfSound_play(struct_main->sound.button_sound), bol++ : 0;
@@ -302,7 +306,6 @@ void exec_pause(main_t *struct_main)
         basic_button_pause(struct_main);
     }
     disp_pause(struct_main);
-
 }
 
 void exec_menu(main_t *struct_main)
@@ -310,4 +313,10 @@ void exec_menu(main_t *struct_main)
     play_music(struct_main);
     screen_menu_order(struct_main);
     disp_menu(struct_main);
+}
+
+handle_pause_menu(main_t *main, sfEvent event)
+{
+    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyP)
+        main->s_menu.bol_pause = !(main->s_menu.bol_pause);
 }
