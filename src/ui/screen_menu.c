@@ -178,7 +178,6 @@ void disp_menu(main_t *struct_main)
             sfRenderWindow_drawSprite(struct_main->window, struct_main->s_menu.button[i]->sprite, NULL);
             sfRenderWindow_drawText(struct_main->window, struct_main->s_menu.text[i]->txt1, NULL);
         }
-        sfRenderWindow_display(struct_main->window);
     }
 }
 
@@ -193,7 +192,6 @@ void disp_pause(main_t *struct_main)
             sfRenderWindow_drawSprite(struct_main->window, struct_main->s_menu.button_pause[i]->sprite, NULL);
             sfRenderWindow_drawText(struct_main->window, struct_main->s_menu.text_pause[i]->txt1, NULL);
         }
-        sfRenderWindow_display(struct_main->window);
     }
 }
 
