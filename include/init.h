@@ -26,7 +26,7 @@ typedef struct init_s {
 
 //////////FUNCS//////////////
 init_t init_funcs[] = {
-    {init_character},
+    {init_player},
     {NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////

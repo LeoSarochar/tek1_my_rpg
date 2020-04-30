@@ -13,7 +13,6 @@ typedef struct sprite
     sfIntRect *rect;
     int visible;
     int offset;
-    int max;
     sfVector2f pos;
 } sprite_t;
 
