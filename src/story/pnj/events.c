@@ -11,7 +11,7 @@ void create_window_pnj(story_t *story, char *text, void (*ptr)(story_t *))
 {
     pnj_t *pnj = story->current_pnj;
     sfVector2f pos = (sfVector2f){pnj->pos.x + 250, pnj->pos.y};
-    sfVector2f pos_avatar = (sfVector2f){pnj->pos.x + 680, pnj->pos.y + 30};
+    sfVector2f pos_avatar = (sfVector2f){pnj->pos.x + 690, pnj->pos.y + 30};
     story->w_avatar = load_sprite(story->current_pnj->path);
 
     story->w_background = load_sprite("ressources/pnjs/pnj_background.png");

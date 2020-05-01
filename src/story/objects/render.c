@@ -14,10 +14,10 @@ int check_player_interract(object_t object, main_t *main)
     sfBool res = sfFloatRect_contains(&bounds, pos.x, pos.y);
 
     if (res == sfTrue) {
-        draw_text(main, "E : prendre", (sfVector2f){object.pos.x + 20, object.pos.y - 40}, 35);
+        draw_text(main, "E : prendre", (sfVector2f){object.pos.x - 10, object.pos.y - 20}, 15);
         return (1);
     } else {
-        draw_text(main, object.name, (sfVector2f){object.pos.x + 50, object.pos.y - 40}, 35);
+        draw_text(main, object.name, (sfVector2f){object.pos.x, object.pos.y - 20}, 15);
     }
     return (0);
 }
@@ -44,13 +44,14 @@ void    gest_norm_book_clock(story_t *story)
 void render_objects(main_t *main)
 {
     object_t cur_object;
+    int cur_scene = main->pm.player.scene;
 
     if (main->player->fight_scene)
         return;
     gest_norm_book_clock(main->story);
     for (int i = 0; i < main->story->nb_objects; i++) {
         cur_object = main->story->objects[i];
-        if (cur_object.sprite->visible == sfFalse)
+        if (!cur_object.sprite->visible || cur_object.map_scene != cur_scene)
             continue;
         sfSprite_setPosition(cur_object.sprite->sprite, cur_object.pos);
         RWDS(main->window, cur_object.sprite->sprite, NULL);

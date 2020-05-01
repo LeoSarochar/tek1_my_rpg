@@ -29,17 +29,19 @@ typedef struct quests quests_t;
 typedef struct pnj {
     char *name;
     char *path;
+    int map_scene;
     sprite_t *sprite;
     sfVector2f pos;
-    void (*onclick)(story_t *story);
+    void (*onclick)(main_t *main);
 } pnj_t;
 
 typedef struct object {
     char *name;
     char *path;
+    int map_scene;
     sprite_t *sprite;
     sfVector2f pos;
-    void (*onclick)(story_t *story);
+    void (*onclick)(main_t *main);
 } object_t;
 
 typedef struct story {

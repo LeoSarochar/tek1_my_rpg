@@ -21,9 +21,10 @@ void after_sanchez(main_t *main)
 {
     story_t *story = main->story;
     object_t *obj = NULL;
+    char *fp = "ressources/objects/book.png";
 
-    obj = create_object(story, "Norme", "ressources/objects/book.png", after_norme_book);
-    obj->pos = (sfVector2f){1000, 500};
+    obj = create_object(story, (char *[2]){"Norme", fp}, 1, after_norme_book);
+    obj->pos = (sfVector2f){100, 500};
     obj->sprite->rect->top = 4;
     obj->sprite->rect->width = 26;
     obj->sprite->rect->height = 30;
