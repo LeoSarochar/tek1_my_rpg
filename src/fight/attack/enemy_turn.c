@@ -21,7 +21,6 @@ int enem_attack_force(enemy_t *player, int attack)
 int enem_attack_intel(enemy_t *player, attack_t *attack)
 {
     int nb = 0;
-    int ret = 0;
 
     nb = attack->req_intel;
     player->intel -= nb;
@@ -33,7 +32,6 @@ int enem_attack_intel(enemy_t *player, attack_t *attack)
 int enem_attack_ram(enemy_t *player, attack_t *attack)
 {
     int nb = 0;
-    int ret = 0;
 
     nb = attack->req_ram;
     player->ram -= nb;
@@ -42,10 +40,9 @@ int enem_attack_ram(enemy_t *player, attack_t *attack)
     return (nb);
 }
 
-void enem_defense_attack(int dam, enemy_t *player, int ini_speed)
+void enem_defense_attack(int dam, enemy_t *player)
 {
     int nb = 0;
-    int ret = 0;
     int vit = 0;
 
     vit = percent(player->speed, 40);

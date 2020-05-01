@@ -34,7 +34,7 @@ void enemy_turn_attack(player_t *player, enemy_t *enemy, int todo)
         nb = enem_attack_ram(enemy, tmp);
     else
         nb = enem_attack_force(enemy, tmp->dam_com);
-    (todo == 1) ? player_defense_attack(nb, player, player->speed) \
+    (todo == 1) ? player_defense_attack(nb, player) \
     : player_defense_total(player, nb);
 }
 
@@ -48,7 +48,7 @@ void player_attack_turn(player_t *player, enemy_t *enemy, attack_t *attack)
         nb = player_attack_ram(player, attack);
     else
         nb = player_attack_force(player, attack->dam_com);
-    enem_defense_attack(nb, enemy, enemy->speed);
+    enem_defense_attack(nb, enemy);
 }
 
 int pos_attack(sprite_t *cursor)

@@ -72,7 +72,7 @@ void analyse_event_menu(main_t *main, fight_scene_t *scene)
     }
     if (main->event.type == sfEvtKeyPressed \
     && main->event.key.code == sfKeySpace)
-        analyse_suite(main, scene);
+        analyse_suite(scene);
 }
 
 void drawer_menu_char(main_t *main_struct, fight_scene_t *scene)

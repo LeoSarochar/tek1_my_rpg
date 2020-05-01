@@ -22,7 +22,6 @@ void is_dead(enemy_list_t *enemy, fight_scene_t *scene)
 
 void draw_pos_menu(enemy_list_t *list, main_t *main_struct)
 {
-    int nb = 0;
     enemy_list_t *tmp = list;
 
     for (int y = 800; tmp && y <= 900; y += 100)

@@ -17,7 +17,6 @@ void draw_first_menu(main_t *main_struct)
 
 void draw_attack_menu(main_t *main_struct)
 {
-    int nb = 0;
     attack_list_t *tmp = main_struct->player->attacks;
 
     for (int y = 800; tmp && y <= 900; y += 100) {
