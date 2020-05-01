@@ -14,7 +14,7 @@ void after_norme_book(main_t *main)
     story->current_object->sprite->visible = 0;
     story->quests->text = "Recoder la fonction strlen";
     story->quests->quest_id = 3;
-    init_scene(main, 1, NULL);
+    init_scene(main, 1, "my_putstr");
 }
 
 void after_sanchez(main_t *main)

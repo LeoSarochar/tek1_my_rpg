@@ -10,5 +10,5 @@
 #include "../init_attribute.h"
 
 void draw_bg(main_t *main_struct, fight_scene_t *scene);
-void analyse_suite(main_t *main, fight_scene_t *scene);
+void analyse_suite(fight_scene_t *scene);
 #endif /* !DRAWER_BG_H_ */

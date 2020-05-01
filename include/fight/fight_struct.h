@@ -18,7 +18,7 @@ typedef struct attack_s {
     int req_intel;
     int req_ram;
     char *name;
-}attack_t;
+} attack_t;
 
 typedef struct preset_s {
     int xp;
@@ -97,7 +97,6 @@ typedef struct fight_var_s {
 } fight_var_t;
 
 typedef struct fight_scene_s {
-    player_t *player;
     enemy_list_t *enemies;
     sprite_t *bg;
     sprite_t *cursor;

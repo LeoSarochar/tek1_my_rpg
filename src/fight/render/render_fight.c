@@ -17,7 +17,6 @@ void draw_first_menu(main_t *main_struct)
 
 void draw_attack_menu(main_t *main_struct)
 {
-    int nb = 0;
     attack_list_t *tmp = main_struct->player->attacks;
 
     for (int y = 800; tmp && y <= 900; y += 100) {
@@ -54,7 +53,7 @@ void analyse_event_fight(main_t *main, fight_scene_t *sc)
 
 void render_fight(main_t *main_struct, fight_scene_t *scene)
 {
-    if (!scene)
+    if (!main_struct->player->fight_scene)
         return;
     sfView_setSize(main_struct->story->fixed, (sfVector2f){1920, 1080});
     sfView_setCenter(main_struct->story->fixed, (sfVector2f){960, 530});
@@ -65,6 +64,7 @@ void render_fight(main_t *main_struct, fight_scene_t *scene)
     (scene->var.scene == 0) ? draw_bar(main_struct, scene) : 0;
     (scene->var.scene == 1) ? drawer_menu_char(main_struct, scene) : 0;
     is_dead(scene->enemies, scene);
-    (scene->var.scene == -1) ? sfRenderWindow_close(main_struct->window) : 0;
-    scene->var.menu = (scene->player->com <= 0) ? -1 : scene->var.menu;
+    scene->var.scene = (main_struct->player->com <= 0) ? -1 : scene->var.scene;
+    (scene->var.scene == -1) ? \
+    destroy_fight_scene(main_struct) : 0;
 }

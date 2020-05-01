@@ -24,7 +24,7 @@ void draw_text(main_t *main, char *to_write, sfVector2f pos, int size)
     sfText_destroy(text);
 }
 
-void init_sprite(sprite_t **sprite, sfVector2f pos, char *path)
+void init_sprite(sprite_t **sprite, sfVector2f pos, const char *path)
 {
     (*sprite) = load_sprite(path);
     (*sprite)->pos = pos;
