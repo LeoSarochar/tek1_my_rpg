@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2020
+** RPG
+** File description:
+** csfml binding
+*/
+
 #ifndef MY_OWN_H_
 #define MY_OWN_H_
 

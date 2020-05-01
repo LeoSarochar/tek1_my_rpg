@@ -12,12 +12,14 @@ int check_player_interract(object_t object, main_t *main)
     sfVector2f pos = main->pm.player.pos;
     sfFloatRect bounds = sfSprite_getGlobalBounds(object.sprite->sprite);
     sfBool res = sfFloatRect_contains(&bounds, pos.x, pos.y);
+    sfVector2f take_text_pos = {object.pos.x - 10, object.pos.y - 20};
+    sfVector2f text_pos = {object.pos.x, object.pos.y - 20};
 
     if (res == sfTrue) {
-        draw_text(main, "E : prendre", (sfVector2f){object.pos.x - 10, object.pos.y - 20}, 15);
+        draw_text(main, "E : prendre", take_text_pos, 15);
         return (1);
     } else {
-        draw_text(main, object.name, (sfVector2f){object.pos.x, object.pos.y - 20}, 15);
+        draw_text(main, object.name, text_pos, 15);
     }
     return (0);
 }
