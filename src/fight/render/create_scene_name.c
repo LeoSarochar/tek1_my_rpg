@@ -30,12 +30,11 @@ void init_scene_name(main_t *main_struct, char *name)
     fight_scene_t *scene = malloc(sizeof(*scene));
 
     scene->enemies = NULL;
-    scene->player = main_struct->player;
     scene->var.menu = 0;
     scene->var.scene = 0;
     scene->var.nb = 1;
     add_element_enem(scene->enemies, \
-    create_enemy(give_preset_name(name, scene->player)));
+    create_enemy(give_preset_name(name, main_struct->player)));
     init_sprite(&scene->bg, (sfVector2f){0, 0}, bg);
     init_sprite(&scene->cursor, (sfVector2f){100, 800}, cursor);
     init_sprite(&scene->black, (sfVector2f){0, 0}, black);
@@ -51,11 +50,11 @@ void init_randomn(main_t *main_struct)
     fight_scene_t *scene = malloc(sizeof(*scene));
 
     scene->enemies = NULL;
-    scene->player = main_struct->player;
     scene->var.menu = 0;
     scene->var.scene = 0;
     scene->var.nb = 1;
-    create_all_enemy(&scene->enemies, scene->player->preset, scene->player->xp);
+    create_all_enemy(&scene->enemies, main_struct->player->preset, \
+    main_struct->player->xp);
     init_sprite(&scene->bg, (sfVector2f){0, 0}, bg);
     init_sprite(&scene->cursor, (sfVector2f){100, 800}, cursor);
     init_sprite(&scene->black, (sfVector2f){0, 0}, black);

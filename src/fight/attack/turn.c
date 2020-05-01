@@ -70,14 +70,13 @@ void analyse_attack(main_t *main_struct, fight_scene_t *scene)
 
     if (scene->var.menu == 1) {
         i = pos_attack(scene->cursor);
-        player_attack_turn(scene->player, scene->enemies->enemy, \
-        get_element_att(scene->player->attacks, i));
-        enemy_turn_attack(scene->player, scene->enemies->enemy, 0);
+        player_attack_turn(main_struct->player, scene->enemies->enemy, \
+        get_element_att(main_struct->player->attacks, i));
+        enemy_turn_attack(main_struct->player, scene->enemies->enemy, 0);
         scene->var.menu = 0;
-        printf("done\n");
     }
     if (scene->var.menu == 2) {
-        enemy_turn_attack(scene->player, scene->enemies->enemy, 1);
+        enemy_turn_attack(main_struct->player, scene->enemies->enemy, 1);
         scene->var.menu = 0;
     }
 }

@@ -30,7 +30,6 @@ void init_sprite_enem(enemy_list_t *enemies)
             init_sprite(&tmp->enemy->sprite, \
             (sfVector2f){x, y}, path[i].path) : 0;
         }
-        printf("done\n");
     }
 }
 
