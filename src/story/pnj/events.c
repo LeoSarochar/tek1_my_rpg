@@ -7,7 +7,7 @@
 
 #include "story/story.h"
 
-void create_window_pnj(story_t *story, char *text, void (*ptr)(story_t *))
+void create_window_pnj(story_t *story, char *text, void (*ptr)(main_t *))
 {
     pnj_t *pnj = story->current_pnj;
     sfVector2f pos = (sfVector2f){pnj->pos.x + 250, pnj->pos.y};

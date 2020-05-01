@@ -11,24 +11,15 @@ OUT = my_rpg
 
 CFLAGS = -lm -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window -I./include -Wall -W
 
-CFLAGS_DEBUG =
-
-CC = gcc -g3
+CC = gcc
 
 OBJ	=	$(SRC:.c=.o)
 
-$(OUT): re
+all: $(OUT)
 
-debug:	compile_debug
-
-compile:	$(OBJ)
+$(OUT):	$(OBJ)
 	$(CC) -o $(OUT) $(OBJ) $(CFLAGS)
 	make clean
-
-compile_debug:	CFLAGS += $(CFLAGS_DEBUG)
-
-compile_debug:	fclean	$(OBJ)
-	$(CC) -o $(OUT) $(OBJ) $(CFLAGS)
 
 clean:
 	$(shell find . -name '*.o' -delete)
@@ -36,4 +27,4 @@ clean:
 fclean:	clean
 	$(RM) -rf $(OUT)
 
-re: fclean compile
+re: fclean $(OUT)

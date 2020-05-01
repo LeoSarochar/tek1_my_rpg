@@ -6,6 +6,7 @@
 */
 
 #include "story/story.h"
+#include "story/pnj/events.h"
 
 void after_norme_book(main_t *main)
 {

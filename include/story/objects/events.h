@@ -5,12 +5,12 @@
 ** story
 */
 
-#ifndef MY_PNJ_EVENTS_H_
-#define MY_PNJ_EVENTS_H_
+#ifndef MY_OBJECTS_EVENTS_H_
+#define MY_OBJECTS_EVENTS_H_
 
 #include "include_all.h"
 #include "main.h"
 
 void handle_object_event(main_t *main, sfEvent event);
 
-#endif //MY_PNJ_EVENTS_H_
+#endif //MY_OBJECTS_EVENTS_H_
