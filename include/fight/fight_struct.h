@@ -105,11 +105,13 @@ typedef struct fight_scene_s {
     sprite_t *menu;
     sprite_t *green;
     fight_var_t var;
+    void (*ptr)(main_t *);
 } fight_scene_t;
-
 
 typedef struct enemy_preset_s {
     char *name;
+    char *enemy;
+    char *type;
     int life_max;
     int force_max;
     int defence_max;
@@ -122,6 +124,7 @@ typedef struct enemy_path_s {
     char *path;
     char *incomp;
     char *enemy;
+    char *almod;
 } enemy_path_t;
 
 #endif /* !FIGHT_STRUCT_H_ */

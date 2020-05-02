@@ -42,12 +42,9 @@ int player_attack_ram(player_t *player, attack_t *attack)
 
 void player_defense_attack(int dam, player_t *player)
 {
-    int nb = 0;
-    int vit = 0;
+    int reducer = give_rand(10, 20);
 
-    vit = percent(player->speed, 40);
-    nb = (vit <= player->speed) ? give_rand(1, 20) : give_rand(1, 10);
-    dam -= nb;
+    dam -= percent(player->defence, reducer);
     player->com -= dam;
 }
 
@@ -55,7 +52,6 @@ void player_defense_total(player_t *player, int dam)
 {
     int nb = give_rand(80, 100);
 
-    nb = percent(player->defence, nb);
-    dam -= nb;
+    dam = percent(player->defence, nb);
     player->com -= dam;
 }

@@ -38,6 +38,6 @@ void init_state(state_t *state);
 void init_player(main_t *main_struct);
 void analyse_attack(main_t *main_struct, fight_scene_t *scene);
 void is_dead(enemy_list_t *enemy, fight_scene_t *scene);
-void init_scene_name(main_t *main_struct, char *name);
+void init_scene_name(main_t *main_struct, char *, void (*)(main_t *));
 void init_randomn(main_t *main_struct);
 #endif /* !INIT_ATTRIBUTE_H_ */

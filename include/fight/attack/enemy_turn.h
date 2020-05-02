@@ -9,7 +9,6 @@
 #define ENEMY_TURN_H_
 #include "../init_attribute.h"
 
-int enem_attack_force(enemy_t *player, int attack);
 int enem_attack_intel(enemy_t *player, attack_t *attack);
 int enem_attack_ram(enemy_t *player, attack_t *attack);
 void enem_defense_attack(int dam, enemy_t *player);

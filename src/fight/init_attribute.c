@@ -17,18 +17,22 @@ void init_state(state_t *state)
 
 void preset_init(preset_list_t **list)
 {
-    int tab[4];
-
-    set_int_table(4, tab, (int []){10, 0, 1, 0});
-    add_element_pres(list, create_preset(tab, "my_putchar"));
-    set_int_table(4, tab, (int []){10, 0, 1, 0});
-    add_element_pres(list, create_preset(tab, "my_strlen"));
-    set_int_table(4, tab, (int []){15, 0, 1, 5});
-    add_element_pres(list, create_preset(tab, "my_putstr"));
+    add_element_pres(list, create_preset(25, "My_strlen"));
+    add_element_pres(list, create_preset(35, "My_putstr"));
+    add_element_pres(list, create_preset(65, "La vie d'artiste"));
+    add_element_pres(list, create_preset(60, "Nuit blanche"));
+    add_element_pres(list, create_preset(80, "Mauvais nom de repo"));
+    add_element_pres(list, create_preset(55, "Trotinnette en sm1"));
+    add_element_pres(list, create_preset(95, "Criterion"));
+    add_element_pres(list, create_preset(85, "Makefile"));
+    add_element_pres(list, create_preset(90, "8h45"));
+    add_element_pres(list, create_preset(87, "Je n'arrive pas \
+    à clone ton repo"));
 }
 
 void init_player(main_t *main_struct)
 {
+    srand(time(NULL));
     main_struct->player = malloc(sizeof(player_t));
     main_struct->player->preset = NULL;
     main_struct->player->attacks = NULL;

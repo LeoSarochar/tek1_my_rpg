@@ -65,6 +65,5 @@ void render_fight(main_t *main_struct, fight_scene_t *scene)
     (scene->var.scene == 1) ? drawer_menu_char(main_struct, scene) : 0;
     is_dead(scene->enemies, scene);
     scene->var.scene = (main_struct->player->com <= 0) ? -1 : scene->var.scene;
-    (scene->var.scene == -1) ? \
-    destroy_fight_scene(main_struct) : 0;
+    (scene->var.scene == -1) ? destroy_fight_scene(main_struct) : 0;
 }

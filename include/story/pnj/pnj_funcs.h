@@ -11,6 +11,7 @@
 #include "include_all.h"
 #include "main.h"
 #include "story/story.h"
+#include "fight/init_attribute.h"
 
 typedef struct main_s main_t;
 typedef struct story story_t;
