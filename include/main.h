@@ -44,5 +44,7 @@ void init_screen_menu(main_t *);
 void destoy_menu(main_t *all);
 void exec_menu(main_t *main_struct);
 void exec_pause(main_t *struct_main);
+void init_inventori(main_t *structm);
+void render_inv(main_t *structm);
 
 #endif //MY_MAIN_H_

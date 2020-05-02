@@ -23,6 +23,8 @@ typedef struct event_s {
 //////////PROTOTYPE//////////
 //void func_name(main_t *main, sfEvent event);
 void handle_pause_menu(main_t *main, sfEvent event);
+void handle_inv(main_t *main, sfEvent event);
+
 /////////////////////////////
 
 //////////FUNCS//////////////
@@ -31,6 +33,7 @@ event_t events_funcs[] = {
     {sfEvtKeyPressed, handle_pnj_event},
     {sfEvtKeyPressed, handle_object_event},
     {sfEvtKeyPressed, handle_pause_menu},
+    {sfEvtKeyPressed, handle_inv},
     {sfEvtCount, NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////
