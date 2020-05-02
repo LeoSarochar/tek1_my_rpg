@@ -33,12 +33,6 @@ int main(UNUSED int ac, UNUSED char **av)
     int bol = 0;
     main_t main_struct;
     sfVideoMode mode = {1920, 1080, 32};
-    for (int i = 0; i < 3; i += 1) {
-        main_struct.map[i] = malloc(sizeof(char**) * 3);;
-    }
-    main_struct.map[1] = get_collision("./ressources/maps/map_cols/sm1_cols.txt");
-    main_struct.map[2] = get_collision("./ressources/maps/map_cols/corridor_cols.txt");
-    main_struct.map[3] = get_collision("./ressources/maps/map_cols/ground_cols.txt");
 
     main_struct.window = SFWC(mode, "Road 4 GPA", sfDefaultStyle, NULL);
     sfRenderWindow_setFramerateLimit(main_struct.window, 64);
