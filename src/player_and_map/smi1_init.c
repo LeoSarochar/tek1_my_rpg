@@ -64,7 +64,7 @@ void init_perso(main_t *main_struct)
     main_struct->pm.player.pos.x = 96;
     main_struct->pm.player.pos.y = 681;
     main_struct->pm.player.player_sp = load_sprite_player("./ressources/maps/player.png");
-    main_struct->pm.player.scene = 2;
+    main_struct->pm.player.scene = 0;
     sfSprite_setTextureRect(main_struct->pm.player.player_sp->sprite, *(main_struct->pm.player.player_sp->rect));
 }
 

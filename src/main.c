@@ -33,6 +33,7 @@ int main(UNUSED int ac, UNUSED char **av)
     int bol = 0;
     main_t main_struct;
     sfVideoMode mode = {1920, 1080, 32};
+    int index = 0;
 
     main_struct.window = SFWC(mode, "Road 4 GPA", sfDefaultStyle, NULL);
     sfRenderWindow_setFramerateLimit(main_struct.window, 64);

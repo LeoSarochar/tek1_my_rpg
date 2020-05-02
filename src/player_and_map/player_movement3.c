@@ -38,7 +38,7 @@ void go_up(main_t *main_struct)
     sfClock *clock = malloc(sizeof(clock));
     float seconds = 0.0;
 
-    if (check_cols_right(main_struct) == 0) {
+    if (check_cols_up(main_struct) == 0) {
         seconds = sfClock_getElapsedTime(clock).microseconds / 1000000.0;
         // if (seconds < 0.2)
         //     return;
@@ -60,7 +60,7 @@ void go_left(main_t *main_struct)
     sfClock *clock = malloc(sizeof(clock));
     float seconds = 0.0;
 
-    if (check_cols_right(main_struct) == 0) {
+    if (check_cols_left(main_struct) == 0) {
         seconds = sfClock_getElapsedTime(clock).microseconds / 1000000.0;
         // if (seconds < 0.2)
         //     return;
@@ -82,7 +82,7 @@ void go_down(main_t *main_struct)
     sfClock *clock = malloc(sizeof(clock));
     float seconds = 0.0;
 
-    if (check_cols_right(main_struct) == 0) {
+    if (check_cols_down(main_struct) == 0) {
         seconds = sfClock_getElapsedTime(clock).microseconds / 1000000.0;
         // if (seconds < 0.2)
         //     return;

@@ -35,13 +35,13 @@ void change_map_1(main_t *main_struct)
             main_struct->pm.player.pos.y = 87;
             main_struct->pm.player.pos.x = 1047;
         }
-        if (main_struct->pm.player.pos.y >= 1040 && main_struct->pm.player.pos.x >= 1408 
+        if (main_struct->pm.player.pos.y >= 960 && main_struct->pm.player.pos.x >= 1408 
         && main_struct->pm.player.pos.x <= 1564) {
             main_struct->pm.player.scene = 0;
             main_struct->pm.player.pos.y = 132;
             main_struct->pm.player.pos.x = 1497;
         }
-        if (main_struct->pm.player.pos.y >= 1040 && main_struct->pm.player.pos.x >= 289 
+        if (main_struct->pm.player.pos.y >= 960 && main_struct->pm.player.pos.x >= 289 
         && main_struct->pm.player.pos.x <= 412) {
             main_struct->pm.player.scene = 0;
             main_struct->pm.player.pos.y = 132;
