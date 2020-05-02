@@ -125,7 +125,7 @@ void create_sound(main_t *struct_main)
 
 void init_screen_menu(main_t *struct_main)
 {
-    char *name = my_strdup("ressources/ui/menu_b/menu_b01.jpg");
+    STR name = my_strdup("ressources/ui/menu_b/menu_b01.jpg");
 
     struct_main->s_menu.bgt_menu = malloc(sizeof(sfTexture *) * 11);
     struct_main->s_menu.bgt_menu[10] = NULL;
@@ -145,7 +145,7 @@ void init_screen_menu(main_t *struct_main)
     init_button_pause(struct_main);
     struct_main->s_menu.bol_menu = 1;
     struct_main->s_menu.bol_pause = 0;
-    free(name);
+    init_inventori(struct_main);
 }
 
 void play_music(main_t *struct_main)
@@ -319,4 +319,10 @@ handle_pause_menu(main_t *main, sfEvent event)
 {
     if (event.type == sfEvtKeyPressed && event.key.code == sfKeyP)
         main->s_menu.bol_pause = !(main->s_menu.bol_pause);
+}
+
+handle_inv(main_t *main, sfEvent event)
+{
+    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyI)
+        main->s_menu.inv.disp = !(main->s_menu.inv.disp);
 }

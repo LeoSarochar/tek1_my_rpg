@@ -13,6 +13,31 @@
 #define VEC(A,B) (sfVector2f){A,B}
 #define PATH_BUTTON "ressources/ui/other/button_men.png"
 
+typedef struct item_s
+{
+    int id;
+    int stat1;
+    int stat2;
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfVector2f pos;
+    int num;
+    int state;
+} item_t;
+
+typedef struct inventori_s
+{
+    int **id_item;
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfVector2f pos;
+    int disp;
+} inven_t;
+
+typedef struct wearing_s
+{
+} wear_t;
+
 typedef struct button_s
 {
     sfTime time_butt;
@@ -36,11 +61,13 @@ typedef struct text_s
 
 typedef struct main_menu_s
 {
+    item_t **item;
     button_t **button;
     button_t **button_pause;
     sfTexture **bgt_menu;
     sfSprite *bgs_menu;
     sfClock *clock_menu;
+    inven_t inv;
     sfTime time_menu;
     text_menu_t **text;
     text_menu_t **text_pause;
@@ -50,8 +77,6 @@ typedef struct main_menu_s
     int bol_menu;
     int bol_pause;
 } main_menu_t;
-
-
 
 typedef struct menu_sound_s
 {
