@@ -67,6 +67,6 @@ typedef struct story {
 void init_story(main_t *main_struct);
 void render_pnjs(main_t *main);
 void handle_pnj_event(main_t *main, sfEvent event);
-void nothing(story_t *story);
+void nothing(main_t *main);
 
 #endif //MY_STORY_H_
