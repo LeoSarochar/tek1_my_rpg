@@ -33,13 +33,39 @@ void put_player(main_t *main_struct)
     sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.player.player_sp->sprite, NULL);
 }
 
+sfIntRect *init_rect_player(sfTexture *texture)
+{
+    sfIntRect *rect = malloc(sizeof(sfIntRect));
+    rect->top = 60;
+    rect->left = 0;
+    rect->height = 60;
+    rect->width = 54;
+    return (rect);
+}
+
+sprite_t *load_sprite_player(char const *file_name)
+{
+    sprite_t *item = malloc(sizeof(sprite_t));
+    sfSprite *sprite = NULL;
+    sfTexture *texture = sfTexture_createFromFile(file_name, NULL);
+
+    sprite = sfSprite_create();
+    sfSprite_setTexture(sprite, texture, sfTrue);
+    item->sprite = sprite;
+    item->rect = malloc(sizeof(sfIntRect));
+    item->rect = init_rect_player(texture);
+    item->visible = sfTrue;
+    return (item);
+}
+
 void init_perso(main_t *main_struct)
 {
+
     main_struct->pm.player.pos.x = 96;
     main_struct->pm.player.pos.y = 681;
-    main_struct->pm.player.player_sp = load_sprite("./ressources/maps/player.png");
+    main_struct->pm.player.player_sp = load_sprite_player("./ressources/maps/player.png");
     main_struct->pm.player.scene = 2;
-
+    sfSprite_setTextureRect(main_struct->pm.player.player_sp->sprite, *(main_struct->pm.player.player_sp->rect));
 }
 
 void init_map(main_t *main_struct)
