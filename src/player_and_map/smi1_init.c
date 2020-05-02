@@ -27,7 +27,7 @@ void put_player(main_t *main_struct)
 void init_perso(main_t *main_struct)
 {
     main_struct->pm.player.pos.x = 315;
-    main_struct->pm.player.pos.y = 130;
+    main_struct->pm.player.pos.y = 133;
     main_struct->pm.player.player_sp = load_sprite("./ressources/maps/player.png");
     main_struct->pm.player.scene = 0;
 
