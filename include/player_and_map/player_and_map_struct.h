@@ -39,8 +39,11 @@ typedef struct playmap_s {
     sfView *view;
     cam_t cam;
     map_t map;
+    map_t map_3D;
     map_t corridor;
+    map_t corridor_3D;
     map_t ground;
+    map_t ground_3D;
     perso_t player;
     int map_scene;
 } playmap_t;
