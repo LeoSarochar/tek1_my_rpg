@@ -31,7 +31,7 @@ void after_my_putstr(main_t *main)
 
 void after_sanchez_putstr(main_t *main)
 {
-    init_scene(main, 1, NULL); // my_putstr check return
+    //init_scene(main, 1, NULL); // my_putstr check return
     after_my_putstr(main);
 }
 
