@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** RPG
 ** File description:
-** misc
+** script file
 */
 
 #include "story/story.h"

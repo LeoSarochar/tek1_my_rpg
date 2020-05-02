@@ -13,9 +13,10 @@
 #include "main.h"
 #include "lib/my.h"
 #include "story/pnj/create.h"
-#include "story/pnj/pnj_funcs1.h"
+#include "story/pnj/pnj_funcs.h"
 #include "story/pnj/events.h"
 #include "story/objects/events.h"
+#include "story/objects/object_funcs.h"
 #include "story/objects/create.h"
 #include "story/quests.h"
 
@@ -67,6 +68,6 @@ typedef struct story {
 void init_story(main_t *main_struct);
 void render_pnjs(main_t *main);
 void handle_pnj_event(main_t *main, sfEvent event);
-void nothing(story_t *story);
+void nothing(main_t *main);
 
 #endif //MY_STORY_H_
