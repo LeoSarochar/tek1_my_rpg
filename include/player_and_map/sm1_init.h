@@ -17,6 +17,7 @@ void put_player(main_t *main_struct);
 void init_perso(main_t *main_struct);
 void init_map(main_t *main_struct);
 void init_corridor(main_t *main_struct);
+char **get_collision(char *filename);
 
 
 #endif //MY_SM1_INIT_H_

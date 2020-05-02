@@ -44,9 +44,9 @@ void analyse_event_fight(main_t *main, fight_scene_t *sc)
     if (sc->var.scene == 0 && sfKeyboard_isKeyPressed(sfKeyRight))
         sc->cursor->pos.x = (sc->cursor->pos.x != 1500) ? 1500 : 100;
     if (main->event.type == sfEvtKeyPressed) {
-        if (sc->var.menu == 0 && main->event.key.code == sfKeyEnter)
+        if (sc->var.menu == 0 && main->event.key.code == sfKeySpace)
             analyse_enter_bg(sc);
-        else if (sc->var.menu == 1 && main->event.key.code == sfKeyEnter)
+        else if (sc->var.menu == 1 && main->event.key.code == sfKeySpace)
             analyse_attack(main, sc);
     }
 }

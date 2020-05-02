@@ -26,6 +26,7 @@ typedef struct init_s {
 void init_perso(main_t *main_struct);
 void init_map(main_t *main_struct);
 void init_corridor(main_t *main_struct);
+void init_ground(main_t *main_struct);
 /////////////////////////////
 
 //////////FUNCS//////////////
@@ -34,6 +35,7 @@ init_t init_funcs[] = {
     {init_map},
     {init_perso},
     {init_corridor},
+    {init_ground},
     {init_player},
     {NULL} //Don't touch, is the mark of the end of the array
 };
