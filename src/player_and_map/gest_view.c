@@ -10,7 +10,7 @@
 
 void gest_view(main_t *main_struct)
 {
-    sfVector2f center = {main_struct->pm.player.pos.x + 32, main_struct->pm.player.pos.y + 33};
+    sfVector2f center = {main_struct->pm.player.pos.x + 17, main_struct->pm.player.pos.y + 17};
 
     if (main_struct->player->fight_scene)
         return;

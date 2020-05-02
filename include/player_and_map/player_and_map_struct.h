@@ -27,7 +27,7 @@ typedef struct perso_s {
     sprite_t *player_sp;
     sfIntRect rect;
     int scene;
-    char **map[3];
+    char **map;
 } perso_t;
 
 typedef struct map_s {
