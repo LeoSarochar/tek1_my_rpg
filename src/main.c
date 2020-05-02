@@ -6,7 +6,7 @@
 */
 
 #include "main.h"
-#include "events.h"*
+#include "events.h"
 
 void close_window(main_t *main_struct, UNUSED sfEvent event)
 {

@@ -42,7 +42,7 @@ void pnj_sanchez(main_t *main)
     switch (story->quests->quest_id) {
         case 1:
             create_window_pnj(story, "Bienvenue a la Piscine !\nVa falloir\
-t'accrocher\nOn compte sur toi !", after_sanchez);
+ t'accrocher\nOn compte sur toi !", after_sanchez);
             break;
         case 3:
             create_window_pnj(story, "Bravo ! Maintenant recode\nmy_putstr", after_sanchez_putstr);
