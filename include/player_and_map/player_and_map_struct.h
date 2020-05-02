@@ -40,6 +40,7 @@ typedef struct playmap_s {
     cam_t cam;
     map_t map;
     map_t corridor;
+    map_t ground;
     perso_t player;
     int map_scene;
 } playmap_t;

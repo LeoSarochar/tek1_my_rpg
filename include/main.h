@@ -33,7 +33,7 @@ typedef struct main_s {
     main_sound_t sound;
     playmap_t pm;
     player_t *player;
-    char **map[2];
+    char **map[3];
 } main_t;
 
 void close_window(main_t *main_struct, UNUSED sfEvent event);

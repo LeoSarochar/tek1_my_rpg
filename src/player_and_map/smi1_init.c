@@ -30,6 +30,7 @@ void init_perso(main_t *main_struct)
     main_struct->pm.player.pos.y = 130;
     main_struct->pm.player.player_sp = load_sprite("./ressources/maps/player.png");
     main_struct->pm.player.scene = 0;
+
 }
 
 void init_map(main_t *main_struct)
