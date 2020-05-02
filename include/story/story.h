@@ -13,9 +13,10 @@
 #include "main.h"
 #include "lib/my.h"
 #include "story/pnj/create.h"
-#include "story/pnj/pnj_funcs1.h"
+#include "story/pnj/pnj_funcs.h"
 #include "story/pnj/events.h"
 #include "story/objects/events.h"
+#include "story/objects/object_funcs.h"
 #include "story/objects/create.h"
 #include "story/quests.h"
 
