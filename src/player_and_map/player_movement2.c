@@ -8,7 +8,7 @@
 #include "./player_and_map/player_movement.h"
 #include "main.h"
 
-int check_cols_right(main_t *main_struct, sfVector2f pos)
+int check_cols_right(main_t *main_struct)
 {
     int a = 0;
     int b = 0;
@@ -26,7 +26,7 @@ int check_cols_right(main_t *main_struct, sfVector2f pos)
     return (0);
 }
 
-int check_cols_left(main_t *main_struct, sfVector2f pos)
+int check_cols_left(main_t *main_struct)
 {
     int a = 0;
     int b = 0;
@@ -44,7 +44,7 @@ int check_cols_left(main_t *main_struct, sfVector2f pos)
     return (0);
 }
 
-int check_cols_down(main_t *main_struct, sfVector2f pos)
+int check_cols_down(main_t *main_struct)
 {
     int a = 0;
     int b = 0;
@@ -62,7 +62,7 @@ int check_cols_down(main_t *main_struct, sfVector2f pos)
     return (0);
 }
 
-int check_cols_up(main_t *main_struct, sfVector2f pos)
+int check_cols_up(main_t *main_struct)
 {
     int a = 0;
     int b = 0;

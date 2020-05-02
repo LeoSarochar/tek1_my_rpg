@@ -12,10 +12,10 @@
 #include "main.h"
 
 void player_move(main_t *main_struct);
-int check_cols_right(main_t *main_struct, sfVector2f pos);
-int check_cols_left(main_t *main_struct, sfVector2f pos);
-int check_cols_down(main_t *main_struct, sfVector2f pos);
-int check_cols_up(main_t *main_struct, sfVector2f pos);
+int check_cols_right(main_t *main_struct);
+int check_cols_left(main_t *main_struct);
+int check_cols_down(main_t *main_struct);
+int check_cols_up(main_t *main_struct);
 char **get_collision(char *filename);
 
 #endif //MY_PLAYER_MOVEMENT_H_

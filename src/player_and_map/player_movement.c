@@ -62,40 +62,27 @@ void change_map_2(main_t *main_struct)
     }
 }
 
-// void map_handler(main_t *main_struct)
-// {
-//     if (main_struct->pm.player.scene == 0)
-//         change_map_0;
-//     else if (main_struct->pm.player.scene == 1)
-//         change_map_1;
-//     else if (main_struct->pm.player.scene == 2)
-//         change_map_2;
-// }
-
 void player_move(main_t *main_struct)
 {
-    sfVector2f pos;
-
     if (main_struct->story->show_window == 1)
         return;
     if (sfKeyboard_isKeyPressed(sfKeyRight) && main_struct->pm.player.pos.x < 1920 - 32) {
-        if (check_cols_right(main_struct, pos) == 0)
+        if (check_cols_right(main_struct) == 0)
             main_struct->pm.player.pos.x += 3;
     }
     if (sfKeyboard_isKeyPressed(sfKeyUp)) {
-        if (check_cols_up(main_struct, pos) == 0)
+        if (check_cols_up(main_struct) == 0)
             main_struct->pm.player.pos.y -= 3;
     }
     if (sfKeyboard_isKeyPressed(sfKeyLeft) && main_struct->pm.player.pos.x > 0) {
-        if (check_cols_left(main_struct, pos) == 0)
+        if (check_cols_left(main_struct) == 0)
             main_struct->pm.player.pos.x -= 3;
     }
     if (sfKeyboard_isKeyPressed(sfKeyDown) && main_struct->pm.player.pos.y < 1080 - 32) {
-        if (check_cols_down(main_struct, pos) == 0)
+        if (check_cols_down(main_struct) == 0)
             main_struct->pm.player.pos.y += 3;
     }
     change_map_0(main_struct);
     change_map_1(main_struct);
     change_map_2(main_struct);
-    // change_map_1(main_struct);
 }
