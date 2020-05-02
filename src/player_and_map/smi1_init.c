@@ -47,5 +47,5 @@ void init_map(main_t *main_struct)
     main_struct->pm.view = sfView_create();
     sfView_setSize(main_struct->pm.view, (sfVector2f){960, 540});
     main_struct->pm.map.map_sp = load_sprite("./ressources/maps/sm1.png");
-    main_struct->pm.map_3D.map_sp = load_sprite("./ressources/maps/sm1_3D.png");
+    main_struct->pm.map_3D.map_sp = load_sprite("./ressources/maps/sm1_3d.png");
 }
