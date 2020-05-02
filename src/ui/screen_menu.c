@@ -315,13 +315,13 @@ void exec_menu(main_t *struct_main)
     disp_menu(struct_main);
 }
 
-handle_pause_menu(main_t *main, sfEvent event)
+void handle_pause_menu(main_t *main, sfEvent event)
 {
     if (event.type == sfEvtKeyPressed && event.key.code == sfKeyP)
         main->s_menu.bol_pause = !(main->s_menu.bol_pause);
 }
 
-handle_inv(main_t *main, sfEvent event)
+void handle_inv(main_t *main, sfEvent event)
 {
     if (event.type == sfEvtKeyPressed && event.key.code == sfKeyI)
         main->s_menu.inv.disp = !(main->s_menu.inv.disp);
