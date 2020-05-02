@@ -16,9 +16,9 @@ int check_cols_right(main_t *main_struct, sfVector2f pos)
     int d = 0;
 
     a = (main_struct->pm.player.pos.y) / 32;
-    b = (main_struct->pm.player.pos.x + 32) / 32;
+    b = (main_struct->pm.player.pos.x + 36) / 32;
     c = (main_struct->pm.player.pos.y + 32) / 32;
-    d = (main_struct->pm.player.pos.x + 32) / 32;
+    d = (main_struct->pm.player.pos.x + 36) / 32;
     if (main_struct->map[main_struct->pm.player.scene + 1][a][b] == '1' ||
     main_struct->map[main_struct->pm.player.scene + 1][c][d] == '1') {    
         return (-1);
@@ -34,9 +34,9 @@ int check_cols_left(main_t *main_struct, sfVector2f pos)
     int d = 0;
 
     a = (main_struct->pm.player.pos.y) / 32;
-    b = (main_struct->pm.player.pos.x) / 32;
+    b = (main_struct->pm.player.pos.x - 3) / 32;
     c = (main_struct->pm.player.pos.y + 32) / 32;
-    d = (main_struct->pm.player.pos.x) / 32;
+    d = (main_struct->pm.player.pos.x - 3) / 32;
     if (main_struct->map[main_struct->pm.player.scene + 1][a][b] == '1' ||
     main_struct->map[main_struct->pm.player.scene + 1][c][d] == '1') {    
         return (-1);
@@ -51,10 +51,10 @@ int check_cols_down(main_t *main_struct, sfVector2f pos)
     int c = 0;
     int d = 0;
 
-    a = (main_struct->pm.player.pos.y + 32) / 32;
+    a = (main_struct->pm.player.pos.y + 36) / 32;
     b = (main_struct->pm.player.pos.x + 32) / 32;
-    c = (main_struct->pm.player.pos.y + 32) / 32;
-    d = (main_struct->pm.player.pos.x) / 32;
+    c = (main_struct->pm.player.pos.y + 36) / 32;
+    d = (main_struct->pm.player.pos.x ) / 32;
     if (main_struct->map[main_struct->pm.player.scene + 1][a][b] == '1' ||
     main_struct->map[main_struct->pm.player.scene + 1][c][d] == '1') {    
         return (-1);
@@ -69,9 +69,9 @@ int check_cols_up(main_t *main_struct, sfVector2f pos)
     int c = 0;
     int d = 0;
 
-    a = (main_struct->pm.player.pos.y) / 32;
+    a = (main_struct->pm.player.pos.y - 3) / 32;
     b = (main_struct->pm.player.pos.x) / 32;
-    c = (main_struct->pm.player.pos.y) / 32;
+    c = (main_struct->pm.player.pos.y - 3) / 32;
     d = (main_struct->pm.player.pos.x + 32) / 32;
     if (main_struct->map[main_struct->pm.player.scene + 1][a][b] == '1' ||
     main_struct->map[main_struct->pm.player.scene + 1][c][d] == '1') {    
