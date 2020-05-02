@@ -1,9 +1,0 @@
-    for (; scene->enemies; scene->enemies = scene->enemies->next) {
-        printf("name = %s\n", scene->enemies->enemy->name);
-        printf("com = %d\n", scene->enemies->enemy->com);
-        printf("def = %d\n", scene->enemies->enemy->defence);
-        printf("force = %d\n", scene->enemies->enemy->force);
-        printf("intel = %d\n", scene->enemies->enemy->intel);
-        printf("ram = %d\n", scene->enemies->enemy->ram);
-        printf("speed = %d\n\n", scene->enemies->enemy->speed);
-    }
