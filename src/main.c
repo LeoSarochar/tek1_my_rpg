@@ -54,7 +54,6 @@ int main(UNUSED int ac, UNUSED char **av)
             exec_pause(&main_struct);
         } else
             render(&main_struct);
-        printf("x = %f y = %f\n", main_struct.pm.player.pos.x, main_struct.pm.player.pos.y);
     }
     return (0);
 }

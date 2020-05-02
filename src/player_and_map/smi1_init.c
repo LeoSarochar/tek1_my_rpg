@@ -18,6 +18,15 @@ void put_map_sm1(main_t *main_struct)
     }
 }
 
+void put_map_sm1_3D(main_t *main_struct)
+{
+    if (main_struct->player->fight_scene)
+        return;
+    if (main_struct->pm.player.scene == 0) {
+        sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.map_3D.map_sp->sprite, NULL);
+    }
+}
+
 void put_player(main_t *main_struct)
 {
     sfSprite_setPosition(main_struct->pm.player.player_sp->sprite, main_struct->pm.player.pos);
@@ -38,4 +47,5 @@ void init_map(main_t *main_struct)
     main_struct->pm.view = sfView_create();
     sfView_setSize(main_struct->pm.view, (sfVector2f){960, 540});
     main_struct->pm.map.map_sp = load_sprite("./ressources/maps/sm1.png");
+    main_struct->pm.map_3D.map_sp = load_sprite("./ressources/maps/sm1_3D.png");
 }

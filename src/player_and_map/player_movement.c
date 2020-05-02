@@ -29,19 +29,19 @@ void change_map_0(main_t *main_struct)
 void change_map_1(main_t *main_struct)
 {
     if (main_struct->pm.player.scene == 1) {
-        if (main_struct->pm.player.pos.y <= 321 && main_struct->pm.player.pos.x <= 990 
+        if (main_struct->pm.player.pos.y <= 330 && main_struct->pm.player.pos.x <= 990 
         && main_struct->pm.player.pos.x >= 800) {
             main_struct->pm.player.scene = 2;
             main_struct->pm.player.pos.y = 87;
             main_struct->pm.player.pos.x = 1047;
         }
-        if (main_struct->pm.player.pos.y >= 1050 && main_struct->pm.player.pos.x >= 1408 
+        if (main_struct->pm.player.pos.y >= 1040 && main_struct->pm.player.pos.x >= 1408 
         && main_struct->pm.player.pos.x <= 1564) {
             main_struct->pm.player.scene = 0;
             main_struct->pm.player.pos.y = 132;
             main_struct->pm.player.pos.x = 1497;
         }
-        if (main_struct->pm.player.pos.y >= 1050 && main_struct->pm.player.pos.x >= 289 
+        if (main_struct->pm.player.pos.y >= 1040 && main_struct->pm.player.pos.x >= 289 
         && main_struct->pm.player.pos.x <= 412) {
             main_struct->pm.player.scene = 0;
             main_struct->pm.player.pos.y = 132;
@@ -56,7 +56,7 @@ void change_map_2(main_t *main_struct)
         if (main_struct->pm.player.pos.y <= 34 && main_struct->pm.player.pos.x <= 1122 
         && main_struct->pm.player.pos.x >= 990) {
             main_struct->pm.player.scene = 1;
-            main_struct->pm.player.pos.y = 342;
+            main_struct->pm.player.pos.y = 370;
             main_struct->pm.player.pos.x = 933;
         }
     }
