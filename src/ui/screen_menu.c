@@ -25,8 +25,7 @@ void find_button(main_t *glob, sfVector2i cursor)
 void mouse_position(main_t *glob, sfRenderWindow *window)
 {
     sfVector2i cursor = sfMouse_getPositionRenderWindow(window);
-    if (cursor.x > 1520 && cursor.x < 1800)
-    {
+    if (cursor.x > 1520 && cursor.x < 1800) {
         if ((cursor.y > 190 && cursor.y < 330) ||
             (cursor.y > 340 && cursor.y < 480) ||
             (cursor.y > 490 && cursor.y < 630) ||

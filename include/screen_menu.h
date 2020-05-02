@@ -10,7 +10,6 @@
 
 #include "include_all.h"
 
-#define VEC(A,B) (sfVector2f){A,B}
 #define PATH_BUTTON "ressources/ui/other/button_men.png"
 
 typedef struct item_s
@@ -83,7 +82,7 @@ typedef struct menu_sound_s
     sfMusic *menu_music;
     sfSound *button_sound;
     sfSoundBuffer *buffer_button;
-    int bol_menu_music; 
+    int bol_menu_music;
 } main_sound_t;
 
-#endif 
+#endif
