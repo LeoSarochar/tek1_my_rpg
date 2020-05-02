@@ -18,7 +18,7 @@ void exec_pause(main_t *struct_main)
     if (struct_main->s_menu.state_button != 0) {
         (bol == 0) ? sfSound_play(struct_main->sound.button_sound), bol++ : 0;
         button_effect_pause(struct_main);
-        if(struct_main->event.type == sfEvtMouseButtonPressed)
+        if (struct_main->event.type == sfEvtMouseButtonPressed)
             modif_statement(struct_main);
     }
     else {

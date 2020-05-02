@@ -10,47 +10,46 @@
 #include "csfml_binding.h"
 #include "first_plan_screen.h"
 
-void init_button_pause(main_t *struct_main)
+void init_button_pause(main_t *glob)
 {
-    struct_main->s_menu.button_pause = malloc(sizeof(button_t *) * (4));
+    glob->s_menu.button_pause = malloc(sizeof(button_t *) * (4));
     for (int j = 0; j < 4; j += 1)
-        struct_main->s_menu.button_pause[j] = malloc(sizeof(button_t));
-    init_button(struct_main->s_menu.button_pause[0], PATH_BUTTON, VEC(795, 150));
-    init_button(struct_main->s_menu.button_pause[1], PATH_BUTTON, VEC(795, 300));
-    init_button(struct_main->s_menu.button_pause[2], PATH_BUTTON, VEC(795, 450));
-    init_button(struct_main->s_menu.button_pause[3], PATH_BUTTON, VEC(795, 600));
-    struct_main->s_menu.text_pause = malloc(sizeof(text_menu_t *) * (9));
+        glob->s_menu.button_pause[j] = malloc(sizeof(button_t));
+    init_button(glob->s_menu.button_pause[0], PATH_BUTTON, VEC(795, 150));
+    init_button(glob->s_menu.button_pause[1], PATH_BUTTON, VEC(795, 300));
+    init_button(glob->s_menu.button_pause[2], PATH_BUTTON, VEC(795, 450));
+    init_button(glob->s_menu.button_pause[3], PATH_BUTTON, VEC(795, 600));
+    glob->s_menu.text_pause = malloc(sizeof(text_menu_t *) * (9));
     for (int j = 0; j < 8; j += 1)
-        struct_main->s_menu.text_pause[j] = malloc(sizeof(text_menu_t));
-    create_text(struct_main->s_menu.text_pause[0], "RETURN", VEC(875, 235), 30);
-    create_text(struct_main->s_menu.text_pause[1], "MENU", VEC(875, 400), 40);
-    create_text(struct_main->s_menu.text_pause[2], "OPTION", VEC(875, 550), 30);
-    create_text(struct_main->s_menu.text_pause[3], "EXIT", VEC(880, 690), 40);
-    create_text(struct_main->s_menu.text_pause[4], "Volume", VEC(795, 150), 30);
-    create_text(struct_main->s_menu.text_pause[5], "Music", VEC(795, 250), 30);
-    create_text(struct_main->s_menu.text_pause[6], "Press x to close", VEC(795, 700), 50);
+        glob->s_menu.text_pause[j] = malloc(sizeof(text_menu_t));
+    create_text(glob->s_menu.text_pause[0], "RETURN", VEC(875, 235), 30);
+    create_text(glob->s_menu.text_pause[1], "MENU", VEC(875, 400), 40);
+    create_text(glob->s_menu.text_pause[2], "OPTION", VEC(875, 550), 30);
+    create_text(glob->s_menu.text_pause[3], "EXIT", VEC(880, 690), 40);
+    create_text(glob->s_menu.text_pause[4], "Volume", VEC(795, 150), 30);
+    create_text(glob->s_menu.text_pause[5], "Music", VEC(795, 250), 30);
+    create_text(glob->s_menu.text_pause[6], "Press x", VEC(795, 700), 50);
 }
 
-
-void init_button_menu(main_t *struct_main)
+void init_button_menu(main_t *glob)
 {
-    struct_main->s_menu.button = malloc(sizeof(button_t *) * (4));
+    glob->s_menu.button = malloc(sizeof(button_t *) * (4));
     for (int j = 0; j < 4; j += 1)
-        struct_main->s_menu.button[j] = malloc(sizeof(button_t));
-    init_button(struct_main->s_menu.button[0], PATH_BUTTON, VEC(1500, 150));
-    init_button(struct_main->s_menu.button[1], PATH_BUTTON, VEC(1500, 300));
-    init_button(struct_main->s_menu.button[2], PATH_BUTTON, VEC(1500, 450));
-    init_button(struct_main->s_menu.button[3], PATH_BUTTON, VEC(1500, 600));
-    struct_main->s_menu.text = malloc(sizeof(text_menu_t *) * (9));
+        glob->s_menu.button[j] = malloc(sizeof(button_t));
+    init_button(glob->s_menu.button[0], PATH_BUTTON, VEC(1500, 150));
+    init_button(glob->s_menu.button[1], PATH_BUTTON, VEC(1500, 300));
+    init_button(glob->s_menu.button[2], PATH_BUTTON, VEC(1500, 450));
+    init_button(glob->s_menu.button[3], PATH_BUTTON, VEC(1500, 600));
+    glob->s_menu.text = malloc(sizeof(text_menu_t *) * (9));
     for (int j = 0; j < 8; j += 1)
-        struct_main->s_menu.text[j] = malloc(sizeof(text_menu_t));
-    create_text(struct_main->s_menu.text[0], "PLAY", VEC(1580, 235), 40);
-    create_text(struct_main->s_menu.text[1], "CREDIT", VEC(1580, 400), 30);
-    create_text(struct_main->s_menu.text[2], "OPTION", VEC(1580, 550), 30);
-    create_text(struct_main->s_menu.text[3], "EXIT", VEC(1585, 690), 40);
-    create_text(struct_main->s_menu.text[4], "Volume", VEC(1500, 150), 30);
-    create_text(struct_main->s_menu.text[5], "Music", VEC(1500, 250), 30);
-    create_text(struct_main->s_menu.text[6], "Press x to close", VEC(1500, 700), 50);
+        glob->s_menu.text[j] = malloc(sizeof(text_menu_t));
+    create_text(glob->s_menu.text[0], "PLAY", VEC(1580, 235), 40);
+    create_text(glob->s_menu.text[1], "CREDIT", VEC(1580, 400), 30);
+    create_text(glob->s_menu.text[2], "OPTION", VEC(1580, 550), 30);
+    create_text(glob->s_menu.text[3], "EXIT", VEC(1585, 690), 40);
+    create_text(glob->s_menu.text[4], "Volume", VEC(1500, 150), 30);
+    create_text(glob->s_menu.text[5], "Music", VEC(1500, 250), 30);
+    create_text(glob->s_menu.text[6], "Press x", VEC(1500, 700), 50);
 }
 
 void init_screen_menu(main_t *struct_main)
@@ -58,7 +57,6 @@ void init_screen_menu(main_t *struct_main)
     STR name = my_strdup("ressources/ui/menu_b/menu_b01.jpg");
 
     struct_main->s_menu.bgt_menu = malloc(sizeof(sfTexture *) * 11);
-    struct_main->s_menu.bgt_menu[10] = NULL;
     struct_main->s_menu.bgs_menu = sfSprite_create();
     struct_main->s_menu.clock_menu = sfClock_create();
     struct_main->s_menu.sec_menu = 9;
@@ -67,9 +65,9 @@ void init_screen_menu(main_t *struct_main)
         (name[28] < '9') ? name[28]++ : (name[28] = '0', name[27]++);
     }
     struct_main->sound.button_sound = sfSound_create();
-    struct_main->sound.menu_music = sfMusic_createFromFile("ressources/ui/sound/menu.ogg");
-    struct_main->sound.buffer_button = sfSoundBuffer_createFromFile("ressources/ui/sound/button.ogg");
-    sfSound_setBuffer(struct_main->sound.button_sound, struct_main->sound.buffer_button);
+    struct_main->sound.menu_music = SMFF("ressources/ui/sound/menu.ogg");
+    struct_main->sound.buffer_button = SBFF("ressources/ui/sound/button.ogg");
+    SSB(struct_main->sound.button_sound, struct_main->sound.buffer_button);
     struct_main->sound.bol_menu_music = 0;
     init_button_menu(struct_main);
     init_button_pause(struct_main);
@@ -95,7 +93,7 @@ void init_button(button_t *butt, char *path, sfVector2f posin)
 void create_text(text_menu_t *actual, char *into, sfVector2f pos, int size)
 {
     actual->txt1 = sfText_create();
-    sfText_setFont(actual->txt1, sfFont_createFromFile("ressources/ui/other/Pixeled.ttf"));
+    sfText_setFont(actual->txt1, FCFF("ressources/ui/other/Pixeled.ttf"));
     sfText_setString(actual->txt1, into);
     sfText_setColor(actual->txt1, sfBlack);
     sfText_setCharacterSize(actual->txt1, size);

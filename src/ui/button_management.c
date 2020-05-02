@@ -12,42 +12,42 @@
 
 void basic_button(main_t *glob)
 {
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 4; i++) {
         glob->s_menu.button[i]->rect = (sfIntRect){0, 0, 330, 220};
-        sfSprite_setTextureRect(glob->s_menu.button[i]->sprite, glob->s_menu.button[i]->rect);
+        SSTR(glob->s_menu.button[i]->sprite, glob->s_menu.button[i]->rect);
     }
 }
 
 void basic_button_pause(main_t *glob)
 {
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 4; i++) {
         glob->s_menu.button_pause[i]->rect = (sfIntRect){0, 0, 330, 220};
-        sfSprite_setTextureRect(glob->s_menu.button_pause[i]->sprite, glob->s_menu.button_pause[i]->rect);
+        SSTR(GBPS, glob->s_menu.button_pause[i]->rect);
     }
 }
 
 void button_effect(main_t *glob)
 {
-    glob->s_menu.button[glob->s_menu.state_button - 1]->time_butt = sfClock_getElapsedTime(glob->s_menu.button[glob->s_menu.state_button - 1]->clock);
-    glob->s_menu.button[glob->s_menu.state_button - 1]->sec = glob->s_menu.button[glob->s_menu.state_button - 1]->time_butt.microseconds / 10000000.0;
-    if (glob->s_menu.button[glob->s_menu.state_button - 1]->sec > 0.015) {
-        if (glob->s_menu.button[glob->s_menu.state_button - 1]->rect.left < 700) {
-            glob->s_menu.button[glob->s_menu.state_button - 1]->rect = move_rect_button(glob->s_menu.button[glob->s_menu.state_button - 1]->rect, 330, 990);
-            sfSprite_setTextureRect(glob->s_menu.button[glob->s_menu.state_button - 1]->sprite, glob->s_menu.button[glob->s_menu.state_button - 1]->rect);
+    PAT1->time_butt = CET(PAT1->clock);
+    PAT1->sec = PAT1->time_butt.microseconds / 10000000.0;
+    if (PAT1->sec > 0.015) {
+        if (PAT1->rect.left < 700) {
+            PAT1->rect = move_rect_button(PAT1->rect, 330, 990);
+            sfSprite_setTextureRect(PAT1->sprite, PAT1->rect);
         }
-        sfClock_restart(glob->s_menu.button[glob->s_menu.state_button - 1]->clock);
+        CR(PAT1->clock);
     }
 }
 
 void button_effect_pause(main_t *glob)
 {
-    glob->s_menu.button_pause[glob->s_menu.state_button - 1]->time_butt = sfClock_getElapsedTime(glob->s_menu.button_pause[glob->s_menu.state_button - 1]->clock);
-    glob->s_menu.button_pause[glob->s_menu.state_button - 1]->sec = glob->s_menu.button_pause[glob->s_menu.state_button - 1]->time_butt.microseconds / 10000000.0;
-    if (glob->s_menu.button_pause[glob->s_menu.state_button - 1]->sec > 0.015) {
-        if (glob->s_menu.button_pause[glob->s_menu.state_button - 1]->rect.left < 700) {
-            glob->s_menu.button_pause[glob->s_menu.state_button - 1]->rect = move_rect_button(glob->s_menu.button_pause[glob->s_menu.state_button - 1]->rect, 330, 990);
-            sfSprite_setTextureRect(glob->s_menu.button_pause[glob->s_menu.state_button - 1]->sprite, glob->s_menu.button_pause[glob->s_menu.state_button - 1]->rect);
+    PAT2->time_butt = sfClock_getElapsedTime(PAT2->clock);
+    PAT2->sec = PAT2->time_butt.microseconds / 10000000.0;
+    if (PAT2->sec > 0.015) {
+        if (PAT2->rect.left < 700) {
+            PAT2->rect = move_rect_button(PAT2->rect, 330, 990);
+            sfSprite_setTextureRect(PAT2->sprite, PAT2->rect);
         }
-        sfClock_restart(glob->s_menu.button[glob->s_menu.state_button - 1]->clock);
+        CR(glob->s_menu.button[glob->s_menu.state_button - 1]->clock);
     }
 }

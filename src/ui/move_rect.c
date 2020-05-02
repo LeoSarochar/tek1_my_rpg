@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2020
-** rect move effect 
+** rect move effect
 ** File description:
 ** rpg
 */

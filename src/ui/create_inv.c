@@ -46,6 +46,6 @@ void init_inventori(main_t *structm)
     structm->s_menu.inv.sprite = sfSprite_create();
     structm->s_menu.inv.disp = 0;
     structm->s_menu.inv.texture = CFF("ressources/ui/item/inv.png", NULL);
-    sfSprite_setTexture(structm->s_menu.inv.sprite, structm->s_menu.inv.texture, sfTrue);
+    SST(structm->s_menu.inv.sprite, structm->s_menu.inv.texture, sfTrue);
     sfSprite_setPosition(structm->s_menu.inv.sprite, structm->s_menu.inv.pos);
 }

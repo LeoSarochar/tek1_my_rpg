@@ -10,7 +10,6 @@
 #include "csfml_binding.h"
 #include "first_plan_screen.h"
 
-
 void find_button(main_t *glob, sfVector2i cursor)
 {
     if (cursor.y > 190 && cursor.y < 330)
@@ -47,7 +46,7 @@ void screen_menu_order(main_t *glob)
     if (glob->s_menu.state_button != 0) {
         (bol == 0) ? sfSound_play(glob->sound.button_sound), bol++ : 0;
         button_effect(glob);
-        if(glob->event.type == sfEvtMouseButtonPressed)
+        if (glob->event.type == sfEvtMouseButtonPressed)
             modif_statement(glob);
     }
     else {

@@ -68,7 +68,9 @@ void find_button(main_t *glob, sfVector2i cursor);
 void create_text(text_menu_t *actual, char *into, sfVector2f pos, int size);
 void init_button(button_t *butt, char *path, sfVector2f posin);
 sfIntRect move_rect_button(sfIntRect spritesheet, int offset, int max_value);
-
+void find_item2(main_t *glob, sfVector2i cursor, int i);
+void find_wear2(main_t *glob, sfVector2i cursor, int i);
+int my_strlen(char const *str);
 
 
 #endif //MY_MAIN_H_

@@ -13,9 +13,9 @@
 void create_sound(main_t *struct_main)
 {
     struct_main->sound.button_sound = sfSound_create();
-    struct_main->sound.menu_music = sfMusic_createFromFile("ressources/ui/sound/menu.ogg");
-    struct_main->sound.buffer_button = sfSoundBuffer_createFromFile("ressources/ui/sound/button.mp3");
-    sfSound_setBuffer(struct_main->sound.button_sound, struct_main->sound.buffer_button);
+    struct_main->sound.menu_music = SMFF("ressources/ui/sound/menu.ogg");
+    struct_main->sound.buffer_button = SBFF("ressources/ui/sound/button.mp3");
+    SSB(struct_main->sound.button_sound, struct_main->sound.buffer_button);
     struct_main->sound.bol_menu_music = 0;
 }
 
