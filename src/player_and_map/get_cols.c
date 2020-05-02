@@ -13,6 +13,16 @@
 #include "./player_and_map/player_movement.h"
 #include "my.h"
 
+void init_collisions(main_t *main_struct)
+{
+    for (int i = 0; i < 3; i += 1) {
+        main_struct->map[i] = malloc(sizeof(char**) * 3);;
+    }
+    main_struct->map[1] = get_collision("./ressources/maps/map_cols/sm1_cols.txt");
+    main_struct->map[2] = get_collision("./ressources/maps/map_cols/corridor_cols.txt");
+    main_struct->map[3] = get_collision("./ressources/maps/map_cols/ground_cols.txt");
+}
+
 int open_file(char *name)
 {
     int fd = open(name, O_RDONLY);
