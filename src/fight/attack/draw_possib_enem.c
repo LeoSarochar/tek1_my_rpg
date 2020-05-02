@@ -16,15 +16,12 @@ void is_dead(enemy_list_t *enemy, fight_scene_t *scene)
     for (; tmp; tmp = tmp->next)
         if (tmp->enemy->com <= 0)
             i += 1;
-    if (max == i) {
+    if (max == i)
         scene->var.scene = -1;
-        free_enem(enemy);
-    }
 }
 
 void draw_pos_menu(enemy_list_t *list, main_t *main_struct)
 {
-    int nb = 0;
     enemy_list_t *tmp = list;
 
     for (int y = 800; tmp && y <= 900; y += 100)

@@ -10,4 +10,5 @@
 #include "fight/init_attribute.h"
 
 void init_scene(main_t *main_struct, int visible, char *name);
+void create_all_enemy(enemy_list_t **enemy, preset_list_t *pre, int xp);
 #endif /* !CREATE_SCENE_H_ */

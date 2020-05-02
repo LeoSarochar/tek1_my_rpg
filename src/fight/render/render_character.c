@@ -31,8 +31,10 @@ void draw_enemy(main_t *main_struct, fight_scene_t *scene)
 {
     enemy_list_t *tmp = scene->enemies;
 
-    for (; tmp; tmp = tmp->next)
+    for (; tmp; tmp = tmp->next) {
+        echanger(tmp->enemy);
         draw_sprite(main_struct, tmp->enemy->sprite);
+    }
 }
 
 void change_lifebar(int life, int new_life, sprite_t *red)

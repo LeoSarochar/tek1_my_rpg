@@ -14,10 +14,10 @@ int check_player_talk(pnj_t pnj, main_t *main)
     sfBool res = sfFloatRect_contains(&bounds, pos.x, pos.y);
 
     if (res == sfTrue) {
-        draw_text(main, "E : interagir", (sfVector2f){pnj.pos.x + 20, pnj.pos.y - 40}, 35);
+        draw_text(main, "E : interagir", (sfVector2f){pnj.pos.x - 10, pnj.pos.y - 15}, 15);
         return (1);
     } else {
-        draw_text(main, pnj.name, (sfVector2f){pnj.pos.x + 50, pnj.pos.y - 40}, 35);
+        draw_text(main, pnj.name, (sfVector2f){pnj.pos.x + 10, pnj.pos.y - 15}, 15);
     }
     return (0);
 }
@@ -43,12 +43,13 @@ void renderPNJWindow(main_t *main)
 void render_pnjs(main_t *main)
 {
     pnj_t cur_pnj;
+    int cur_scene = main->pm.player.scene;
 
     if (main->player->fight_scene)
         return;
     for (int i = 0; i < main->story->nb_pnjs; i++) {
         cur_pnj = main->story->pnjs[i];
-        if (cur_pnj.sprite->visible == sfFalse)
+        if (!cur_pnj.sprite->visible || cur_pnj.map_scene != cur_scene)
             continue;
         sfSprite_setPosition(cur_pnj.sprite->sprite, cur_pnj.pos);
         RWDS(main->window, cur_pnj.sprite->sprite, NULL);

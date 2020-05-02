@@ -7,7 +7,7 @@
 
 #include "fight/render/drawer_bg.h"
 
-void analyse_suite(main_t *main, fight_scene_t *scene)
+void analyse_suite(fight_scene_t *scene)
 {
     if (scene->var.menu == 0)
         scene->var.scene = 0;

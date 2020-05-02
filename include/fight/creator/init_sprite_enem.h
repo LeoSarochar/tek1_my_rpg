@@ -11,4 +11,5 @@
 
 void init_sprite_enem(enemy_list_t *enemies);
 void change_sprite_enem(enemy_t *enem,  int nb);
+void echanger(enemy_t *enem);
 #endif /* !INIT_SPRITE_ENEM_H_ */

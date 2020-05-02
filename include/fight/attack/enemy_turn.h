@@ -12,6 +12,6 @@
 int enem_attack_force(enemy_t *player, int attack);
 int enem_attack_intel(enemy_t *player, attack_t *attack);
 int enem_attack_ram(enemy_t *player, attack_t *attack);
-void enem_defense_attack(int dam, enemy_t *player, int ini_speed);
+void enem_defense_attack(int dam, enemy_t *player);
 void enem_defense_total(enemy_t *player, int dam);
 #endif /* !ENEMY_TURN_H_ */

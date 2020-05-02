@@ -14,6 +14,7 @@
 #include "lib/my.h"
 #include "story/pnj/create.h"
 #include "story/pnj/pnj_funcs1.h"
+#include "story/pnj/events.h"
 #include "story/objects/events.h"
 #include "story/objects/create.h"
 #include "story/quests.h"
@@ -29,17 +30,19 @@ typedef struct quests quests_t;
 typedef struct pnj {
     char *name;
     char *path;
+    int map_scene;
     sprite_t *sprite;
     sfVector2f pos;
-    void (*onclick)(story_t *story);
+    void (*onclick)(main_t *main);
 } pnj_t;
 
 typedef struct object {
     char *name;
     char *path;
+    int map_scene;
     sprite_t *sprite;
     sfVector2f pos;
-    void (*onclick)(story_t *story);
+    void (*onclick)(main_t *main);
 } object_t;
 
 typedef struct story {
@@ -58,7 +61,7 @@ typedef struct story {
     char *w_text;
     sprite_t *w_background;
     sprite_t *w_avatar;
-    void (*onclose)(story_t *story);
+    void (*onclose)(main_t *main);
 } story_t;
 
 void init_story(main_t *main_struct);

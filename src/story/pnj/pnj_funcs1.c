@@ -6,6 +6,7 @@
 */
 
 #include "story/story.h"
+#include "story/pnj/events.h"
 
 void after_norme_book(main_t *main)
 {
@@ -14,16 +15,17 @@ void after_norme_book(main_t *main)
     story->current_object->sprite->visible = 0;
     story->quests->text = "Recoder la fonction strlen";
     story->quests->quest_id = 3;
-    init_scene(main, 1, NULL);
+    init_scene(main, 1, "my_putstr");
 }
 
 void after_sanchez(main_t *main)
 {
     story_t *story = main->story;
     object_t *obj = NULL;
+    char *fp = "ressources/objects/book.png";
 
-    obj = create_object(story, "Norme", "ressources/objects/book.png", after_norme_book);
-    obj->pos = (sfVector2f){1000, 500};
+    obj = create_object(story, (char *[2]){"Norme", fp}, 1, after_norme_book);
+    obj->pos = (sfVector2f){100, 500};
     obj->sprite->rect->top = 4;
     obj->sprite->rect->width = 26;
     obj->sprite->rect->height = 30;

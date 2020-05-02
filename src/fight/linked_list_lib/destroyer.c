@@ -7,28 +7,46 @@
 
 #include "fight/linked_list_library/destroyer.h"
 
-void destroy_attack(attack_list_t *attack)
+void destroy_sprite(sprite_t **sprite)
 {
-    attack_list_t *tmp = attack;
+    free((*sprite)->rect);
+    sfSprite_destroy((*sprite)->sprite);
+    free((*sprite));
+}
 
-    for(; attack; tmp = attack) {
-        attack = attack->next;
+void destroy_attack(attack_list_t **attack)
+{
+    attack_list_t *tmp = (*attack);
+
+    for (; (*attack); tmp = (*attack)) {
+        (*attack) = (*attack)->next;
         free(tmp->attack);
         free(tmp);
     }
 }
 
-void free_enem(enemy_list_t *enemy)
+void free_enem(enemy_list_t **enemy)
 {
-    enemy_list_t *tmp = enemy;
+    enemy_list_t *tmp = (*enemy);
 
-    for (; enemy; tmp = enemy) {
-        enemy = enemy->next;
-        destroy_attack(tmp->enemy->attacks);
-        free(tmp->enemy->sprite->rect);
-        sfSprite_destroy(tmp->enemy->sprite->sprite);
-        free(tmp->enemy->sprite);
+    for (; (*enemy); tmp = (*enemy)) {
+        (*enemy) = (*enemy)->next;
+        destroy_attack(&tmp->enemy->attacks);
+        destroy_sprite(&tmp->enemy->sprite);
         free(tmp->enemy);
         free(tmp);
     }
+}
+
+void destroy_fight_scene(main_t *main_struct)
+{
+    destroy_sprite(&main_struct->player->fight_scene->bg);
+    destroy_sprite(&main_struct->player->fight_scene->black);
+    destroy_sprite(&main_struct->player->fight_scene->cursor);
+    destroy_sprite(&main_struct->player->fight_scene->green);
+    destroy_sprite(&main_struct->player->fight_scene->menu);
+    destroy_sprite(&main_struct->player->fight_scene->red);
+    free_enem(&main_struct->player->fight_scene->enemies);
+    free(main_struct->player->fight_scene);
+    main_struct->player->fight_scene = NULL;
 }

@@ -18,7 +18,7 @@ void init_story_struct(story_t *story)
     sfView *view = sfView_create();
 
     sfView_setSize(view, (sfVector2f){1920, 1080});
-    sfView_setCenter(view, (sfVector2f){960, 530});
+    sfView_setCenter(view, (sfVector2f){960, 540});
     story->fixed = view;
     story->pnjs = NULL;
     story->current_pnj = NULL;
@@ -31,9 +31,11 @@ void init_story_struct(story_t *story)
 void create_pnjs(story_t *story)
 {
     pnj_t *pnj = NULL;
+    char *path = NULL;
 
-    pnj = create_pnj(story, "Lucas", "ressources/pnjs/sanchez.png", pnj_sanchez);
-    pnj->pos = (sfVector2f){50, 200};
+    path = "ressources/pnjs/sanchez.png";
+    pnj = create_pnj(story, (char *[2]){"Lucas", path}, 0, pnj_sanchez);
+    pnj->pos = (sfVector2f){727, 241};
 }
 
 void create_objects(story_t *story)

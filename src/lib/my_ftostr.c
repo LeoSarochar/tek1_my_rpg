@@ -5,6 +5,7 @@
 ** my_ftostr
 */
 
+#include "include_all.h"
 #include "lib/my.h"
 
 int size_nb(int nb)
@@ -19,10 +20,6 @@ int size_nb(int nb)
 
 void give_after(char *str, int nb, int prec)
 {
-    int coeff = 1;
-    int ret = 0;
-    int tmp = 0;
-
     for (int i = 0; i < prec; i += 1) {
         str[i] += (nb % 10) + '0';
         nb /= 10;
