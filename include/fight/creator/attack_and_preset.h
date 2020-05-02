@@ -10,6 +10,7 @@
 #include "../init_attribute.h"
 
 void set_int_table(int nb, int tab[], int value[]);
-preset_t *create_preset(int attrib[4], char *name);
+preset_t *create_preset(int attrib, char *name);
 attack_t *create_attack(preset_t *preset);
+void adder(attack_list_t **attacks, preset_list_t *pre, const char *name);
 #endif /* !ATTACK_AND_PRESET_H_ */

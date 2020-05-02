@@ -26,18 +26,17 @@ preset_t *give_preset_name(char *name, preset_list_t *pre)
     return (NULL);
 }
 
-void init_scene_name(main_t *main_struct, char *name)
+void init_scene_name(main_t *main_struct, char *name, void (*ptr)(main_t *))
 {
     fight_scene_t *scene = malloc(sizeof(*scene));
-    preset_t *enemy = give_preset_name(name, main_struct->player->preset);
 
     scene->enemies = NULL;
     scene->var.menu = 0;
     scene->var.scene = 0;
     scene->var.nb = 1;
-    (!enemy) ? exit(84) : 0;
+    scene->ptr = ptr;
     add_element_enem(&scene->enemies, \
-    create_enemy(enemy));
+    create_enemy(main_struct->player->preset, name));
     init_sprite(&scene->bg, (sfVector2f){0, 0}, bg);
     init_sprite(&scene->cursor, (sfVector2f){100, 800}, cursor);
     init_sprite(&scene->black, (sfVector2f){0, 0}, black);
@@ -56,8 +55,6 @@ void init_randomn(main_t *main_struct)
     scene->var.menu = 0;
     scene->var.scene = 0;
     scene->var.nb = 1;
-    create_all_enemy(&scene->enemies, main_struct->player->preset, \
-    main_struct->player->xp);
     init_sprite(&scene->bg, (sfVector2f){0, 0}, bg);
     init_sprite(&scene->cursor, (sfVector2f){100, 800}, cursor);
     init_sprite(&scene->black, (sfVector2f){0, 0}, black);
