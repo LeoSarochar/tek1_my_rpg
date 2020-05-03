@@ -75,7 +75,7 @@ void disp_option(main_t *glob)
 }
 
 void disp_option_pause(main_t *glob)
-{   
+{
     if (glob->s_menu.bol_c_o == 2) {
         sfText_setPosition(glob->s_menu.disp_vol, (sfVector2f){400, 270});
         SP(glob->s_menu.opt.sprite, VEC(150, 50));
