@@ -37,7 +37,7 @@ void put_player(main_t *main_struct)
     main_struct->pm.player.player_sp->sprite, NULL);
 }
 
-sfIntRect *init_rect_player(sfTexture *texture)
+sfIntRect *init_rect_player(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
     rect->top = 49;
@@ -57,29 +57,7 @@ sprite_t *load_sprite_player(char const *file_name)
     sfSprite_setTexture(sprite, texture, sfTrue);
     item->sprite = sprite;
     item->rect = malloc(sizeof(sfIntRect));
-    item->rect = init_rect_player(texture);
+    item->rect = init_rect_player();
     item->visible = sfTrue;
     return (item);
-}
-
-void init_perso(main_t *main_struct)
-{
-
-    main_struct->pm.player.pos.x = 96;
-    main_struct->pm.player.pos.y = 681;
-    main_struct->pm.player.player_sp = 
-    load_sprite_player("./ressources/maps/player.png");
-    main_struct->pm.player.scene = 2;
-    sfSprite_setTextureRect(main_struct->pm.player.player_sp->sprite, 
-    *(main_struct->pm.player.player_sp->rect));
-    main_struct->pm.player.clock = sfClock_create();
-}
-
-void init_map(main_t *main_struct)
-{
-    main_struct->pm.view = sfView_create();
-    sfView_setSize(main_struct->pm.view, (sfVector2f){960, 540});
-    main_struct->pm.map.map_sp = load_sprite("./ressources/maps/sm1.png");
-    main_struct->pm.map_3D.map_sp = 
-    load_sprite("./ressources/maps/sm1_3d.png");
 }

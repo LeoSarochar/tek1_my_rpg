@@ -62,7 +62,7 @@ void change_map_2(main_t *main_struct)
         && main_struct->pm.player.pos.x <= 1122 
         && main_struct->pm.player.pos.x >= 990) {
             main_struct->pm.player.scene = 1;
-            main_struct->pm.player.pos.y = 370;
+            main_struct->pm.player.pos.y = 450;
             main_struct->pm.player.pos.x = 933;
         }
     }
