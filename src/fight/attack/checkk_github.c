@@ -20,7 +20,7 @@ int check_github(attack_t *attack, char *name, main_t *main)
 
 void write_enemy(char *attack, char *name, main_t *main)
 {
-    draw_text(main, my_strcat(name, " attacked: "), (sfVector2f){100, 800}, 75);
+    draw_text(main, my_strcat(name, " a lance: "), (sfVector2f){100, 800}, 75);
     draw_text(main, attack, (sfVector2f){1000, 800}, 75);
     main->player->fight_scene->var.menu = 0;
     sfRenderWindow_display(main->window);

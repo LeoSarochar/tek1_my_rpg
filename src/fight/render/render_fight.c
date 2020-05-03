@@ -9,10 +9,10 @@
 
 void draw_first_menu(main_t *main_struct)
 {
-    draw_text(main_struct, "ATTACK", (sfVector2f){100, 800}, 75);
-    draw_text(main_struct, "GUARD", (sfVector2f){1500, 800}, 75);
+    draw_text(main_struct, "ATTAQUER", (sfVector2f){100, 800}, 75);
+    draw_text(main_struct, "DEFENDRE", (sfVector2f){1500, 800}, 75);
     draw_text(main_struct, "MENU", (sfVector2f){100, 900}, 75);
-    draw_text(main_struct, "FLEE", (sfVector2f){1500, 900}, 75);
+    draw_text(main_struct, "FUIR", (sfVector2f){1500, 900}, 75);
 }
 
 void draw_attack_menu(main_t *main_struct)
