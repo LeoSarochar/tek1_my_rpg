@@ -45,4 +45,6 @@ void draw_player(main_t *main);
 void ending_cond(main_t *main);
 int check_github(attack_t *attack, char *name, main_t *main);
 void write_enemy(char *attack, char *name, main_t *main);
+void render_fight2(main_t *main, fight_scene_t *sc);
+preset_t *give_where(char *name, main_t *main);
 #endif /* !INIT_ATTRIBUTE_H_ */
