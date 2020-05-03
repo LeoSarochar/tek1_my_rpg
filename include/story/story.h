@@ -19,6 +19,7 @@
 #include "story/objects/object_funcs.h"
 #include "story/objects/create.h"
 #include "story/quests.h"
+#include "fight/init_attribute.h"
 
 #define CUR_PNJ story->pnjs[story->nb_pnjs - 1]
 #define CUR_OBJ story->objects[story->nb_objects - 1]
