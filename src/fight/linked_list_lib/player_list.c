@@ -59,8 +59,6 @@ void insert_element_pl(player_list_t **list, int position, player_t *pl)
         tmp1 = tmp1->next;
     for (int i = 0; i < position - 1; i += 1) {
         tmp2 = tmp2->next;
-        if (i < position - 2 && tmp2 == NULL)
-            exit(84);
     }
     tmp1->next = elem;
     elem->next = tmp2;

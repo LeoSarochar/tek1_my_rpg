@@ -31,11 +31,7 @@ int open_file(char *name)
 {
     int fd = open(name, O_RDONLY);
 
-    if (fd == -1)
-        exit (84);
-    else
-        return (fd);
-    return (0);
+    return (fd);
 }
 
 char *read_file(struct stat *f_info, char *name)
@@ -50,8 +46,6 @@ char *read_file(struct stat *f_info, char *name)
     buff = malloc(sizeof(char) * (len + 1));
     buff[len] = '\0';
     size = read(fd, buff, len);
-    if (size == -1 || size == 0)
-        exit(84);
     return (buff);
 }
 
