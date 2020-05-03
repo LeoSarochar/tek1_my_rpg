@@ -11,7 +11,7 @@ void after_pull(main_t *main)
 {
     story_t *story = main->story;
 
-    set_attrib(main, 0, 10, 0);
+    set_attrib(main, 10, 40, 0);
     story->current_object->sprite->visible = 0;
     main->s_menu.item[2]->num = assign_num(main);
     main->s_menu.item[2]->state = 1;
