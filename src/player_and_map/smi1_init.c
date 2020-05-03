@@ -13,7 +13,7 @@ void put_map_sm1(main_t *main_struct)
     if (main_struct->player->fight_scene)
         return;
     if (main_struct->pm.player.scene == 0) {
-        sfRenderWindow_drawSprite(main_struct->window, 
+        sfRenderWindow_drawSprite(main_struct->window,
         main_struct->pm.map.map_sp->sprite, NULL);
         put_player(main_struct);
     }
@@ -24,16 +24,16 @@ void put_map_sm1_3D(main_t *main_struct)
     if (main_struct->player->fight_scene)
         return;
     if (main_struct->pm.player.scene == 0) {
-        sfRenderWindow_drawSprite(main_struct->window, 
+        sfRenderWindow_drawSprite(main_struct->window,
         main_struct->pm.map_3D.map_sp->sprite, NULL);
     }
 }
 
 void put_player(main_t *main_struct)
 {
-    sfSprite_setPosition(main_struct->pm.player.player_sp->sprite, 
+    sfSprite_setPosition(main_struct->pm.player.player_sp->sprite,
     main_struct->pm.player.pos);
-    sfRenderWindow_drawSprite(main_struct->window, 
+    sfRenderWindow_drawSprite(main_struct->window,
     main_struct->pm.player.player_sp->sprite, NULL);
 }
 
