@@ -47,23 +47,3 @@ sfIntRect setblack_knight(void)
     rect.height = 64;
     return (rect);
 }
-
-sfIntRect setblack_rook(void)
-{
-    sfIntRect rect;
-    rect.left = 258;
-    rect.top = 64;
-    rect.width = 64;
-    rect.height = 64;
-    return (rect);
-}
-
-sfIntRect setblack_pawn(void)
-{
-    sfIntRect rect;
-    rect.left = 312;
-    rect.top = 64;
-    rect.width = 64;
-    rect.height = 64;
-    return (rect);
-}
