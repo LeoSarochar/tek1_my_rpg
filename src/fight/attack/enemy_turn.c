@@ -7,17 +7,6 @@
 
 #include "fight/attack/enemy_turn.h"
 
-int enem_attack_force(enemy_t *player, int attack)
-{
-    int nb = 0;
-    int ret = 0;
-
-    ret = give_rand(80, 100);
-    nb = percent(player->force, ret);
-    nb += attack;
-    return (nb);
-}
-
 int enem_attack_intel(enemy_t *player, attack_t *attack)
 {
     int nb = 0;
@@ -42,12 +31,9 @@ int enem_attack_ram(enemy_t *player, attack_t *attack)
 
 void enem_defense_attack(int dam, enemy_t *player)
 {
-    int nb = 0;
-    int vit = 0;
+    int nb = give_rand(80, 100);
 
-    vit = percent(player->speed, 40);
-    nb = (vit <= player->speed) ? give_rand(1, 20) : give_rand(1, 10);
-    dam -= nb;
+    dam -= percent(player->defence, nb);
     player->com -= fabs(dam);
 }
 
@@ -55,7 +41,6 @@ void enem_defense_total(enemy_t *player, int dam)
 {
     int nb = give_rand(80, 100);
 
-    nb = percent(player->defence, nb);
-    dam -= nb;
+    dam -= percent(player->defence, nb);
     player->com -= dam;
 }

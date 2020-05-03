@@ -34,8 +34,9 @@ typedef struct main_s {
     main_sound_t sound;
     playmap_t pm;
     player_t *player;
+    char **map[3];
     particle_t *part1;
-    particle_t *part2; 
+    particle_t *part2;
 } main_t;
 
 void init_option(main_t *glob);

@@ -9,9 +9,7 @@
 
 int check_player_interract(object_t object, main_t *main)
 {
-    sfVector2f pos = main->pm.player.pos;
-    sfFloatRect bounds = sfSprite_getGlobalBounds(object.sprite->sprite);
-    sfBool res = sfFloatRect_contains(&bounds, pos.x, pos.y);
+    sfBool res = player_can_interact_object(main, object, 80);
     sfVector2f take_text_pos = {object.pos.x - 10, object.pos.y - 20};
     sfVector2f text_pos = {object.pos.x, object.pos.y - 20};
 

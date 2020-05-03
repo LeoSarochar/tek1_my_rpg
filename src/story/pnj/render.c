@@ -9,15 +9,15 @@
 
 int check_player_talk(pnj_t pnj, main_t *main)
 {
-    sfVector2f pos = main->pm.player.pos;
-    sfFloatRect bounds = sfSprite_getGlobalBounds(pnj.sprite->sprite);
-    sfBool res = sfFloatRect_contains(&bounds, pos.x, pos.y);
+    int res = player_can_interact_pnj(main, pnj, 80);
 
     if (res == sfTrue) {
-        draw_text(main, "E : interagir", (sfVector2f){pnj.pos.x - 10, pnj.pos.y - 15}, 15);
+        draw_text(main, "E : interagir",\
+        (sfVector2f){pnj.pos.x - 10, pnj.pos.y - 15}, 15);
         return (1);
     } else {
-        draw_text(main, pnj.name, (sfVector2f){pnj.pos.x + 10, pnj.pos.y - 15}, 15);
+        draw_text(main, pnj.name,\
+        (sfVector2f){pnj.pos.x + 10, pnj.pos.y - 15}, 15);
     }
     return (0);
 }
@@ -26,9 +26,9 @@ void renderPNJWindow(main_t *main)
 {
     story_t *story = main->story;
     pnj_t *pnj = story->current_pnj;
-    sfVector2f pos_text = (sfVector2f){pnj->pos.x + 280, pnj->pos.y + 20};
-    sfVector2f pos = (sfVector2f){pnj->pos.x + 720, pnj->pos.y + 165};
-    sfVector2f pos_echap = (sfVector2f){pnj->pos.x + 280, pnj->pos.y + 180};
+    sfVector2f pos_text = (sfVector2f){780, 200};
+    sfVector2f pos = (sfVector2f){1220, 345};
+    sfVector2f pos_echap = (sfVector2f){780, 360};
 
     sfView_setSize(main->story->fixed, (sfVector2f){1920, 1080});
     sfView_setCenter(main->story->fixed, (sfVector2f){960, 530});

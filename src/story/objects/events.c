@@ -9,16 +9,12 @@
 
 void handle_object_event(main_t *main, sfEvent event)
 {
-    sfVector2f pos = main->pm.player.pos;
-    sfFloatRect bds;
-
     if (event.key.code != sfKeyE)
         return;
     for (int i = 0; i < main->story->nb_objects; i++) {
         if (main->story->objects[i].sprite->visible == sfFalse)
             continue;
-        bds = sfSprite_getGlobalBounds(main->story->objects[i].sprite->sprite);
-        if (sfFloatRect_contains(&bds, pos.x, pos.y)) {
+        if (player_can_interact_object(main, main->story->objects[i], 80)) {
             main->story->current_object = &(main->story->objects[i]);
             main->story->objects[i].onclick(main);
         }

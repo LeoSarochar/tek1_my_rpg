@@ -29,3 +29,17 @@ object_t *create_object(story_t *story, char **conf, int scene, STRY_PTR)
     CUR_OBJ.path = conf[1];
     return (&(CUR_OBJ));
 }
+
+int player_can_interact_object(main_t *main, object_t obj, int radius)
+{
+    sfVector2f pos = main->pm.player.pos;
+    sfFloatRect bounds = sfSprite_getGlobalBounds(obj.sprite->sprite);
+    sfBool res;
+
+    bounds.top -= radius / 2;
+    bounds.left -= radius / 2;
+    bounds.height += radius;
+    bounds.width += radius;
+    res = sfFloatRect_contains(&bounds, pos.x, pos.y);
+    return (res);
+}

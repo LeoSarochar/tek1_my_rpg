@@ -29,23 +29,22 @@ void analyse_stat_attack(attack_list_t *attack, fight_scene_t *scene, int to_do)
 
 void draw_option(main_t *main_struct)
 {
-    draw_text(main_struct, "attacks", (sfVector2f){870, 200}, 75);
+    draw_text(main_struct, "attaques", (sfVector2f){870, 200}, 75);
     draw_text(main_struct, "stats", (sfVector2f){890, 300}, 75);
-    draw_text(main_struct, "return", (sfVector2f){880, 400}, 75);
-    draw_text(main_struct, "quit game", (sfVector2f){850, 500}, 75);
+    draw_text(main_struct, "retourner", (sfVector2f){880, 400}, 75);
 }
 
 void pos_cursor(sprite_t *sprite, int dir)
 {
     if (dir == 0) {
-        if (sprite->pos.y >= 500)
+        if (sprite->pos.y >= 400)
             sprite->pos.y = 200;
         else
             sprite->pos.y += 100;
     }
     if (dir == 1) {
         if (sprite->pos.y <= 200)
-            sprite->pos.y = 500;
+            sprite->pos.y = 400;
         else
             sprite->pos.y -= 100;
     }
@@ -53,7 +52,7 @@ void pos_cursor(sprite_t *sprite, int dir)
 
 void analyse_event_menu(main_t *main, fight_scene_t *scene)
 {
-    if (main->event.type == sfEvtClosed || sfKeyboard_isKeyPressed(sfKeyEscape))
+    if (main->event.type == sfEvtClosed)
         sfRenderWindow_close(main->window);
     if (scene->var.menu == 0 && main->event.type == sfEvtKeyPressed) {
         if (main->event.key.code == sfKeyUp)

@@ -7,9 +7,9 @@
 
 #include "story/story.h"
 
-void nothing(story_t *story)
+void nothing(main_t *main)
 {
-    (void)story;
+    (void)main;
     return;
 }
 
@@ -36,6 +36,18 @@ void create_pnjs(story_t *story)
     path = "ressources/pnjs/sanchez.png";
     pnj = create_pnj(story, (char *[2]){"Lucas", path}, 0, pnj_sanchez);
     pnj->pos = (sfVector2f){727, 241};
+    path = "ressources/pnjs/jordan.png";
+    pnj = create_pnj(story, (char *[2]){"Jordan", path}, 1, pnj_jordan);
+    pnj->pos = (sfVector2f){120, 405};
+    path = "ressources/pnjs/mathilde.png";
+    pnj = create_pnj(story, (char *[2]){"Mathilde", path}, 0, pnj_mathilde);
+    pnj->pos = (sfVector2f){1110, 298};
+    path = "ressources/pnjs/nathan.png";
+    pnj = create_pnj(story, (char *[2]){"Nathan", path}, 2, pnj_nathan);
+    pnj->pos = (sfVector2f){795, 627};
+    path = "ressources/pnjs/loic.png";
+    pnj = create_pnj(story, (char *[2]){"Loic", path}, 0, pnj_loic);
+    pnj->pos = (sfVector2f){1500, 232};
 }
 
 void create_objects(story_t *story)

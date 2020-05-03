@@ -13,13 +13,13 @@ void analyse_enter_bg(fight_scene_t *scene)
     if (scene->cursor->pos.x == 100 && scene->cursor->pos.y == 800)
         scene->var.menu = 1;
     if (scene->cursor->pos.x == 1500 && scene->cursor->pos.y == 800)
-        scene->var.menu = 0;
+        scene->var.menu = 2;
     if (scene->cursor->pos.x == 100 && scene->cursor->pos.y == 900) {
         scene->var.scene = 1;
         scene->var.menu = 0;
     }
     if (scene->cursor->pos.x == 1500 && scene->cursor->pos.y == 900)
-        scene->var.menu = 3;
+        scene->var.scene = -1;
 }
 
 void draw_stat_attack(int nb, main_t *main, int tab[4])
@@ -61,13 +61,13 @@ void analyse_enter_menu(fight_scene_t *scene)
 
 void printer(attack_t *attack, main_t *main)
 {
-    draw_text(main, "NAME:", (sfVector2f){500, 200}, 75);
+    draw_text(main, "NOM:", (sfVector2f){500, 200}, 75);
     draw_text(main, attack->name, (sfVector2f){700, 200}, 75);
-    draw_text(main, "DAMAGE:", (sfVector2f){500, 300}, 75);
-    draw_text(main, my_itoa(attack->dam_com), (sfVector2f){750, 300}, 75);
-    draw_text(main, "COST INTELLIGENCE:", (sfVector2f){500, 400}, 75);
+    draw_text(main, "PUISSANCE:", (sfVector2f){500, 300}, 75);
+    draw_text(main, my_itoa(attack->dam_com), (sfVector2f){770, 300}, 75);
+    draw_text(main, "COUT INTELLIGENCE:", (sfVector2f){500, 400}, 75);
     draw_text(main, my_itoa(attack->req_intel), (sfVector2f){1000, 400}, 75);
-    draw_text(main, "COST RAM:", (sfVector2f){500, 500}, 75);
+    draw_text(main, "COUT RAM:", (sfVector2f){500, 500}, 75);
     draw_text(main, my_itoa(attack->req_intel), (sfVector2f){800, 500}, 75);
 }
 
@@ -75,19 +75,19 @@ void draw_stat_player(player_t *player, main_t *main)
 {
     char *tmp = my_strcat(my_itoa(player->com), "/");
 
-    draw_text(main, "NAME:", (sfVector2f){500, 200}, 60);
+    draw_text(main, "NOM:", (sfVector2f){500, 200}, 60);
     draw_text(main, player->name, (sfVector2f){700, 200}, 60);
     tmp = my_strcat(tmp, my_itoa(player->com_max));
-    draw_text(main, "COMMITMENT:", (sfVector2f){500, 270}, 60);
+    draw_text(main, "ENGAGEMENT:", (sfVector2f){500, 270}, 60);
     draw_text(main, tmp, (sfVector2f){850, 270}, 60);
     draw_text(main, "FORCE:", (sfVector2f){500, 340}, 60);
     draw_text(main, my_itoa(player->force), (sfVector2f){700, 340}, 60);
-    draw_text(main, "DEFENCE:", (sfVector2f){500, 410}, 60);
+    draw_text(main, "DEFENSE:", (sfVector2f){500, 410}, 60);
     draw_text(main, my_itoa(player->defence), (sfVector2f){750, 410}, 60);
     draw_text(main, "GPA:", (sfVector2f){500, 480}, 60);
     draw_text(main, my_ftostr(player->gpa, 2), (sfVector2f){650, 480}, 60);
     draw_text(main, "INTELLIGENCE:", (sfVector2f){500, 550}, 60);
     draw_text(main, my_itoa(player->intel), (sfVector2f){850, 550}, 60);
-    draw_text(main, "SPEED:", (sfVector2f){500, 620}, 60);
-    draw_text(main, my_itoa(player->speed), (sfVector2f){650, 620}, 60);
+    draw_text(main, "RAPIDITE:", (sfVector2f){500, 620}, 60);
+    draw_text(main, my_itoa(player->speed), (sfVector2f){700, 620}, 60);
 }

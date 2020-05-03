@@ -23,4 +23,6 @@ char *my_itoa(int nb);
 char *my_strcat (char *dest , char *src);
 char *my_ftostr(float nb, int prec);
 void my_revstr(char *str);
+char **my_str_to_word_array(char *str);
+
 #endif //MY_H
