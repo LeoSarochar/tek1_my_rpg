@@ -66,7 +66,8 @@ void disp_menu(main_t *struct_main)
         for (int i = 0; i < 4; i++) {
             RWDS(WIN, struct_main->s_menu.button[i]->sprite, NULL);
             RWT(struct_main->window, struct_main->s_menu.text[i]->txt1, NULL);
-        }
+        display_particle(struct_main->part, struct_main->window, sfMouse_getPositionRenderWindow(struct_main->window), 1);
+         }
         sfRenderWindow_display(struct_main->window);
     }
 }

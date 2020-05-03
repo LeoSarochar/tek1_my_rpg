@@ -33,4 +33,5 @@
 #define CR(A) sfClock_restart(A);
 #define PRESS sfEvtMouseButtonPressed
 #define FCFF(A) sfFont_createFromFile(A)
+
 #endif //MY_OWN_H_
