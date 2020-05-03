@@ -18,7 +18,6 @@ void after_my_strlen(main_t *main)
 void after_mathilde(main_t *main)
 {
     init_scene_name(main, "my_strlen", after_my_strlen);
-    // after_my_strlen(main);
 }
 
 void pnj_mathilde(main_t *main)

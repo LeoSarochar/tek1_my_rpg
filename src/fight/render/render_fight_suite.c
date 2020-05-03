@@ -17,7 +17,6 @@ void render_fight2(main_t *main, fight_scene_t *sc)
     is_dead(sc->enemies, sc);
     sc->var.scene = (main->player->com <= 0) ? 15 : sc->var.scene;
     ending_cond(main);
-    (sc->var.scene == -1) ? main->player->fight_scene->ptr(main) : 0;
     (sc->var.scene == -1) ? destroy_fight_scene(main) : 0;
 }
 
