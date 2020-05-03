@@ -44,7 +44,7 @@ void create_pnjs(story_t *story)
     pnj->pos = (sfVector2f){1110, 298};
     path = "ressources/pnjs/nathan.png";
     pnj = create_pnj(story, (char *[2]){"Nathan", path}, 2, pnj_nathan);
-    pnj->pos = (sfVector2f){790, 630};
+    pnj->pos = (sfVector2f){795, 627};
     path = "ressources/pnjs/loic.png";
     pnj = create_pnj(story, (char *[2]){"Loic", path}, 0, pnj_loic);
     pnj->pos = (sfVector2f){1500, 232};

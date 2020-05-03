@@ -20,7 +20,7 @@ void create_item(item_t *item, char *path, int id)
     item->stat2 = 0;
     item->texture = CFF(path, NULL);
     sfSprite_setTexture(item->sprite, item->texture, sfTrue);
-    item->state = 1;
+    item->state = 0;
 }
 
 void init_item(main_t *structm)
@@ -28,7 +28,7 @@ void init_item(main_t *structm)
     structm->s_menu.item = malloc(sizeof(item_t *) * 6);
     for (int j = 0; j < 6; j += 1)
         structm->s_menu.item[j] = malloc(sizeof(item_t));
-    create_item(structm->s_menu.item[0], "ressources/ui/item/norme.png", 0);
+    create_item(structm->s_menu.item[0], "ressources/ui/item/norme.png", 1);
 }
 
 void init_inventori(main_t *structm)

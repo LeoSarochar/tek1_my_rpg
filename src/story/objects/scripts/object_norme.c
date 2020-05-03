@@ -15,6 +15,7 @@ void after_norme_book(main_t *main)
     story->quests->text = "Retourner voir Sanchez pour\n\
 apprendre a coder my_putchar";
     story->quests->quest_id = 3;
+    main->s_menu.item[0]->state = 1;
 }
 
 void after_norme_book_again(main_t *main)
