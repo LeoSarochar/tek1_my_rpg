@@ -19,8 +19,7 @@ char *nbr_str(long nb)
         str[i] = (i == 0) ? '0' : '\0';
     for (long compt = nb; compt >= 1; i++)
         compt = compt / 10;
-    for (; nb >= 1; i--)
-    {
+    for (; nb >= 1; i--) {
         str[i] = nb % 10 + 48;
         nb = nb / 10;
     }

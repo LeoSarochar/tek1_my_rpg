@@ -33,9 +33,9 @@ void init_cred(main_t *glob)
 
 void disp_cred(main_t *glob)
 {
-    if(glob->s_menu.bol_c_o == 1)
+    if (glob->s_menu.bol_c_o == 1)
         for (int j = 0; j < 4; j += 1)
             RWT(glob->window, glob->s_menu.cred[j]->txt1, NULL);
-    if(glob->s_menu.bol_c_o == 2)
+    if (glob->s_menu.bol_c_o == 2)
         disp_option(glob);
 }

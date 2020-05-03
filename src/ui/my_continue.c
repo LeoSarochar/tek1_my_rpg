@@ -80,7 +80,7 @@ void cond_disp_part(main_t *glob)
 {
 <<<<<<< HEAD
     if (glob->event.type == PRESS) {
-        if(glob->s_menu.state_button == 0 && glob->s_menu.d_p == 0)
+        if (glob->s_menu.state_button == 0 && glob->s_menu.d_p == 0)
             disp_part(glob->part1, glob->window, MOUSE(glob->window), 1);
 =======
     if (struct_main->event.type == PRESS) {

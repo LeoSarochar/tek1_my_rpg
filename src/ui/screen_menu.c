@@ -50,7 +50,7 @@ void screen_menu_order(main_t *glob)
             modif_statement(glob);
             realesed = 1;
             }
-    if(glob->event.type == sfEvtMouseButtonReleased)
+    if (glob->event.type == sfEvtMouseButtonReleased)
         realesed = 0;
     }
     else {

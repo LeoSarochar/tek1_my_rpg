@@ -38,7 +38,7 @@ void display_square(particle_t *particle, int refresh)
 {
     sfVector2i pos = {0, 0};
 
-    while (pos.x != particle->x || pos.y!= particle->y) {
+    while (pos.x != particle->x || pos.y != particle->y) {
         radial_gradiant(particle, pos, refresh, particle->color);
         pos.x += 1;
         if (pos.x > particle->x ) {
