@@ -84,21 +84,24 @@ void change_map_2(main_t *main_struct)
 
 void player_move(main_t *main_struct)
 {
-    if (main_struct->story->show_window == 1)
-        return;
-    if (sfKeyboard_isKeyPressed(sfKeyRight)
-    && main_struct->pm.player.pos.x < 1920 - 50)
-        go_right(main_struct);
-    if (sfKeyboard_isKeyPressed(sfKeyUp))
-        go_up(main_struct);
-    if (sfKeyboard_isKeyPressed(sfKeyLeft) && main_struct->pm.player.pos.x > 0)
-        go_left(main_struct);
-    if (sfKeyboard_isKeyPressed(sfKeyDown)
-    && main_struct->pm.player.pos.y < 1080 - 50)
-        go_down(main_struct);
-    change_map_0(main_struct);
-    change_map_1(main_struct);
-    change_map_1_2(main_struct);
-    change_map_2(main_struct);
-    change_map_3(main_struct);
+    if (main_struct->pm.player.scene != 3) {
+        if (main_struct->story->show_window == 1)
+            return;
+        if (sfKeyboard_isKeyPressed(sfKeyRight)
+        && main_struct->pm.player.pos.x < 1920 - 50)
+            go_right(main_struct);
+        if (sfKeyboard_isKeyPressed(sfKeyUp))
+            go_up(main_struct);
+        if (sfKeyboard_isKeyPressed(sfKeyLeft) && main_struct->pm.player.pos.x > 0)
+            go_left(main_struct);
+        if (sfKeyboard_isKeyPressed(sfKeyDown)
+        && main_struct->pm.player.pos.y < 1080 - 50)
+            go_down(main_struct);
+        change_map_0(main_struct);
+        change_map_1(main_struct);
+        change_map_1_2(main_struct);
+        change_map_2(main_struct);
+    } else if (main_struct->pm.player.scene == 3 && sfKeyboard_isKeyPressed(sfKeyQ)) {
+        change_map_3(main_struct);
+    }
 }
