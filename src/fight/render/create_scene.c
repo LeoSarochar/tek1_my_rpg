@@ -29,8 +29,3 @@ void second_wave(preset_list_t **list, int xp, preset_list_t *preset)
         if (tmp->preset->xp <= xp)
             add_element_pres(list, tmp->preset);
 }
-
-void init_scene(main_t *main_struct, int visible, char *name)
-{
-    init_scene_name(main_struct, name, NULL);
-}

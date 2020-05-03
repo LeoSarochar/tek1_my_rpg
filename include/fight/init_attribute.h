@@ -36,7 +36,7 @@ void is_dead(enemy_list_t *enemy, fight_scene_t *scene);
 void init_scene_name(main_t *main_struct, char *, void (*)(main_t *));
 void init_randomn(main_t *main_struct);
 int is_same(int i, int ind, int tab[4]);
-void second_anim(main_t *main, Rect_t rect1, Rect_t rect2, char *attack);
+void second_anim(main_t *main, Rect_t rect1, char *attack);
 void wait_second(float to_wait);
 void render_biensur(main_t *main_struct);
 void change_position(sprite_t *sprite, int x, int y);

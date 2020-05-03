@@ -99,7 +99,7 @@ int anim_fosquare_letter(main_t *main, enemy_t *enemy, char *att, int ind)
     return (-2);
 }
 
-void square_anim(main_t *main, enemy_t *enemy, char *name, int todo)
+void square_anim(main_t *main, enemy_t *enemy, char *name)
 {
     static int ind = 0;
     static int tab[4] = {-1, -1, -1, -1};

@@ -46,7 +46,7 @@ int to_end(int tab[], int size, main_t *main)
     return (0);
 }
 
-void second_anim(main_t *main, Rect_t rect1, Rect_t rect2, char *attack)
+void second_anim(main_t *main, Rect_t rect1, char *attack)
 {
     static int tab[34];
     static int todo = 0;
