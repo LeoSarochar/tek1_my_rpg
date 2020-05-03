@@ -55,6 +55,8 @@ typedef struct playmap_s {
     perso_t player;
     int map_scene;
     chess_t chess;
+    int state;
+    char stock;
 } playmap_t;
 
 void gest_view(main_t *main_struct);
