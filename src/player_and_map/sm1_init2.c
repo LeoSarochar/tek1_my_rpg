@@ -17,7 +17,7 @@ void init_perso(main_t *main_struct)
     main_struct->pm.player.pos.y = 681;
     main_struct->pm.player.player_sp =
     load_sprite_player("./ressources/maps/player.png");
-    main_struct->pm.player.scene = 2;
+    main_struct->pm.player.scene = 3;
     sfSprite_setTextureRect(main_struct->pm.player.player_sp->sprite,
     *(main_struct->pm.player.player_sp->rect));
     main_struct->pm.player.clock = sfClock_create();
@@ -30,4 +30,23 @@ void init_map(main_t *main_struct)
     main_struct->pm.map.map_sp = load_sprite("./ressources/maps/sm1.png");
     main_struct->pm.map_3D.map_sp =
     load_sprite("./ressources/maps/sm1_3d.png");
+}
+
+void init_chess(main_t *main_struct)
+{
+    main_struct->pm.chess.empty_board = load_sprite("./ressources/maps/chess.png");
+    main_struct->pm.chess.chess_board = load_sprite("./ressources/maps/chess_pieces.png");
+}
+
+void put_chess(main_t *main_struct)
+{
+    // sfVector2f pos = {750, 250};
+    if (main_struct->player->fight_scene)
+        return;
+    if (main_struct->pm.player.scene == 3) {
+        sfRenderWindow_drawSprite(main_struct->window,
+        main_struct->pm.chess.empty_board->sprite, NULL);
+        put_pieces(main_struct);
+        putblack_pieces(main_struct);
+    }
 }

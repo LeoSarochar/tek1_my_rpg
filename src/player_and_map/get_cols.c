@@ -23,6 +23,8 @@ void init_collisions(main_t *main_struct)
     get_collision("./ressources/maps/map_cols/corridor_cols.txt");
     main_struct->map[2] =
     get_collision("./ressources/maps/map_cols/ground_cols.txt");
+    main_struct->pm.chess.map =
+    get_collision("./ressources/maps/map_cols/chess.txt");
 }
 
 int open_file(char *name)
