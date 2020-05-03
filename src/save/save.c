@@ -20,10 +20,8 @@ void save_to_file(char *save)
 {
     FILE *fp = fopen("save/data.txt", "w");
 
-    printf("Saving : %s\n", save);
     fwrite(save, 1, sizeof(save), fp);
     fclose(fp);
-    printf("Game saved\n");
 }
 
 void save_game(main_t *main)

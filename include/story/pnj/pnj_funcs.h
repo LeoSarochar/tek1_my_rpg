@@ -29,4 +29,10 @@ void after_my_strlen(main_t *main);
 void pnj_jordan(main_t *main);
 void after_jordan(main_t *main);
 
+void pnj_nathan(main_t *main);
+void after_nathan(main_t *main);
+
+void pnj_loic(main_t *main);
+void after_loic(main_t *main);
+
 #endif //MY_CREATE_OBJECT_H_

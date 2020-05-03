@@ -30,7 +30,7 @@ void preset_init(preset_list_t **list)
     add_element_pres(list, create_preset(85, "Makefile"));
     add_element_pres(list, create_preset(90, "8h45"));
     add_element_pres(list, create_preset(87, \
-    "Je n'arrive pas à clone ton repo"));
+    "Je n'arrive pas a clone ton repo"));
 }
 
 void init_player(main_t *main_struct)

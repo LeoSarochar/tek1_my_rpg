@@ -52,7 +52,8 @@ void win_scene(main_t *main)
     sfRenderWindow_clear(main->window, sfBlack);
     init_sprite(&sprite, (sfVector2f){400, 100}, rafik);
     draw_sprite(main, sprite);
-    draw_text(main, "ah le batard, il a battu", (sfVector2f){400, 0}, 75);
+    draw_text(main, "Bravo, tu obtiens\
+95 a la moulinette", (sfVector2f){400, 0}, 75);
     draw_text(main, main->player->fight_scene->enemies->enemy->name, \
     (sfVector2f){1050, 0}, 75);
     sfRenderWindow_display(main->window);

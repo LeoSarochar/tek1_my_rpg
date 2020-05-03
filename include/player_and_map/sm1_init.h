@@ -18,6 +18,7 @@ void init_perso(main_t *main_struct);
 void init_map(main_t *main_struct);
 void init_corridor(main_t *main_struct);
 char **get_collision(char *filename);
+sprite_t *load_sprite_player(char const *file_name);
 
 
 #endif //MY_SM1_INIT_H_

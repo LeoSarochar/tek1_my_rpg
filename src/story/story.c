@@ -42,6 +42,12 @@ void create_pnjs(story_t *story)
     path = "ressources/pnjs/mathilde.png";
     pnj = create_pnj(story, (char *[2]){"Mathilde", path}, 0, pnj_mathilde);
     pnj->pos = (sfVector2f){1110, 298};
+    path = "ressources/pnjs/nathan.png";
+    pnj = create_pnj(story, (char *[2]){"Nathan", path}, 2, pnj_nathan);
+    pnj->pos = (sfVector2f){790, 630};
+    path = "ressources/pnjs/loic.png";
+    pnj = create_pnj(story, (char *[2]){"Loic", path}, 0, pnj_loic);
+    pnj->pos = (sfVector2f){1500, 232};
 }
 
 void create_objects(story_t *story)

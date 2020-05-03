@@ -28,7 +28,8 @@ void after_my_putstr(main_t *main)
     add_element_att(&main->player->attacks, \
     create_attack(give_where("My_putstr", main)));
     main->story->quests->quest_id = 3;
-    main->story->quests->text = "Demander de l'aide a Mathilde\npour le my_strlen";
+    main->story->quests->text = "Demander de l'aide a Mathilde\npour\
+ le my_strlen";
 }
 
 void after_sanchez_putstr(main_t *main)
@@ -49,12 +50,12 @@ void pnj_sanchez(main_t *main)
         case 3:
             add_element_att(&main->player->attacks, \
             create_attack(main->player->preset->preset));
-            add_element_att(&main->player->attacks, \
-            create_attack(create_preset(60, "github")));
-            create_window_pnj(story, "Bravo ! Maintenant recode\nmy_putstr", after_sanchez_putstr);
+            create_window_pnj(story, "Bravo ! Maintenant recode\nmy_putstr",\
+            after_sanchez_putstr);
             break;
         default:
-            create_window_pnj(story, "Trouve le document de\nla norme ou lis le man !", nothing);
+            create_window_pnj(story, "Trouve le document de\nla\
+ norme ou lis le man !", nothing);
             break;
     }
 }
