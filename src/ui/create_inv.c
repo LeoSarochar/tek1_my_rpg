@@ -29,6 +29,13 @@ void init_item(main_t *structm)
     for (int j = 0; j < 6; j += 1)
         structm->s_menu.item[j] = malloc(sizeof(item_t));
     create_item(structm->s_menu.item[0], "ressources/ui/item/norme.png", 1);
+    create_item(structm->s_menu.item[1], "ressources/ui/item/air.png", 0);
+    create_item(structm->s_menu.item[2], "ressources/ui/item/pull.png", 2);
+    create_item(structm->s_menu.item[3], "ressources/ui/item/ttb.png", 3);
+    create_item(structm->s_menu.item[4], "ressources/ui/item/esc.png", 4);
+    create_item(structm->s_menu.item[5], "ressources/ui/item/trot.png", 5);
+
+
 }
 
 void init_inventori(main_t *structm)

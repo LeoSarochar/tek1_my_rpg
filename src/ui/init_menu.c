@@ -24,7 +24,7 @@ void init_button_pause(main_t *glob)
         glob->s_menu.text_pause[j] = malloc(sizeof(text_menu_t));
     create_text(glob->s_menu.text_pause[0], "RETURN", VEC(875, 235), 30);
     create_text(glob->s_menu.text_pause[1], "MENU", VEC(875, 400), 40);
-    create_text(glob->s_menu.text_pause[2], "OPTION", VEC(875, 550), 30);
+    create_text(glob->s_menu.text_pause[2], "OPTIONS", VEC(875, 550), 27);
     create_text(glob->s_menu.text_pause[3], "EXIT", VEC(880, 690), 40);
     create_text(glob->s_menu.text_pause[4], "Volume", VEC(795, 150), 30);
     create_text(glob->s_menu.text_pause[5], "Music", VEC(795, 250), 30);
@@ -44,8 +44,8 @@ void init_button_menu(main_t *glob)
     for (int j = 0; j < 8; j += 1)
         glob->s_menu.text[j] = malloc(sizeof(text_menu_t));
     create_text(glob->s_menu.text[0], "PLAY", VEC(1580, 235), 40);
-    create_text(glob->s_menu.text[1], "CREDIT", VEC(1580, 400), 30);
-    create_text(glob->s_menu.text[2], "OPTION", VEC(1580, 550), 30);
+    create_text(glob->s_menu.text[1], "CREDITS", VEC(1580, 400), 27);
+    create_text(glob->s_menu.text[2], "OPTIONS", VEC(1580, 550), 27);
     create_text(glob->s_menu.text[3], "EXIT", VEC(1585, 690), 40);
     create_text(glob->s_menu.text[4], "Volume", VEC(1500, 150), 30);
     create_text(glob->s_menu.text[5], "Music", VEC(1500, 250), 30);
