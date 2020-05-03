@@ -15,9 +15,11 @@ void renderblack_rook(main_t *main_struct, sfIntRect rect, int y, int x)
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == '6') {
         rect = setblack_rook();
-        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite, rect);
+        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite,
+        rect);
         sfSprite_setPosition(main_struct->pm.chess.chess_board->sprite, pos);
-        sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.chess.chess_board->sprite, NULL);
+        sfRenderWindow_drawSprite(main_struct->window,
+        main_struct->pm.chess.chess_board->sprite, NULL);
     }
 }
 
@@ -28,8 +30,10 @@ void renderblack_pawn(main_t *main_struct, sfIntRect rect, int y, int x)
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == '1') {
         rect = setblack_pawn();
-        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite, rect);
+        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite,
+        rect);
         sfSprite_setPosition(main_struct->pm.chess.chess_board->sprite, pos);
-        sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.chess.chess_board->sprite, NULL);
+        sfRenderWindow_drawSprite(main_struct->window,
+        main_struct->pm.chess.chess_board->sprite, NULL);
     }
 }

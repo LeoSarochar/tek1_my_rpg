@@ -15,9 +15,11 @@ void render_king(main_t *main_struct, sfIntRect rect, int y, int x)
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == 'k') {
         rect = set_king();
-        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite, rect);
+        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite,
+        rect);
         sfSprite_setPosition(main_struct->pm.chess.chess_board->sprite, pos);
-        sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.chess.chess_board->sprite, NULL);
+        sfRenderWindow_drawSprite(main_struct->window,
+        main_struct->pm.chess.chess_board->sprite, NULL);
     }
 }
 
@@ -28,9 +30,11 @@ void render_queen(main_t *main_struct, sfIntRect rect, int y, int x)
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == 'q') {
         rect = set_queen();
-        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite, rect);
+        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite,
+        rect);
         sfSprite_setPosition(main_struct->pm.chess.chess_board->sprite, pos);
-        sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.chess.chess_board->sprite, NULL);
+        sfRenderWindow_drawSprite(main_struct->window,
+        main_struct->pm.chess.chess_board->sprite, NULL);
     }
 }
 
@@ -41,9 +45,11 @@ void render_bishop(main_t *main_struct, sfIntRect rect, int y, int x)
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == 'b') {
         rect = set_bishop();
-        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite, rect);
+        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite,
+        rect);
         sfSprite_setPosition(main_struct->pm.chess.chess_board->sprite, pos);
-        sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.chess.chess_board->sprite, NULL);
+        sfRenderWindow_drawSprite(main_struct->window,
+        main_struct->pm.chess.chess_board->sprite, NULL);
     }
 }
 
@@ -54,9 +60,11 @@ void render_knight(main_t *main_struct, sfIntRect rect, int y, int x)
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == 'c') {
         rect = set_knight();
-        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite, rect);
+        sfSprite_setTextureRect(main_struct->pm.chess.chess_board->sprite,
+        rect);
         sfSprite_setPosition(main_struct->pm.chess.chess_board->sprite, pos);
-        sfRenderWindow_drawSprite(main_struct->window, main_struct->pm.chess.chess_board->sprite, NULL);
+        sfRenderWindow_drawSprite(main_struct->window,
+        main_struct->pm.chess.chess_board->sprite, NULL);
     }
 }
 

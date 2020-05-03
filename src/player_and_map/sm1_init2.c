@@ -34,8 +34,10 @@ void init_map(main_t *main_struct)
 
 void init_chess(main_t *main_struct)
 {
-    main_struct->pm.chess.empty_board = load_sprite("./ressources/maps/chess.png");
-    main_struct->pm.chess.chess_board = load_sprite("./ressources/maps/chess_pieces.png");
+    main_struct->pm.chess.empty_board =
+    load_sprite("./ressources/maps/chess.png");
+    main_struct->pm.chess.chess_board =
+    load_sprite("./ressources/maps/chess_pieces.png");
     main_struct->pm.state = 0;
     main_struct->pm.stock = '0';
 }
