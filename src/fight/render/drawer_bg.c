@@ -32,5 +32,6 @@ void drawer_sprite(main_t *main, sprite_t *sprite)
 void draw_bg(main_t *main_struct, fight_scene_t *scene)
 {
     drawer_sprite(main_struct, scene->bg);
-    draw_sprite(main_struct, scene->cursor);
+    if (scene->var.menu == 0 || scene->var.menu == 1)
+        draw_sprite(main_struct, scene->cursor);
 }

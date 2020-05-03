@@ -24,5 +24,5 @@ void write_enemy(char *attack, char *name, main_t *main)
     draw_text(main, attack, (sfVector2f){1000, 800}, 75);
     main->player->fight_scene->var.menu = 0;
     sfRenderWindow_display(main->window);
-    wait_second(1.0);
+    wait_second(2.0);
 }

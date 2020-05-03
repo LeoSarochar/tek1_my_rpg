@@ -43,7 +43,7 @@ void init_player(main_t *main_struct)
     main_struct->player->force = 10;
     main_struct->player->com = 250;
     main_struct->player->defence = 10;
-    main_struct->player->gpa = 0.0;
+    main_struct->player->gpa = 4.0;
     main_struct->player->intel = 10;
     main_struct->player->name = "main player";
     main_struct->player->speed = 10;
