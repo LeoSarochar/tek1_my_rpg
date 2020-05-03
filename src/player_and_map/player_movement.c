@@ -45,6 +45,12 @@ void change_map_1(main_t *main_struct)
             main_struct->pm.player.pos.y = 132;
             main_struct->pm.player.pos.x = 1497;
         }
+    }
+}
+
+void change_map_1_2(main_t *main_struct)
+{
+    if (main_struct->pm.player.scene == 1) {
         if (main_struct->pm.player.pos.y >= 960
         && main_struct->pm.player.pos.x >= 289
         && main_struct->pm.player.pos.x <= 412) {
@@ -84,5 +90,6 @@ void player_move(main_t *main_struct)
         go_down(main_struct);
     change_map_0(main_struct);
     change_map_1(main_struct);
+    change_map_1_2(main_struct);
     change_map_2(main_struct);
 }

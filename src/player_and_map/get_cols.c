@@ -15,7 +15,7 @@
 void init_collisions(main_t *main_struct)
 {
     for (int i = 0; i < 3; i += 1) {
-        main_struct->map[i] = malloc(sizeof(char**) * 3);
+        main_struct->map[i] = malloc(sizeof(char **) * 3);
     }
     main_struct->map[0] =
     get_collision("./ressources/maps/map_cols/sm1_cols.txt");
