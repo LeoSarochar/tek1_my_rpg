@@ -7,9 +7,15 @@
 
 #include "story/story.h"
 
+void the_end(main_t *main)
+{
+    main->story->quests->quest_id = 9;
+    main->story->quests->text = "THE END";
+}
+
 void after_jordan_karim(main_t *main)
 {
-    init_scene_name(main, "Karim", nothing);
+    init_scene_name(main, "Karim", the_end);
 }
 
 void after_jordan(main_t *main)

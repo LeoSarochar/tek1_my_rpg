@@ -28,6 +28,7 @@ void after_my_strlen(main_t *main);
 
 void pnj_jordan(main_t *main);
 void after_jordan(main_t *main);
+void the_end(main_t *main);
 
 void pnj_nathan(main_t *main);
 void after_nathan(main_t *main);
