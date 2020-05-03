@@ -9,13 +9,13 @@
 
 void after_loic_fight(main_t *main)
 {
-    main->story->quests->quest_id = 9;
+    main->story->quests->quest_id = 8;
     main->story->quests->text = "Retourne voir Jordan pour ton grade";
 }
 
 void after_loic(main_t *main)
 {
-    init_scene_name(main, "loic", after_loic_fight);
+    init_scene_name(main, "Loic", after_loic_fight);
 }
 
 void pnj_loic(main_t *main)

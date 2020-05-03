@@ -26,9 +26,9 @@ void renderPNJWindow(main_t *main)
 {
     story_t *story = main->story;
     pnj_t *pnj = story->current_pnj;
-    sfVector2f pos_text = (sfVector2f){pnj->pos.x + 280, pnj->pos.y + 20};
-    sfVector2f pos = (sfVector2f){pnj->pos.x + 720, pnj->pos.y + 165};
-    sfVector2f pos_echap = (sfVector2f){pnj->pos.x + 280, pnj->pos.y + 180};
+    sfVector2f pos_text = (sfVector2f){780, 200};
+    sfVector2f pos = (sfVector2f){1220, 345};
+    sfVector2f pos_echap = (sfVector2f){780, 360};
 
     sfView_setSize(main->story->fixed, (sfVector2f){1920, 1080});
     sfView_setCenter(main->story->fixed, (sfVector2f){960, 530});
