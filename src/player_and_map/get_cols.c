@@ -32,7 +32,8 @@ char *read_file(struct stat *f_info, char *name)
 
     stat(name, f_info);
     len = f_info->st_size;
-    buff = malloc(sizeof(char) * len + 1);
+    buff = malloc(sizeof(char) * (len + 1));
+    buff[len] = '\0';
     size = read(fd, buff, len);
     if (size == -1 || size == 0)
         exit(84);
@@ -41,7 +42,7 @@ char *read_file(struct stat *f_info, char *name)
 
 char **word_array(char *str)
 {
-    int size = strlen(str) + 1;
+    int size = my_strlen(str) + 1;
     char **new_tab = malloc(sizeof(char * ) * size);
     int y = 0;
     int x = 0;
@@ -63,12 +64,9 @@ char **word_array(char *str)
     return (new_tab);
 }
 
-
-
 char **get_collision(char *filename)
 {
     struct stat info;
-
     char *str = read_file(&info, filename);
     char **map_col = word_array(str);
 

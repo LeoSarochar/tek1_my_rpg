@@ -27,12 +27,15 @@ void init_sprite_enem(enemy_list_t *enemies)
     enemy_list_t *tmp = enemies;
     int x = 960;
     int y = 200;
+    int check = 0;
 
     for (; tmp; tmp = tmp->next, x += 200) {
         for (int i = 0; i < 4; i += 1) {
-            (my_strcmp(path[i].enemy, tmp->enemy->name) == 0) ? \
-            init_sprite(&tmp->enemy->sprite, \
+            check = my_strcmp(path[i].enemy, tmp->enemy->name);
+            (check == 0) ? init_sprite(&tmp->enemy->sprite, \
             (sfVector2f){x, y}, path[i].path) : 0;
+            (check == 0) ? set_rect_sprite(&tmp->enemy->rect, \
+            tmp->enemy->sprite) : 0;
         }
     }
 }

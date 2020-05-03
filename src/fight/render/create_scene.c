@@ -32,12 +32,5 @@ void second_wave(preset_list_t **list, int xp, preset_list_t *preset)
 
 void init_scene(main_t *main_struct, int visible, char *name)
 {
-    fight_scene_t *scene = malloc(sizeof(*scene));
-
-    if (visible != 1)
-        return;
-    if (name == NULL)
-        init_randomn(main_struct);
-    else
-        init_scene_name(main_struct, name, NULL);
+    init_scene_name(main_struct, name, NULL);
 }

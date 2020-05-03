@@ -34,6 +34,13 @@ typedef struct attack_list_s {
     struct attack_list_s *next;
 } attack_list_t;
 
+typedef struct Rect_s {
+    int x;
+    int y;
+    int height;
+    int width;
+} Rect_t;
+
 typedef struct state_s{
     int is_alive;
     int is_dem;
@@ -55,6 +62,7 @@ typedef struct enemy_s {
     int defence;
     int ram;
     char *name;
+    Rect_t rect;
     state_t state;
     sprite_t *sprite;
     attack_list_t *attacks;
@@ -76,6 +84,9 @@ typedef struct player_s {
     int ram;
     char *name;
     int xp;
+    char *last_attack;
+    sfClock *clock;
+    Rect_t rect;
     state_t state;
     sprite_t *sprite;
     attack_list_t *attacks;

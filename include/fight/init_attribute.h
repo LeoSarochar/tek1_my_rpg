@@ -18,6 +18,7 @@
 #include "creator/init_sprite_enem.h"
 #include "render/render_character.h"
 #include "render/analyse_position.h"
+#include "animation/rect_function.h"
 #include "render/drawer_function.h"
 #include "render/create_scene.h"
 #include "render/enemy_preset.h"
@@ -26,6 +27,7 @@
 #include "attack/enemy_turn.h"
 #include "render/draw_menu.h"
 #include "render/drawer_bg.h"
+#include "animation/first.h"
 
 
 
@@ -40,4 +42,6 @@ void analyse_attack(main_t *main_struct, fight_scene_t *scene);
 void is_dead(enemy_list_t *enemy, fight_scene_t *scene);
 void init_scene_name(main_t *main_struct, char *, void (*)(main_t *));
 void init_randomn(main_t *main_struct);
+int is_same(int i, int ind, int tab[4]);
+void second_anim(main_t *main, Rect_t rect1, Rect_t rect2, char *attack);
 #endif /* !INIT_ATTRIBUTE_H_ */

@@ -48,13 +48,15 @@ int pos_attack(sprite_t *cursor)
 void analyse_attack(main_t *main_struct, fight_scene_t *scene)
 {
     int i = 0;
+    attack_t *tmp = NULL;
 
     if (scene->var.menu == 1) {
         i = pos_attack(scene->cursor);
-        player_attack_turn(scene->enemies->enemy, \
-        get_element_att(main_struct->player->attacks, i));
+        tmp = get_element_att(main_struct->player->attacks, i);
+        player_attack_turn(scene->enemies->enemy, tmp);
         enemy_turn_attack(main_struct->player, scene->enemies->enemy, 0);
-        scene->var.menu = 0;
+        main_struct->player->last_attack = tmp->name;
+        scene->var.menu = 8;
     }
     if (scene->var.menu == 2) {
         enemy_turn_attack(main_struct->player, scene->enemies->enemy, 1);

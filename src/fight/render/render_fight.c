@@ -33,7 +33,7 @@ void draw_menu(int menu, main_t *main_struct)
 
 void analyse_event_fight(main_t *main, fight_scene_t *sc)
 {
-    if (main->event.type == sfEvtClosed || sfKeyboard_isKeyPressed(sfKeyEscape))
+    if (main->event.type == sfEvtClosed)
         sfRenderWindow_close(main->window);
     if (sc->var.scene == 0 && sfKeyboard_isKeyPressed(sfKeyUp))
         sc->cursor->pos.y = (sc->cursor->pos.y != 800) ? 800 : 900;
@@ -51,19 +51,23 @@ void analyse_event_fight(main_t *main, fight_scene_t *sc)
     }
 }
 
-void render_fight(main_t *main_struct, fight_scene_t *scene)
+void render_fight(main_t *main, fight_scene_t *sc)
 {
-    if (!main_struct->player->fight_scene)
+    if (!main->player->fight_scene)
         return;
-    sfView_setSize(main_struct->story->fixed, (sfVector2f){1920, 1080});
-    sfView_setCenter(main_struct->story->fixed, (sfVector2f){960, 530});
-    sfRenderWindow_setView(main_struct->window, main_struct->story->fixed);
-    (scene->var.scene == 0) ? draw_bg(main_struct, scene) : 0;
-    (scene->var.scene == 0) ? draw_menu(scene->var.menu, main_struct) : 0;
-    (scene->var.scene == 0) ? draw_enemy(main_struct, scene) : 0;
-    (scene->var.scene == 0) ? draw_bar(main_struct, scene) : 0;
-    (scene->var.scene == 1) ? drawer_menu_char(main_struct, scene) : 0;
-    is_dead(scene->enemies, scene);
-    scene->var.scene = (main_struct->player->com <= 0) ? -1 : scene->var.scene;
-    (scene->var.scene == -1) ? destroy_fight_scene(main_struct) : 0;
+    sfView_setSize(main->story->fixed, (sfVector2f){1920, 1080});
+    sfView_setCenter(main->story->fixed, (sfVector2f){960, 530});
+    sfRenderWindow_setView(main->window, main->story->fixed);
+    (sc->var.scene == 0) ? draw_bg(main, sc) : 0;
+    (sc->var.scene == 0) ? draw_menu(sc->var.menu, main) : 0;
+    (sc->var.scene == 0) ? draw_enemy(main, sc) : 0;
+    (sc->var.scene == 0) ? draw_bar(main, sc) : 0;
+    (sc->var.scene == 1) ? drawer_menu_char(main, sc) : 0;
+    (sc->var.menu == 7) ? square_anim(main, \
+    sc->enemies->enemy, main->player->last_attack, 1) : 0;
+    (sc->var.menu == 8) ? second_anim(main, sc->enemies->enemy->rect, \
+    main->player->rect, main->player->last_attack) : 0;
+    is_dead(sc->enemies, sc);
+    sc->var.scene = (main->player->com <= 0) ? -1 : sc->var.scene;
+    (sc->var.scene == -1) ? destroy_fight_scene(main) : 0;
 }
