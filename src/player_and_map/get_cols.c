@@ -39,13 +39,12 @@ char *read_file(struct stat *f_info, char *name)
     char *buff = NULL;
     int fd = open_file(name);
     int len = 0;
-    int size = 0;
 
     stat(name, f_info);
     len = f_info->st_size;
     buff = malloc(sizeof(char) * (len + 1));
     buff[len] = '\0';
-    size = read(fd, buff, len);
+    read(fd, buff, len);
     return (buff);
 }
 
