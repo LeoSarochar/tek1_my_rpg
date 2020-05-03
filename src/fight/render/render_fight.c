@@ -44,9 +44,10 @@ void analyse_event_fight(main_t *main, fight_scene_t *sc)
     if (sc->var.scene == 0 && sfKeyboard_isKeyPressed(sfKeyRight))
         sc->cursor->pos.x = (sc->cursor->pos.x != 1500) ? 1500 : 100;
     if (main->event.type == sfEvtKeyPressed) {
-        if (sc->var.menu == 0 && main->event.key.code == sfKeySpace)
+        if (sc->var.menu == 0 && main->event.key.code == sfKeyEnter)
             analyse_enter_bg(sc);
-        else if (sc->var.menu == 1 && main->event.key.code == sfKeySpace)
+        else if ((sc->var.menu == 1 || sc->var.menu == 2) \
+        && main->event.key.code == sfKeyEnter)
             analyse_attack(main, sc);
     }
 }
@@ -62,12 +63,15 @@ void render_fight(main_t *main, fight_scene_t *sc)
     (sc->var.scene == 0) ? draw_menu(sc->var.menu, main) : 0;
     (sc->var.scene == 0) ? draw_enemy(main, sc) : 0;
     (sc->var.scene == 0) ? draw_bar(main, sc) : 0;
+    (sc->var.scene == 0) ? draw_player(main) : 0;
+    (sc->var.scene == 3) ? render_biensur(main) : 0;
     (sc->var.scene == 1) ? drawer_menu_char(main, sc) : 0;
     (sc->var.menu == 7) ? square_anim(main, \
     sc->enemies->enemy, main->player->last_attack, 1) : 0;
     (sc->var.menu == 8) ? second_anim(main, sc->enemies->enemy->rect, \
     main->player->rect, main->player->last_attack) : 0;
     is_dead(sc->enemies, sc);
-    sc->var.scene = (main->player->com <= 0) ? -1 : sc->var.scene;
+    sc->var.scene = (main->player->com <= 0) ? 15 : sc->var.scene;
+    ending_cond(main);
     (sc->var.scene == -1) ? destroy_fight_scene(main) : 0;
 }

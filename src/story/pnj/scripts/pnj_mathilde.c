@@ -15,7 +15,7 @@ void after_my_strlen(main_t *main)
 
 void after_mathilde(main_t *main)
 {
-    init_scene(main, 1, NULL); // my_strlen check return
+    init_scene_name(main, "my_strlen", after_my_strlen); // my_strlen check return
     after_my_strlen(main);
 }
 

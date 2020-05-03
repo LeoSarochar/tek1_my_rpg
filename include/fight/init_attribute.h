@@ -29,14 +29,7 @@
 #include "render/drawer_bg.h"
 #include "animation/first.h"
 
-
-
-//
-//\brief function to initialize state of charachter
-//\param take the state of character
 void init_state(state_t *state);
-//
-
 void init_player(main_t *main_struct);
 void analyse_attack(main_t *main_struct, fight_scene_t *scene);
 void is_dead(enemy_list_t *enemy, fight_scene_t *scene);
@@ -44,4 +37,10 @@ void init_scene_name(main_t *main_struct, char *, void (*)(main_t *));
 void init_randomn(main_t *main_struct);
 int is_same(int i, int ind, int tab[4]);
 void second_anim(main_t *main, Rect_t rect1, Rect_t rect2, char *attack);
+void wait_second(float to_wait);
+void render_biensur(main_t *main_struct);
+void change_position(sprite_t *sprite, int x, int y);
+void change_lifebar(int life, int new_life, sprite_t *red);
+void draw_player(main_t *main);
+void ending_cond(main_t *main);
 #endif /* !INIT_ATTRIBUTE_H_ */

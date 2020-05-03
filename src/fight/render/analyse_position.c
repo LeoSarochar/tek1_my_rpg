@@ -13,13 +13,13 @@ void analyse_enter_bg(fight_scene_t *scene)
     if (scene->cursor->pos.x == 100 && scene->cursor->pos.y == 800)
         scene->var.menu = 1;
     if (scene->cursor->pos.x == 1500 && scene->cursor->pos.y == 800)
-        scene->var.menu = 0;
+        scene->var.menu = 2;
     if (scene->cursor->pos.x == 100 && scene->cursor->pos.y == 900) {
         scene->var.scene = 1;
         scene->var.menu = 0;
     }
     if (scene->cursor->pos.x == 1500 && scene->cursor->pos.y == 900)
-        scene->var.menu = 3;
+        scene->var.scene = 3;
 }
 
 void draw_stat_attack(int nb, main_t *main, int tab[4])

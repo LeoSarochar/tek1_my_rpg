@@ -46,6 +46,8 @@ void destroy_fight_scene(main_t *main_struct)
     destroy_sprite(&main_struct->player->fight_scene->green);
     destroy_sprite(&main_struct->player->fight_scene->menu);
     destroy_sprite(&main_struct->player->fight_scene->red);
+    destroy_sprite(&main_struct->player->fight_scene->black_pl);
+    destroy_sprite(&main_struct->player->fight_scene->red_pl);
     free_enem(&main_struct->player->fight_scene->enemies);
     free(main_struct->player->fight_scene);
     main_struct->player->fight_scene = NULL;

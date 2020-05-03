@@ -41,6 +41,8 @@ void init_scene_name(main_t *main_struct, char *name, void (*ptr)(main_t *))
     init_sprite(&scene->cursor, (sfVector2f){100, 800}, cursor);
     init_sprite(&scene->black, (sfVector2f){0, 0}, black);
     init_sprite(&scene->red, (sfVector2f){0, 0}, red);
+    init_sprite(&scene->black_pl, (sfVector2f){0, 0}, black);
+    init_sprite(&scene->red_pl, (sfVector2f){0, 0}, red);
     init_sprite(&scene->menu, (sfVector2f){0, 0}, menu);
     init_sprite(&scene->green, (sfVector2f){790, 200}, green);
     init_sprite_enem(scene->enemies);

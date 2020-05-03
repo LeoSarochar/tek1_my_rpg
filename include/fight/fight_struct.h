@@ -112,7 +112,9 @@ typedef struct fight_scene_s {
     sprite_t *bg;
     sprite_t *cursor;
     sprite_t *red;
+    sprite_t *red_pl;
     sprite_t *black;
+    sprite_t *black_pl;
     sprite_t *menu;
     sprite_t *green;
     fight_var_t var;
