@@ -42,6 +42,7 @@ void screen_menu_order(main_t *glob)
 {
     static int realesed = 0;
     static int bol = 0;
+    
     mouse_position(glob, glob->window);
     if (glob->s_menu.state_button != 0) {
         (bol == 0) ? sfSound_play(glob->sound.button_sound), bol++ : 0;
@@ -65,6 +66,12 @@ void modif_statement_pause(main_t *glob)
         glob->s_menu.bol_pause = 0;
     if (glob->s_menu.state_button == 2)
         glob->s_menu.bol_menu = 1;
+    if (glob->s_menu.state_button == 3) {
+        if (glob->s_menu.bol_c_o == 0)
+            glob->s_menu.bol_c_o = 2;
+        else
+            glob->s_menu.bol_c_o = 0;
+    }
     if (glob->s_menu.state_button == 4)
         close_window(glob, glob->event);
 }

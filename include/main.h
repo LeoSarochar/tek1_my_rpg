@@ -39,6 +39,8 @@ typedef struct main_s {
     particle_t *part2;
 } main_t;
 
+void exit_cmb(main_t *glob);
+void enter_combat(main_t *glob);
 void init_option(main_t *glob);
 void disp_option(main_t *glob);
 void disp_cred(main_t *glob);

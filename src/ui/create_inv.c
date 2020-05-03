@@ -16,7 +16,7 @@ void create_item(item_t *item, char *path, int id)
     item->pos = (sfVector2f){0, 0};
     item->sprite = sfSprite_create();
     item->stat1 = 0;
-    item->num = 0;
+    item->num = -1;
     item->stat2 = 0;
     item->texture = CFF(path, NULL);
     sfSprite_setTexture(item->sprite, item->texture, sfTrue);
