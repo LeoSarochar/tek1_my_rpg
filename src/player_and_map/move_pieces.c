@@ -8,10 +8,11 @@
 #include "player_and_map/sm1_init.h"
 #include "main.h"
 
-void move_pieces(main_t *main, sfEvent event)
+void move_pieces(main_t *main, UNUSED sfEvent event)
 {
     int x = 0;
     int y = 0;
+
     sfVector2i cursor = sfMouse_getPositionRenderWindow(main->window);
     if (main->pm.player.scene == 3) {
         x = cursor.x / 64;
