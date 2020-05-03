@@ -20,7 +20,7 @@ int check_cols_right(main_t *main_struct)
     c = (main_struct->pm.player.pos.y + 47) / 32;
     d = (main_struct->pm.player.pos.x + 47) / 32;
     if (main_struct->map[main_struct->pm.player.scene][a][b] == '1' ||
-    main_struct->map[main_struct->pm.player.scene][c][d] == '1') {    
+    main_struct->map[main_struct->pm.player.scene][c][d] == '1') {
         return (-1);
     }
     return (0);
@@ -38,7 +38,7 @@ int check_cols_left(main_t *main_struct)
     c = (main_struct->pm.player.pos.y + 47) / 32;
     d = (main_struct->pm.player.pos.x - 3) / 32;
     if (main_struct->map[main_struct->pm.player.scene][a][b] == '1' ||
-    main_struct->map[main_struct->pm.player.scene][c][d] == '1') {    
+    main_struct->map[main_struct->pm.player.scene][c][d] == '1') {
         return (-1);
     }
     return (0);
@@ -56,7 +56,7 @@ int check_cols_down(main_t *main_struct)
     c = (main_struct->pm.player.pos.y + 50) / 32;
     d = (main_struct->pm.player.pos.x ) / 32;
     if (main_struct->map[main_struct->pm.player.scene][a][b] == '1' ||
-    main_struct->map[main_struct->pm.player.scene][c][d] == '1') {    
+    main_struct->map[main_struct->pm.player.scene][c][d] == '1') {
         return (-1);
     }
     return (0);
@@ -74,7 +74,7 @@ int check_cols_up(main_t *main_struct)
     c = (main_struct->pm.player.pos.y - 3) / 32;
     d = (main_struct->pm.player.pos.x + 44) / 32;
     if (main_struct->map[main_struct->pm.player.scene][a][b] == '1' ||
-    main_struct->map[main_struct->pm.player.scene][c][d] == '1') {    
+    main_struct->map[main_struct->pm.player.scene][c][d] == '1') {
         return (-1);
     }
     return (0);

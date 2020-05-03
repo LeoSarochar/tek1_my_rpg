@@ -45,6 +45,8 @@ void pnj_sanchez(main_t *main)
  t'accrocher\nOn compte sur toi !", after_sanchez);
             break;
         case 3:
+            add_element_att(&main->player->attacks, \
+            create_attack(main->player->preset->preset));
             create_window_pnj(story, "Bravo ! Maintenant recode\nmy_putstr", after_sanchez_putstr);
             break;
         default:

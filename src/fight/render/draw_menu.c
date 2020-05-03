@@ -53,7 +53,7 @@ void pos_cursor(sprite_t *sprite, int dir)
 
 void analyse_event_menu(main_t *main, fight_scene_t *scene)
 {
-    if (main->event.type == sfEvtClosed || sfKeyboard_isKeyPressed(sfKeyEscape))
+    if (main->event.type == sfEvtClosed)
         sfRenderWindow_close(main->window);
     if (scene->var.menu == 0 && main->event.type == sfEvtKeyPressed) {
         if (main->event.key.code == sfKeyUp)

@@ -18,6 +18,7 @@
 #include "creator/init_sprite_enem.h"
 #include "render/render_character.h"
 #include "render/analyse_position.h"
+#include "animation/rect_function.h"
 #include "render/drawer_function.h"
 #include "render/create_scene.h"
 #include "render/enemy_preset.h"
@@ -26,18 +27,22 @@
 #include "attack/enemy_turn.h"
 #include "render/draw_menu.h"
 #include "render/drawer_bg.h"
+#include "animation/first.h"
 
-
-
-//
-//\brief function to initialize state of charachter
-//\param take the state of character
 void init_state(state_t *state);
-//
-
 void init_player(main_t *main_struct);
 void analyse_attack(main_t *main_struct, fight_scene_t *scene);
 void is_dead(enemy_list_t *enemy, fight_scene_t *scene);
 void init_scene_name(main_t *main_struct, char *, void (*)(main_t *));
 void init_randomn(main_t *main_struct);
+int is_same(int i, int ind, int tab[4]);
+void second_anim(main_t *main, Rect_t rect1, char *attack);
+void wait_second(float to_wait);
+void render_biensur(main_t *main_struct);
+void change_position(sprite_t *sprite, int x, int y);
+void change_lifebar(int life, int new_life, sprite_t *red);
+void draw_player(main_t *main);
+void ending_cond(main_t *main);
+int check_github(attack_t *attack, char *name, main_t *main);
+void write_enemy(char *attack, char *name, main_t *main);
 #endif /* !INIT_ATTRIBUTE_H_ */
