@@ -75,3 +75,13 @@ void find_item2(main_t *glob, sfVector2i cursor, int i)
     }
     find_item3(glob, cursor, i);
 }
+
+void cond_disp_part(main_t *struct_main)
+{
+    if (struct_main->event.type == PRESS) {
+        if (struct_main->s_menu.state_button == 0)
+            disp_part(struct_main->part1, WIN, MOUSE(struct_main->window), 1);
+        else
+            disp_part(struct_main->part2, WIN, MOUSE(struct_main->window), 1);
+    }
+}

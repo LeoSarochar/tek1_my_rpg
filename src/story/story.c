@@ -43,11 +43,11 @@ void create_pnjs(story_t *story)
     pnj = create_pnj(story, (char *[2]){"Mathilde", path}, 0, pnj_mathilde);
     pnj->pos = (sfVector2f){1110, 298};
     path = "ressources/pnjs/nathan.png";
-    pnj = create_pnj(story, (char *[2]){"Nathan", path}, 0, pnj_nathan);
-    pnj->pos = (sfVector2f){800, 298};
+    pnj = create_pnj(story, (char *[2]){"Nathan", path}, 2, pnj_nathan);
+    pnj->pos = (sfVector2f){790, 620};
     path = "ressources/pnjs/loic.png";
     pnj = create_pnj(story, (char *[2]){"Loic", path}, 0, pnj_loic);
-    pnj->pos = (sfVector2f){1850, 168};
+    pnj->pos = (sfVector2f){1500, 232};
 }
 
 void create_objects(story_t *story)

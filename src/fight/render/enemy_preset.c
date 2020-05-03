@@ -18,7 +18,7 @@ const enemy_preset_t preset_enemy[] = {
     {"Criterion", "Karim", "none", 1000, 95, 95, 95, 95, 95},
     {"Makefile", "Karim", "none", 1000, 95, 95, 95, 95, 95},
     {"8h45", "Karim", "none", 1000, 95, 95, 95, 95, 95},
-    {"Je n'arrive pas à clone ton repo", "Karim", "none", \
+    {"Je n'arrive pas a clone ton repo", "Karim", "none", \
     1000, 95, 95, 95, 95, 95}
 };
 
