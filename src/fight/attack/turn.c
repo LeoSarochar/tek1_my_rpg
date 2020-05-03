@@ -61,8 +61,4 @@ void analyse_attack(main_t *main_struct, fight_scene_t *scene)
         main_struct->player->last_attack = tmp->name;
         scene->var.menu = give_rand(7, 8);
     }
-    if (scene->var.menu == 2) {
-        enemy_turn_attack(main_struct->player, scene->enemies->enemy, 1);
-        scene->var.menu = 0;
-    }
 }
