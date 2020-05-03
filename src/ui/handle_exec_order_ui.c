@@ -23,8 +23,7 @@ void exec_pause(main_t *struct_main)
             modif_statement_pause(struct_main);
             rea = 1;
             }
-    }
-    else {
+    } else {
         bol = 0;
         basic_button_pause(struct_main);
     }

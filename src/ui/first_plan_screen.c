@@ -26,6 +26,7 @@ char *my_strdup(char *src)
 void init_all_first(UNUSED main_t *struct_main, init_pop_t *pop)
 {
     char *name = my_strdup("ressources/ui/unlock/unlock01.jpg");
+
     pop->Tfirst_display = malloc(sizeof(sfTexture *) * 86);
     pop->Tfirst_display[85] = NULL;
     pop->Sfirst_display = sfSprite_create();
@@ -70,6 +71,7 @@ void first_destroy(UNUSED main_t *struct_main, init_pop_t *pop)
 void first_process(main_t *struct_main)
 {
     init_pop_t pop;
+
     init_all_first(struct_main, &pop);
     first_display(struct_main, &pop);
     first_destroy(struct_main, &pop);

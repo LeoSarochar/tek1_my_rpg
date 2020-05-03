@@ -11,6 +11,7 @@
 void renderblack_king(main_t *main_struct, sfIntRect rect, int y, int x)
 {
     sfVector2f pos;
+
     pos.x = x * 64;
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == '2') {
@@ -26,6 +27,7 @@ void renderblack_king(main_t *main_struct, sfIntRect rect, int y, int x)
 void renderblack_queen(main_t *main_struct, sfIntRect rect, int y, int x)
 {
     sfVector2f pos;
+
     pos.x = x * 64;
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == '3') {
@@ -41,6 +43,7 @@ void renderblack_queen(main_t *main_struct, sfIntRect rect, int y, int x)
 void renderblack_bishop(main_t *main_struct, sfIntRect rect, int y, int x)
 {
     sfVector2f pos;
+
     pos.x = x * 64;
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == '4') {
@@ -56,6 +59,7 @@ void renderblack_bishop(main_t *main_struct, sfIntRect rect, int y, int x)
 void renderblack_knight(main_t *main_struct, sfIntRect rect, int y, int x)
 {
     sfVector2f pos;
+
     pos.x = x * 64;
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == '5') {
@@ -71,6 +75,7 @@ void renderblack_knight(main_t *main_struct, sfIntRect rect, int y, int x)
 void putblack_pieces(main_t *main_struct)
 {
     sfIntRect rect;
+
     for (int y = 0; y < 8; y += 1) {
         for (int x = 0; x < 8; x += 1) {
             renderblack_king(main_struct, rect, y, x);

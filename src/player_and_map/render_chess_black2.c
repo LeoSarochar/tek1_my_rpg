@@ -11,6 +11,7 @@
 void renderblack_rook(main_t *main_struct, sfIntRect rect, int y, int x)
 {
     sfVector2f pos;
+
     pos.x = x * 64;
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == '6') {
@@ -26,6 +27,7 @@ void renderblack_rook(main_t *main_struct, sfIntRect rect, int y, int x)
 void renderblack_pawn(main_t *main_struct, sfIntRect rect, int y, int x)
 {
     sfVector2f pos;
+
     pos.x = x * 64;
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == '1') {

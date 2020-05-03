@@ -47,8 +47,9 @@ void exit_cmb(main_t *glob)
 
 void handle_music_pause(main_t *global)
 {
-    global->s_menu.d_p = 0;
     sfVector2i cur = sfMouse_getPositionRenderWindow(global->window);
+
+    global->s_menu.d_p = 0;
     if (global->event.type == sfEvtMouseButtonPressed) {
         if (cur.x > 566 && cur.x < 636 && cur.y > 264 && cur.y < 336) {
             global->sound.vol++;

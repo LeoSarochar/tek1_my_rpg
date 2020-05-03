@@ -10,7 +10,7 @@
 #include "csfml_binding.h"
 #include "first_plan_screen.h"
 
-void modif_statement(main_t *glob)
+void modif_statement2(main_t *glob)
 {
     if (glob->s_menu.state_button == 1)
         glob->s_menu.bol_menu = 0;
@@ -20,6 +20,11 @@ void modif_statement(main_t *glob)
         else
             glob->s_menu.bol_c_o = 0;
     }
+}
+
+void modif_statement(main_t *glob)
+{
+    modif_statement2(glob);
     if (glob->s_menu.state_button == 3) {
         if (glob->s_menu.bol_c_o == 0)
             glob->s_menu.bol_c_o = 2;

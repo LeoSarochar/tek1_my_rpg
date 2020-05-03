@@ -12,7 +12,7 @@ void render(main_t *main_struct)
 {
     if (main_struct->s_menu.inv.disp == 1)
         render_inv(main_struct);
-    else{
+    else {
         sfRenderWindow_clear(main_struct->window, sfBlack);
         for (int i = 0; render_funcs[i].ptr != NULL; i++)
             render_funcs[i].ptr(main_struct);
