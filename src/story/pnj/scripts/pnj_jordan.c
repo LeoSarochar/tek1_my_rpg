@@ -7,6 +7,11 @@
 
 #include "story/story.h"
 
+void after_jordan_karim(main_t *main)
+{
+    init_scene_name(main, "Karim", nothing);
+}
+
 void after_jordan(main_t *main)
 {
     main->story->quests->quest_id = 5;
@@ -20,6 +25,9 @@ void pnj_jordan(main_t *main)
     if (story->quests->quest_id == 4) {
         create_window_pnj(story, "T'es claque au sol, t'as\n\
 obtenu grade D", after_jordan);
+    } else if (story->quests->quest_id == 8) {
+        create_window_pnj(story, "Avant d'obtenir tes grades\n\
+tu dois 1vs1 avec\nKarim", after_jordan_karim);
     } else
         create_window_pnj(story, "Tu veux quoi enfaite ?", nothing);
 }
