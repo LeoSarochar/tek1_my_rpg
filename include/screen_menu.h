@@ -76,6 +76,8 @@ typedef struct main_menu_s
     int sec_menu;
     int bol_menu;
     int bol_pause;
+    int bol_c_o;
+    text_menu_t **cred;
 } main_menu_t;
 
 typedef struct menu_sound_s
