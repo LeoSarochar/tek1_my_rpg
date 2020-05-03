@@ -25,6 +25,9 @@ void create_window_pnj(story_t *story, char *text, void (*ptr)(main_t *))
 
 void handle_pnj_event(main_t *main, sfEvent event)
 {
+    pnj_t cur_pnj;
+    int cur_scene = main->pm.player.scene;
+
     if (event.key.code == sfKeyEscape && main->story->show_window) {
         main->story->show_window = 0;
         main->story->onclose(main);
@@ -33,7 +36,8 @@ void handle_pnj_event(main_t *main, sfEvent event)
     if (event.key.code != sfKeyE)
         return;
     for (int i = 0; i < main->story->nb_pnjs; i++) {
-        if (main->story->pnjs[i].sprite->visible == sfFalse)
+        cur_pnj = main->story->pnjs[i];
+        if (!cur_pnj.sprite->visible || cur_pnj.map_scene != cur_scene)
             continue;
         if (player_can_interact_pnj(main, main->story->pnjs[i], 80)) {
             main->story->current_pnj = &(main->story->pnjs[i]);

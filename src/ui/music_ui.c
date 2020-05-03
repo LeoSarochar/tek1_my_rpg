@@ -36,7 +36,7 @@ void play_music(main_t *struct_main)
 void enter_combat(main_t *glob)
 {
     sfMusic_setVolume(glob->sound.menu_music, 0);
-    sfMusic_setVolume(glob->sound.cmb, glob->sound.vol);
+    sfMusic_setVolume(glob->sound.cmb, glob->sound.vol - 30);
 }
 
 void exit_cmb(main_t *glob)
