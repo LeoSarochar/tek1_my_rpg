@@ -63,6 +63,7 @@ void render_fight(main_t *main, fight_scene_t *sc)
     sfView_setSize(main->story->fixed, (sfVector2f){1920, 1080});
     sfView_setCenter(main->story->fixed, (sfVector2f){960, 530});
     sfRenderWindow_setView(main->window, main->story->fixed);
+    enter_combat(main);
     (sc->var.scene == 0) ? draw_bg(main, sc) : 0;
     (sc->var.scene == 0) ? draw_menu(sc->var.menu, main) : 0;
     (sc->var.scene == 0) ? draw_enemy(main, sc) : 0;

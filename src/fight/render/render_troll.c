@@ -78,7 +78,8 @@ void ending_cond(main_t *main)
 {
     if (main->player->fight_scene->var.scene == 16) {
         main->player->fight_scene->var.scene = -1;
-        win_scene(main);
+        (my_strcmp(main->player->fight_scene->enemies->enemy->name, \
+        "Karim") != 0) ? win_scene(main) : win_rimka(main);
     }
     if (main->player->fight_scene->var.scene == 15) {
         render_honte(main);

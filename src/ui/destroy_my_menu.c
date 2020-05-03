@@ -13,6 +13,7 @@
 void destoy_menu(main_t *all)
 {
     sfMusic_destroy(all->sound.menu_music);
+    sfMusic_destroy(all->sound.cmb);
     sfSoundBuffer_destroy(all->sound.buffer_button);
     sfSound_destroy(all->sound.button_sound);
 }

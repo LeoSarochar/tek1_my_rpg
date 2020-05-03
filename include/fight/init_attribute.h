@@ -49,4 +49,5 @@ void render_fight2(main_t *main, fight_scene_t *sc);
 preset_t *give_where(char *name, main_t *main);
 void set_attrib(main_t *main, int att, int def, int life);
 void enemy_turn_attack(player_t *player, enemy_t *enemy, int todo);
+void win_rimka(main_t *main);
 #endif /* !INIT_ATTRIBUTE_H_ */

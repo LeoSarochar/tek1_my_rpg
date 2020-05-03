@@ -90,6 +90,7 @@ typedef struct main_menu_s
 typedef struct menu_sound_s
 {
     sfMusic *menu_music;
+    sfMusic *cmb;
     sfSound *button_sound;
     sfSoundBuffer *buffer_button;
     int bol_menu_music;
