@@ -66,7 +66,7 @@ void disp_menu(main_t *struct_main)
         for (int i = 0; i < 4; i++) {
             RWDS(WIN, struct_main->s_menu.button[i]->sprite, NULL);
             RWT(struct_main->window, struct_main->s_menu.text[i]->txt1, NULL);
-         }
+        }
     }
     disp_cred(struct_main);
     cond_disp_part(struct_main);
