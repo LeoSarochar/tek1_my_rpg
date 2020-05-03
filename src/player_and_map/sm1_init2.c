@@ -31,3 +31,25 @@ void init_map(main_t *main_struct)
     main_struct->pm.map_3D.map_sp =
     load_sprite("./ressources/maps/sm1_3d.png");
 }
+
+void init_chess(main_t *main_struct)
+{
+    main_struct->pm.chess.empty_board =
+    load_sprite("./ressources/maps/chess.png");
+    main_struct->pm.chess.chess_board =
+    load_sprite("./ressources/maps/chess_pieces.png");
+    main_struct->pm.state = 0;
+    main_struct->pm.stock = '0';
+}
+
+void put_chess(main_t *main_struct)
+{
+    if (main_struct->player->fight_scene)
+        return;
+    if (main_struct->pm.player.scene == 3) {
+        sfRenderWindow_drawSprite(main_struct->window,
+        main_struct->pm.chess.empty_board->sprite, NULL);
+        put_pieces(main_struct);
+        putblack_pieces(main_struct);
+    }
+}

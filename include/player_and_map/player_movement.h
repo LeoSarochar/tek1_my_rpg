@@ -21,5 +21,6 @@ void go_left(main_t *main_struct);
 void go_up(main_t *main_struct);
 void go_right(main_t *main_struct);
 void go_down(main_t *main_struct);
+void change_map_3(main_t *main_struct);
 
 #endif //MY_PLAYER_MOVEMENT_H_

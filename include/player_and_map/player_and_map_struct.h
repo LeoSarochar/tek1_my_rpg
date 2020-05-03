@@ -35,6 +35,14 @@ typedef struct map_s {
     sprite_t *map_sp;
 } map_t;
 
+typedef struct chess_s {
+    char **map;
+    sprite_t *empty_board;
+    sfVector2f pos;
+    sprite_t *chess_board;
+    sfIntRect rect;
+} chess_t;
+
 typedef struct playmap_s {
     sfView *view;
     cam_t cam;
@@ -46,6 +54,9 @@ typedef struct playmap_s {
     map_t ground_3D;
     perso_t player;
     int map_scene;
+    chess_t chess;
+    int state;
+    char stock;
 } playmap_t;
 
 void gest_view(main_t *main_struct);

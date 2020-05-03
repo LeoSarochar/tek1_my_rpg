@@ -28,6 +28,7 @@ void put_corridor(main_t *main_struct);
 void put_ground(main_t *main_struct);
 void put_map_sm1_3D(main_t *main_struct);
 void put_ground_3D(main_t *main_struct);
+void put_chess(main_t *main_struct);
 /////////////////////////////
 
 //////////FUNCS//////////////
@@ -40,6 +41,7 @@ render_t render_funcs[] = {
     {render_objects},
     {render_pnjs},
     {render_quests},
+    {put_chess},
     {NULL} //Don't touch, is the mark of the end of the array
 };
 ////////////////////////////
