@@ -38,11 +38,13 @@ typedef struct main_s {
     particle_t *part2; 
 } main_t;
 
+void disp_cred(main_t *glob);
 void close_window(main_t *main_struct, UNUSED sfEvent event);
 void render(main_t *main_struct);
 void init(main_t *main_struct);
 void first_process(main_t *struct_main);
 void game_event(main_t *main_struct);
+void init_cred(main_t *glob);
 void init_screen_menu(main_t *);
 void destoy_menu(main_t *all);
 void exec_menu(main_t *main_struct);

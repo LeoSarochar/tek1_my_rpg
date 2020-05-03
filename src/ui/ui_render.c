@@ -68,8 +68,9 @@ void disp_menu(main_t *struct_main)
             RWT(struct_main->window, struct_main->s_menu.text[i]->txt1, NULL);
          }
     }
+    disp_cred(struct_main);
     cond_disp_part(struct_main);
-        sfRenderWindow_display(struct_main->window);
+    sfRenderWindow_display(struct_main->window);
 }
 
 void handle_pause_menu(main_t *main, sfEvent event)

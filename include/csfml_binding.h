@@ -34,5 +34,5 @@
 #define PRESS sfEvtMouseButtonPressed
 #define FCFF(A) sfFont_createFromFile(A)
 #define MOUSE(A) sfMouse_getPositionRenderWindow(A)
-
+#define CEDRICK "Aboh-Daniel-Cedrick Kakou"
 #endif //MY_OWN_H_
