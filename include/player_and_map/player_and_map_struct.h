@@ -25,9 +25,9 @@ typedef struct cam_s {
 typedef struct perso_s {
     sfVector2f pos;
     sprite_t *player_sp;
-    sfIntRect rect;
     int scene;
     char **map;
+    sfClock *clock;
 } perso_t;
 
 typedef struct map_s {
