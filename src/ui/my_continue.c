@@ -76,12 +76,12 @@ void find_item2(main_t *glob, sfVector2i cursor, int i)
     find_item3(glob, cursor, i);
 }
 
-void cond_disp_part(main_t *struct_main)
+void cond_disp_part(main_t *glob)
 {
-    if (struct_main->event.type == PRESS) {
-        if(struct_main->s_menu.state_button == 0)
-            disp_part(struct_main->part1, WIN, MOUSE(struct_main->window), 1);
+    if (glob->event.type == PRESS) {
+        if(glob->s_menu.state_button == 0 && glob->s_menu.d_p == 0)
+            disp_part(glob->part1, glob->window, MOUSE(glob->window), 1);
         else
-            disp_part(struct_main->part2, WIN, MOUSE(struct_main->window), 1);
+            disp_part(glob->part2, glob->window, MOUSE(glob->window), 1);
     }
 }

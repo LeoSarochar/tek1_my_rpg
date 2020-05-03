@@ -38,6 +38,8 @@ typedef struct main_s {
     particle_t *part2; 
 } main_t;
 
+void init_option(main_t *glob);
+void disp_option(main_t *glob);
 void disp_cred(main_t *glob);
 void close_window(main_t *main_struct, UNUSED sfEvent event);
 void render(main_t *main_struct);

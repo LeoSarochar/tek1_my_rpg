@@ -34,9 +34,12 @@ typedef struct inventori_s
     int disp;
 } inven_t;
 
-typedef struct wearing_s
+typedef struct opt_s
 {
-} wear_t;
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfVector2f pos;
+} opt_t;
 
 typedef struct button_s
 {
@@ -52,6 +55,7 @@ typedef struct button_s
     sfIntRect rect;
 } button_t;
 
+
 typedef struct text_s
 {
     int compt1;
@@ -61,6 +65,7 @@ typedef struct text_s
 
 typedef struct main_menu_s
 {
+    opt_t opt;
     item_t **item;
     button_t **button;
     button_t **button_pause;
@@ -78,6 +83,8 @@ typedef struct main_menu_s
     int bol_pause;
     int bol_c_o;
     text_menu_t **cred;
+    sfText *disp_vol;
+    int d_p;
 } main_menu_t;
 
 typedef struct menu_sound_s
@@ -86,6 +93,7 @@ typedef struct menu_sound_s
     sfSound *button_sound;
     sfSoundBuffer *buffer_button;
     int bol_menu_music;
+    int vol;
 } main_sound_t;
 
 #endif

@@ -20,6 +20,12 @@ void modif_statement(main_t *glob)
         else
             glob->s_menu.bol_c_o = 0;
     }
+    if (glob->s_menu.state_button == 3) {
+        if (glob->s_menu.bol_c_o == 0)
+            glob->s_menu.bol_c_o = 2;
+        else
+            glob->s_menu.bol_c_o = 0;
+    }
     if (glob->s_menu.state_button == 4)
         close_window(glob, glob->event);
 }

@@ -24,7 +24,7 @@ void play_music(main_t *struct_main)
     if (struct_main->sound.bol_menu_music == 0) {
         sfMusic_play(struct_main->sound.menu_music);
         sfMusic_setLoop(struct_main->sound.menu_music, sfTrue);
-        sfMusic_setVolume(struct_main->sound.menu_music, 15);
+        sfMusic_setVolume(struct_main->sound.menu_music, 50);
         struct_main->sound.bol_menu_music = 1;
     }
 }
