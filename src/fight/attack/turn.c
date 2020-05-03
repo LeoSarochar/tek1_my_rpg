@@ -37,9 +37,9 @@ int pos_attack(sprite_t *cursor)
 {
     if (cursor->pos.x == 100 && cursor->pos.y == 800)
         return (1);
-    if (cursor->pos.x == 100 && cursor->pos.y == 900)
-        return (2);
     if (cursor->pos.x == 1500 && cursor->pos.y == 800)
+        return (2);
+    if (cursor->pos.x == 100 && cursor->pos.y == 900)
         return (3);
     if (cursor->pos.x == 1500 && cursor->pos.y == 900)
         return (4);

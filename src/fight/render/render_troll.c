@@ -39,7 +39,7 @@ void render_honte(main_t *main_struct)
     (sfVector2f){1050, 0}, 75);
     draw_sprite(main_struct, sprite);
     sfRenderWindow_display(main_struct->window);
-    wait_second(1.0);
+    wait_second(2.0);
     main_struct->player->com = main_struct->player->com_max;
 }
 
@@ -57,11 +57,7 @@ void win_scene(main_t *main)
     draw_text(main, main->player->fight_scene->enemies->enemy->name, \
     (sfVector2f){1050, 0}, 75);
     sfRenderWindow_display(main->window);
-    wait_second(1.0);
-    for (; enem; enem = enem->next) {
-        tmp = enem->attack;
-        add_element_att(&main->player->attacks, tmp);
-    }
+    wait_second(2.0);
     main->player->com_max += main->player->fight_scene->enemies->enemy->com_max;
     main->player->com = main->player->com_max;
 }

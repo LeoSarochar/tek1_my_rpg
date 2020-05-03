@@ -9,16 +9,16 @@
 
 void after_my_strlen(main_t *main)
 {
+    add_element_att(&main->player->attacks, \
+    create_attack(give_where("My_strlen", main)));
     main->story->quests->quest_id = 4;
     main->story->quests->text = "Demander son grade a Jordan";
 }
 
 void after_mathilde(main_t *main)
 {
-    add_element_att(&main->player->attacks, \
-    create_attack(create_preset(60, "github")));
     init_scene_name(main, "my_strlen", after_my_strlen);
-    after_my_strlen(main);
+    // after_my_strlen(main);
 }
 
 void pnj_mathilde(main_t *main)

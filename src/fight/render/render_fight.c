@@ -67,12 +67,5 @@ void render_fight(main_t *main, fight_scene_t *sc)
     (sc->var.menu == 10) ? write_enemy(sc->enemies->enemy->lastattack,
     sc->enemies->enemy->name, main) : 0;
     (sc->var.scene == 1) ? drawer_menu_char(main, sc) : 0;
-    (sc->var.menu == 7) ? square_anim(main, \
-    sc->enemies->enemy, main->player->last_attack) : 0;
-    (sc->var.menu == 8) ? second_anim(main, sc->enemies->enemy->rect, \
-    main->player->last_attack) : 0;
-    is_dead(sc->enemies, sc);
-    sc->var.scene = (main->player->com <= 0) ? 15 : sc->var.scene;
-    ending_cond(main);
-    (sc->var.scene == -1) ? destroy_fight_scene(main) : 0;
+    render_fight2(main, sc);
 }
