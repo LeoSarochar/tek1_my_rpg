@@ -59,14 +59,14 @@ void analyse_event_menu(main_t *main, fight_scene_t *scene)
             pos_cursor(scene->green, 1);
         if (main->event.key.code == sfKeyDown)
             pos_cursor(scene->green, 0);
-        if (main->event.key.code == sfKeyEnter)
+        if (main->event.key.code == 58)
             analyse_enter_menu(scene);
     } else if (scene->var.menu == 1 && main->event.type == sfEvtKeyPressed) {
         if (main->event.key.code == sfKeyUp)
             analyse_stat_attack(main->player->attacks, scene, 1);
         if (main->event.key.code == sfKeyDown)
             analyse_stat_attack(main->player->attacks, scene, 0);
-        if (main->event.key.code == sfKeyEnter)
+        if (main->event.key.code == 58)
             analyse_enter_menu(scene);
     }
     if (main->event.type == sfEvtKeyPressed \
