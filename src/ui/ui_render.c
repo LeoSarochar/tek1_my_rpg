@@ -23,7 +23,7 @@ void disp_pause(main_t *struct_main)
             RWDS(WIN, struct_main->s_menu.button_pause[i]->sprite, NULL);
             RWT(WIN, struct_main->s_menu.text_pause[i]->txt1, NULL);
         }
-        disp_cred(struct_main);
+        disp_option_pause(struct_main);
         cond_disp_part(struct_main);
         sfRenderWindow_display(struct_main->window);
     }

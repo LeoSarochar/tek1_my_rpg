@@ -67,7 +67,20 @@ void handle_music(main_t *global)
 
 void disp_option(main_t *glob)
 {
+    sfText_setPosition(glob->s_menu.disp_vol, (sfVector2f){600, 270});
+    SP(glob->s_menu.opt.sprite, VEC(350, 50));
     handle_music(glob);
     RWDS(glob->window, glob->s_menu.opt.sprite, NULL);
     RWT(glob->window, glob->s_menu.disp_vol, NULL);
+}
+
+void disp_option_pause(main_t *glob)
+{   
+    if (glob->s_menu.bol_c_o == 2) {
+        sfText_setPosition(glob->s_menu.disp_vol, (sfVector2f){400, 270});
+        SP(glob->s_menu.opt.sprite, VEC(150, 50));
+        handle_music_pause(glob);
+        RWDS(glob->window, glob->s_menu.opt.sprite, NULL);
+        RWT(glob->window, glob->s_menu.disp_vol, NULL);
+    }
 }
