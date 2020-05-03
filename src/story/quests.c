@@ -7,6 +7,12 @@
 
 #include "story/quests.h"
 
+void nothing(main_t *main)
+{
+    (void)main;
+    return;
+}
+
 void init_quests(main_t *main)
 {
     quests_t *quests = malloc(sizeof(quests_t));

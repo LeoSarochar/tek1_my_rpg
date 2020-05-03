@@ -7,12 +7,6 @@
 
 #include "story/story.h"
 
-void nothing(main_t *main)
-{
-    (void)main;
-    return;
-}
-
 void init_story_struct(story_t *story)
 {
     sfView *view = sfView_create();
