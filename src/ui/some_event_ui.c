@@ -14,6 +14,12 @@ void modif_statement(main_t *glob)
 {
     if (glob->s_menu.state_button == 1)
         glob->s_menu.bol_menu = 0;
+    if (glob->s_menu.state_button == 2) {
+        if (glob->s_menu.bol_c_o == 0)
+            glob->s_menu.bol_c_o = 1;
+        else
+            glob->s_menu.bol_c_o = 0;
+    }
     if (glob->s_menu.state_button == 4)
         close_window(glob, glob->event);
 }
