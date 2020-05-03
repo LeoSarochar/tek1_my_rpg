@@ -18,6 +18,7 @@ void render_fight2(main_t *main, fight_scene_t *sc)
     sc->var.scene = (main->player->com <= 0) ? 15 : sc->var.scene;
     ending_cond(main);
     (sc->var.scene == -1) ? destroy_fight_scene(main) : 0;
+    (sc->var.scene == -1) ? exit_cmb(main) : 0;
 }
 
 preset_t *give_where(char *name, main_t *main)
