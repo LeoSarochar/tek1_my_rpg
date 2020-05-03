@@ -64,7 +64,8 @@ void render_fight(main_t *main, fight_scene_t *sc)
     (sc->var.scene == 0) ? draw_enemy(main, sc) : 0;
     (sc->var.scene == 0) ? draw_bar(main, sc) : 0;
     (sc->var.scene == 0) ? draw_player(main) : 0;
-    (sc->var.scene == 3) ? render_biensur(main) : 0;
+    (sc->var.menu == 10) ? write_enemy(sc->enemies->enemy->lastattack,
+    sc->enemies->enemy->name, main) : 0;
     (sc->var.scene == 1) ? drawer_menu_char(main, sc) : 0;
     (sc->var.menu == 7) ? square_anim(main, \
     sc->enemies->enemy, main->player->last_attack, 1) : 0;

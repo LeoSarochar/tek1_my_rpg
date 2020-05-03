@@ -17,18 +17,15 @@ int anim_fsquare_letter(main_t *main, enemy_t *enemy, char *att, int ind)
 
     if (previous == ind) {
         previous = -1;
-        printf("done previous fi\n");
         return (-1);
     }
     if (check) {
         x = 1100;
         y = 120;
         previous = ind;
-        printf("done check pos fi\n");
         return (ind);
     }
     y += 1;
-    printf("yposfirst = %d\n", y);
     draw_text(main, &tmp, (sfVector2f){x, y}, 50);
     return (-2);
 }
@@ -113,6 +110,8 @@ void square_anim(main_t *main, enemy_t *enemy, char *name, int todo)
     tab[2] = (name[ind] && is_same(2, ind, tab) == 0) ? ind++ : tab[2];
     tab[3] = (name[ind] && is_same(3, ind, tab) == 0) ? ind : tab[3];
 
+    draw_text(main, "player attacked: ", (sfVector2f){100, 800}, 75);
+    draw_text(main, name, (sfVector2f){1000, 800}, 75);
     check = anim_fsquare_letter(main, enemy, name, tab[0]);
     check_continue(&tab[0], &ind, check, name);
     check = anim_ssquare_letter(main, enemy, name, tab[1]);

@@ -60,6 +60,7 @@ typedef struct enemy_s {
     int intel;
     int speed;
     int defence;
+    char *lastattack;
     int ram;
     char *name;
     Rect_t rect;

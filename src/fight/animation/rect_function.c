@@ -58,7 +58,7 @@ void waiter_anim(int tab[4], float to_wait, main_t *main_struct, int *ind)
     for (int i = 0; i < 4; i += 1)
         check = (tab[i] == -1) ? check + 1 : check;
     if (check == 4) {
-        main_struct->player->fight_scene->var.menu = 0;
+        main_struct->player->fight_scene->var.menu = 10;
         *ind = 0;
         return;
     }

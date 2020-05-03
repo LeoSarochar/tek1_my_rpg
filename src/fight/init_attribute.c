@@ -19,7 +19,7 @@ void init_state(state_t *state)
 
 void preset_init(preset_list_t **list)
 {
-    add_element_pres(list, create_preset(15, "My_putchar"));
+    add_element_pres(list, create_preset(20, "My_putchar"));
     add_element_pres(list, create_preset(25, "My_strlen"));
     add_element_pres(list, create_preset(35, "My_putstr"));
     add_element_pres(list, create_preset(65, "La vie d'artiste"));
@@ -47,7 +47,7 @@ void init_player(main_t *main_struct)
     main_struct->player->intel = 10;
     main_struct->player->name = "main player";
     main_struct->player->speed = 10;
-    main_struct->player->com_max = 100;
+    main_struct->player->com_max = 250;
     main_struct->player->sprite = NULL;
     main_struct->player->attacks = NULL;
     main_struct->player->fight_scene = NULL;

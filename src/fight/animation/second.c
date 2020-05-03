@@ -42,7 +42,7 @@ int to_end(int tab[], int size, main_t *main)
     for (int i = 0; i < size; i += 1)
         if (tab[i] != -1)
             return (1);
-    main->player->fight_scene->var.menu = 0;
+    main->player->fight_scene->var.menu = 10;
     return (0);
 }
 
@@ -52,6 +52,8 @@ void second_anim(main_t *main, Rect_t rect1, Rect_t rect2, char *attack)
     static int todo = 0;
     int i = my_strlen(attack);
 
+    draw_text(main, "player attacked: ", (sfVector2f){100, 800}, 75);
+    draw_text(main, attack, (sfVector2f){1000, 800}, 75);
     set_table(tab, my_strlen(attack), todo);
     for (int k = 0; k < i; k += 1) {
         tab[k] = (tab[k] != -1) ? tab[k] - 50 : tab[k];

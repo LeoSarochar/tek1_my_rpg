@@ -19,7 +19,7 @@ void analyse_enter_bg(fight_scene_t *scene)
         scene->var.menu = 0;
     }
     if (scene->cursor->pos.x == 1500 && scene->cursor->pos.y == 900)
-        scene->var.scene = 3;
+        scene->var.scene = -1;
 }
 
 void draw_stat_attack(int nb, main_t *main, int tab[4])

@@ -43,4 +43,6 @@ void change_position(sprite_t *sprite, int x, int y);
 void change_lifebar(int life, int new_life, sprite_t *red);
 void draw_player(main_t *main);
 void ending_cond(main_t *main);
+int check_github(attack_t *attack, char *name, main_t *main);
+void write_enemy(char *attack, char *name, main_t *main);
 #endif /* !INIT_ATTRIBUTE_H_ */
