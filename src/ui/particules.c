@@ -41,7 +41,7 @@ void display_square(particle_t *particle, int refresh)
     while (pos.x != particle->x || pos.y!= particle->y) {
         radial_gradiant(particle, pos, refresh, particle->color);
         pos.x += 1;
-        if (pos.x > particle->x / 2 + particle->x / 2) {
+        if (pos.x > particle->x ) {
             pos.x = 0;
             pos.y += 1;
         }
@@ -79,7 +79,7 @@ void put_pixel(particle_t *particle, int x, int y, sfColor color)
     }
 }
 
-void display_particle(particle_t *particle, sfRenderWindow *window, V2I pos,
+void disp_part(particle_t *particle, sfRenderWindow *window, V2I pos,
 int refresh)
 {
     display_square(particle, refresh);

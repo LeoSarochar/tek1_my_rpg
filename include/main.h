@@ -34,7 +34,8 @@ typedef struct main_s {
     main_sound_t sound;
     playmap_t pm;
     player_t *player;
-    particle_t *part; 
+    particle_t *part1;
+    particle_t *part2; 
 } main_t;
 
 void close_window(main_t *main_struct, UNUSED sfEvent event);
@@ -46,6 +47,7 @@ void init_screen_menu(main_t *);
 void destoy_menu(main_t *all);
 void exec_menu(main_t *main_struct);
 void exec_pause(main_t *struct_main);
+void cond_disp_part(main_t *struct_main);
 void init_inventori(main_t *structm);
 void render_inv(main_t *structm);
 void wear_stuff(item_t *item, main_t *glob);

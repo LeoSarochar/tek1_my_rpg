@@ -34,7 +34,7 @@ particle_t *create_particle(sfVector2i size, sfColor color);
 
 //DISPLAY
 void put_pixel(particle_t *particle, int x, int y, sfColor color);
-void display_particle(particle_t *particle, sfRenderWindow *window,
+void disp_part(particle_t *particle, sfRenderWindow *window,
                       sfVector2i pos, int refresh);
 void display_square(particle_t *, int);
 void radial_gradiant(particle_t *, sfVector2i, int, sfColor);
