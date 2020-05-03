@@ -40,13 +40,18 @@ void mouse_position(main_t *glob, sfRenderWindow *window)
 
 void screen_menu_order(main_t *glob)
 {
+    static int realesed = 0;
     static int bol = 0;
     mouse_position(glob, glob->window);
     if (glob->s_menu.state_button != 0) {
         (bol == 0) ? sfSound_play(glob->sound.button_sound), bol++ : 0;
         button_effect(glob);
-        if (glob->event.type == sfEvtMouseButtonPressed)
+        if (glob->event.type == sfEvtMouseButtonPressed && realesed == 0){
             modif_statement(glob);
+            realesed = 1;
+            }
+    if(glob->event.type == sfEvtMouseButtonReleased)
+        realesed = 0;
     }
     else {
         bol = 0;

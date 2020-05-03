@@ -53,7 +53,7 @@ void disp_menu(main_t *struct_main)
 {
     static int i = 0;
 
-    if (struct_main->s_menu.bgt_menu[i + 1] == NULL)
+    if (i == 10)
         i = 0;
     struct_main->s_menu.time_menu = CET(struct_main->s_menu.clock_menu);
     struct_main->s_menu.sec_menu = DIVSEC;
@@ -66,9 +66,11 @@ void disp_menu(main_t *struct_main)
         for (int i = 0; i < 4; i++) {
             RWDS(WIN, struct_main->s_menu.button[i]->sprite, NULL);
             RWT(struct_main->window, struct_main->s_menu.text[i]->txt1, NULL);
-        }
-        sfRenderWindow_display(struct_main->window);
+         }
     }
+    disp_cred(struct_main);
+    cond_disp_part(struct_main);
+    sfRenderWindow_display(struct_main->window);
 }
 
 void handle_pause_menu(main_t *main, sfEvent event)
