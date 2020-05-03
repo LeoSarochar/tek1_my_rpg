@@ -9,7 +9,7 @@
 
 int check_player_interract(object_t object, main_t *main)
 {
-    sfBool res = player_can_interact_object(main, object, 80);
+    sfBool res = player_can_interact_object(main, object, 120);
     sfVector2f take_text_pos = {object.pos.x - 10, object.pos.y - 20};
     sfVector2f text_pos = {object.pos.x, object.pos.y - 20};
 

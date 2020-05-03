@@ -36,7 +36,7 @@ int player_can_interact_object(main_t *main, object_t obj, int radius)
     sfFloatRect bounds = sfSprite_getGlobalBounds(obj.sprite->sprite);
     sfBool res;
 
-    bounds.top -= radius / 2;
+    bounds.top -= radius / 2 + 30;
     bounds.left -= radius / 2;
     bounds.height += radius;
     bounds.width += radius;

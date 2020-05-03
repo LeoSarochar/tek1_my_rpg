@@ -25,7 +25,6 @@ int check_player_talk(pnj_t pnj, main_t *main)
 void renderPNJWindow(main_t *main)
 {
     story_t *story = main->story;
-    pnj_t *pnj = story->current_pnj;
     sfVector2f pos_text = (sfVector2f){780, 200};
     sfVector2f pos = (sfVector2f){1220, 345};
     sfVector2f pos_echap = (sfVector2f){780, 360};

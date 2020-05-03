@@ -35,4 +35,14 @@ void after_nathan(main_t *main);
 void pnj_loic(main_t *main);
 void after_loic(main_t *main);
 
+void pnj_bryan(main_t *main);
+
+void pnj_lorenzo(main_t *main);
+
+void pnj_jackette(main_t *main);
+
+void pnj_richard(main_t *main);
+
+void pnj_sophie(main_t *main);
+
 #endif //MY_CREATE_OBJECT_H_

@@ -34,6 +34,7 @@ int assign_num(main_t *glob)
     int ref = 0;
     int ref2 = 0;
     int n;
+
     for (n = 0; n < 6 || ref == n; n++) {
         ref = n;
         for (int i = 0; i < 6; i++)
@@ -68,6 +69,7 @@ void find_wear(main_t *glob, sfVector2i cursor)
 void get_mouse(main_t *glob)
 {
     sfVector2i cursor = sfMouse_getPositionRenderWindow(glob->window);
+
     if (cursor.x > 730 && cursor.x < 873 && glob->event.type == PRESS)
         if (cursor.y > 403 && cursor.y < 607)
             find_item(glob, cursor);

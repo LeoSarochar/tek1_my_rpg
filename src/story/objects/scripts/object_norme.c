@@ -12,6 +12,7 @@ void after_norme_book(main_t *main)
     story_t *story = main->story;
 
     story->current_object->sprite->visible = 0;
+    main->s_menu.item[0]->num = assign_num(main);
     story->quests->text = "Retourner voir Sanchez pour\n\
 apprendre a coder my_putchar";
     story->quests->quest_id = 3;
