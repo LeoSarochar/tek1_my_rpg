@@ -9,6 +9,7 @@
 #define MY_SCREEN_MAIN_MENU_H_
 
 #include "include_all.h"
+#include "particule.h"
 
 #define PATH_BUTTON "ressources/ui/other/button_men.png"
 

@@ -14,6 +14,7 @@
 #include "player_and_map/player_and_map_struct.h"
 #include "player_and_map/player_movement.h"
 #include "fight/init_attribute.h"
+#include "particule.h"
 
 #define SFWC(A, B, C, D) sfRenderWindow_create(A, B, C, D)
 #define RWPE(A, B) sfRenderWindow_pollEvent(A, B)
@@ -34,6 +35,8 @@ typedef struct main_s {
     playmap_t pm;
     player_t *player;
     char **map[3];
+    particle_t *part1;
+    particle_t *part2;
 } main_t;
 
 void close_window(main_t *main_struct, UNUSED sfEvent event);
@@ -45,6 +48,7 @@ void init_screen_menu(main_t *);
 void destoy_menu(main_t *all);
 void exec_menu(main_t *main_struct);
 void exec_pause(main_t *struct_main);
+void cond_disp_part(main_t *struct_main);
 void init_inventori(main_t *structm);
 void render_inv(main_t *structm);
 void wear_stuff(item_t *item, main_t *glob);
@@ -72,6 +76,6 @@ sfIntRect move_rect_button(sfIntRect spritesheet, int offset, int max_value);
 void find_item2(main_t *glob, sfVector2i cursor, int i);
 void find_wear2(main_t *glob, sfVector2i cursor, int i);
 int my_strlen(char const *str);
-
+int assign_num(main_t *glob);
 
 #endif //MY_MAIN_H_

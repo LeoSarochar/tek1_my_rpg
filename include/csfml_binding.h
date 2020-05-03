@@ -33,4 +33,6 @@
 #define CR(A) sfClock_restart(A);
 #define PRESS sfEvtMouseButtonPressed
 #define FCFF(A) sfFont_createFromFile(A)
+#define MOUSE(A) sfMouse_getPositionRenderWindow(A)
+
 #endif //MY_OWN_H_
