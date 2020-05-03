@@ -26,9 +26,6 @@ void create_window_pnj(story_t *story, char *text, void (*ptr)(main_t *))
 
 void handle_pnj_event(main_t *main, sfEvent event)
 {
-    sfVector2f pos = main->pm.player.pos;
-    sfFloatRect bounds;
-
     if (event.key.code == sfKeyEscape && main->story->show_window) {
         main->story->show_window = 0;
         main->story->onclose(main);
@@ -39,8 +36,7 @@ void handle_pnj_event(main_t *main, sfEvent event)
     for (int i = 0; i < main->story->nb_pnjs; i++) {
         if (main->story->pnjs[i].sprite->visible == sfFalse)
             continue;
-        bounds = sfSprite_getGlobalBounds(main->story->pnjs[i].sprite->sprite);
-        if (sfFloatRect_contains(&bounds, pos.x, pos.y)) {
+        if (player_can_interact_pnj(main, main->story->pnjs[i], 80)) {
             main->story->current_pnj = &(main->story->pnjs[i]);
             main->story->pnjs[i].onclick(main);
         }

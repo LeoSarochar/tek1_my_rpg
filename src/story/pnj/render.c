@@ -9,9 +9,7 @@
 
 int check_player_talk(pnj_t pnj, main_t *main)
 {
-    sfVector2f pos = main->pm.player.pos;
-    sfFloatRect bounds = sfSprite_getGlobalBounds(pnj.sprite->sprite);
-    sfBool res = sfFloatRect_contains(&bounds, pos.x, pos.y);
+    int res = player_can_interact_pnj(main, pnj, 80);
 
     if (res == sfTrue) {
         draw_text(main, "E : interagir", (sfVector2f){pnj.pos.x - 10, pnj.pos.y - 15}, 15);
