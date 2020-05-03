@@ -50,6 +50,10 @@ void analyse_event_fight(main_t *main, fight_scene_t *sc)
         && main->event.key.code == 58)
             analyse_attack(main, sc);
     }
+    if (sc->var.menu == 2) {
+        enemy_turn_attack(main->player, sc->enemies->enemy, 1);
+        sc->var.menu = 0;
+    }
 }
 
 void render_fight(main_t *main, fight_scene_t *sc)
