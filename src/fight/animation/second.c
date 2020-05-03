@@ -52,7 +52,7 @@ void second_anim(main_t *main, Rect_t rect1, char *attack)
     static int todo = 0;
     int i = my_strlen(attack);
 
-    draw_text(main, "player attacked: ", (sfVector2f){100, 800}, 75);
+    draw_text(main, "player a code: ", (sfVector2f){100, 800}, 75);
     draw_text(main, attack, (sfVector2f){1000, 800}, 75);
     set_table(tab, my_strlen(attack), todo);
     for (int k = 0; k < i; k += 1) {

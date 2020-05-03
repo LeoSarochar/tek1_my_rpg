@@ -11,6 +11,7 @@ void after_my_strlen(main_t *main)
 {
     add_element_att(&main->player->attacks, \
     create_attack(give_where("My_strlen", main)));
+    get_element_att(main->player->attacks, 2)->dam_com = 5;
     main->story->quests->quest_id = 4;
     main->story->quests->text = "Demander son grade a Jordan";
 }

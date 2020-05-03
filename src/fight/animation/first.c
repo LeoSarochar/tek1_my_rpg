@@ -110,7 +110,7 @@ void square_anim(main_t *main, enemy_t *enemy, char *name)
     tab[2] = (name[ind] && is_same(2, ind, tab) == 0) ? ind++ : tab[2];
     tab[3] = (name[ind] && is_same(3, ind, tab) == 0) ? ind : tab[3];
 
-    draw_text(main, "player attacked: ", (sfVector2f){100, 800}, 75);
+    draw_text(main, "player a code: ", (sfVector2f){100, 800}, 75);
     draw_text(main, name, (sfVector2f){1000, 800}, 75);
     check = anim_fsquare_letter(main, enemy, name, tab[0]);
     check_continue(&tab[0], &ind, check, name);

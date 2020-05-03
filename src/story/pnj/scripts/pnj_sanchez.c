@@ -50,6 +50,8 @@ void pnj_sanchez(main_t *main)
         case 3:
             add_element_att(&main->player->attacks, \
             create_attack(main->player->preset->preset));
+            add_element_att(&main->player->attacks, \
+            create_attack(create_preset(90, "github")));
             create_window_pnj(story, "Bravo ! Maintenant recode\nmy_putstr",\
             after_sanchez_putstr);
             break;
