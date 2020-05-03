@@ -45,17 +45,18 @@ void init_option(main_t *glob)
 
 void handle_music(main_t *global)
 {
-    global->s_menu.d_p = 0;
     sfVector2i cur = sfMouse_getPositionRenderWindow(global->window);
+
+    global->s_menu.d_p = 0;
     if (global->event.type == sfEvtMouseButtonPressed) {
         if (cur.x > 766 && cur.x < 836 && cur.y > 264 && cur.y < 336) {
             global->sound.vol++;
             global->s_menu.d_p = 1;
-            }
+        }
         if (cur.x > 441 && cur.x < 510 && cur.y > 260 && cur.y < 329) {
             global->sound.vol--;
             global->s_menu.d_p = 1;
-            }
+        }
         if (global->sound.vol > 100)
             global->sound.vol = 100;
         if (global->sound.vol < 0)

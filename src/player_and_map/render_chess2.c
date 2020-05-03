@@ -11,6 +11,7 @@
 void render_rook(main_t *main_struct, sfIntRect rect, int y, int x)
 {
     sfVector2f pos;
+
     pos.x = x * 64;
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == 'r') {
@@ -26,6 +27,7 @@ void render_rook(main_t *main_struct, sfIntRect rect, int y, int x)
 void render_pawn(main_t *main_struct, sfIntRect rect, int y, int x)
 {
     sfVector2f pos;
+
     pos.x = x * 64;
     pos.y = y * 64;
     if (main_struct->pm.chess.map[y][x] == 'p') {

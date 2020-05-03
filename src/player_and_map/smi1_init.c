@@ -40,6 +40,7 @@ void put_player(main_t *main_struct)
 sfIntRect *init_rect_player(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
+
     rect->top = 49;
     rect->left = 0;
     rect->height = 47;

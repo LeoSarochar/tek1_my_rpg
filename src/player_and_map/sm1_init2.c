@@ -12,7 +12,6 @@ sprite_t *load_sprite_player(char const *file_name);
 
 void init_perso(main_t *main_struct)
 {
-
     main_struct->pm.player.pos.x = 96;
     main_struct->pm.player.pos.y = 681;
     main_struct->pm.player.player_sp =
