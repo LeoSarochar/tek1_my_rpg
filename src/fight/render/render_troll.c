@@ -41,6 +41,8 @@ void render_honte(main_t *main_struct)
     sfRenderWindow_display(main_struct->window);
     wait_second(2.0);
     main_struct->player->com = main_struct->player->com_max;
+    main_struct->player->gpa = (main_struct->player->gpa > 0.0) ?
+    main_struct->player->gpa - 1.0 : main_struct->player->gpa;
 }
 
 void win_scene(main_t *main)
@@ -58,6 +60,8 @@ void win_scene(main_t *main)
     main->player->com_max += main->player->fight_scene->enemies->enemy->com_max;
     main->player->com = main->player->com_max;
     main->player->fight_scene->ptr(main);
+    main->player->gpa = (main->player->gpa < 4.0) ?
+    main->player->gpa + 0.2 : main->player->gpa;
 }
 
 void draw_player(main_t *main)

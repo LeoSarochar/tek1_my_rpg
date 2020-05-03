@@ -27,6 +27,8 @@ attack_t *create_attack(preset_t *preset)
     attack_t *attack = malloc(sizeof(attack_t));
 
     attack->dam_com = preset->dam_com;
+    attack->req_intel = 0;
+    attack->req_intel = 0;
     attack->name = preset->name;
     return (attack);
 }
