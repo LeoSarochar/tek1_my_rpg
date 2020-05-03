@@ -36,7 +36,7 @@ void render_honte(main_t *main_struct)
     (sfVector2f){400, 0}, 75);
     draw_text(main_struct, \
     main_struct->player->fight_scene->enemies->enemy->name, \
-    (sfVector2f){1050, 0}, 75);
+    (sfVector2f){1200, 0}, 75);
     draw_sprite(main_struct, sprite);
     sfRenderWindow_display(main_struct->window);
     wait_second(2.0);
@@ -46,8 +46,6 @@ void render_honte(main_t *main_struct)
 void win_scene(main_t *main)
 {
     sprite_t *sprite = NULL;
-    attack_list_t *enem = main->player->fight_scene->enemies->enemy->attacks;
-    attack_t *tmp = NULL;
 
     sfRenderWindow_clear(main->window, sfBlack);
     init_sprite(&sprite, (sfVector2f){400, 100}, rafik);
@@ -60,6 +58,7 @@ void win_scene(main_t *main)
     wait_second(2.0);
     main->player->com_max += main->player->fight_scene->enemies->enemy->com_max;
     main->player->com = main->player->com_max;
+    main->player->fight_scene->ptr(main);
 }
 
 void draw_player(main_t *main)
