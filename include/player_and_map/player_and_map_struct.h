@@ -27,6 +27,7 @@ typedef struct perso_s {
     sprite_t *player_sp;
     int scene;
     char **map;
+    sfClock *clock;
 } perso_t;
 
 typedef struct map_s {
