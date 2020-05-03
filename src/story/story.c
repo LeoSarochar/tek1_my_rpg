@@ -84,7 +84,7 @@ void create_objects(story_t *story)
     obj = create_object(story, (char *[2]){"Airpods", path}, 0, after_airpods);
     obj->pos = (sfVector2f){550, 768};
     path = "ressources/objects/pull.png";
-    obj = create_object(story, (char *[2]){"Pull Epitech", path}, 2, after_pull);
+    obj = create_object(story, (char *[2]){"Pull Epi", path}, 2, after_pull);
     obj->pos = (sfVector2f){670, 957};
     path = "ressources/objects/ttb.png";
     obj = create_object(story, (char *[2]){"ThaiToBox", path}, 2, after_ttb);

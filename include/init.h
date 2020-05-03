@@ -13,6 +13,9 @@
 
 #include "story/story.h"
 
+#define WIDTH 1920
+#define HEIGHT 1080
+
 ////////INCLUDES OF FUNCS/////////
 #include "sprite.h"
 
