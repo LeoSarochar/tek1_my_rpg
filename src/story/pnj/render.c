@@ -12,10 +12,12 @@ int check_player_talk(pnj_t pnj, main_t *main)
     int res = player_can_interact_pnj(main, pnj, 80);
 
     if (res == sfTrue) {
-        draw_text(main, "E : interagir", (sfVector2f){pnj.pos.x - 10, pnj.pos.y - 15}, 15);
+        draw_text(main, "E : interagir",\
+        (sfVector2f){pnj.pos.x - 10, pnj.pos.y - 15}, 15);
         return (1);
     } else {
-        draw_text(main, pnj.name, (sfVector2f){pnj.pos.x + 10, pnj.pos.y - 15}, 15);
+        draw_text(main, pnj.name,\
+        (sfVector2f){pnj.pos.x + 10, pnj.pos.y - 15}, 15);
     }
     return (0);
 }

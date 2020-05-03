@@ -20,6 +20,16 @@ void init_quests(main_t *main)
     quests->text = "Aller voir Lucas, votre AER";
 }
 
+void custom_quests_render(main_t *main)
+{
+    if (main->story->quests->quest_id == 5) {
+        if (main->s_menu.item[0]->state == 2) {
+            main->story->quests->quest_id = 6;
+            main->story->quests->text = "Va voir Nathan, ton super AER TeK2";
+        }
+    }
+}
+
 void render_quests(main_t *main)
 {
     quests_t *quests = main->story->quests;
@@ -33,4 +43,5 @@ void render_quests(main_t *main)
     sfRenderWindow_setView(main->window, main->story->fixed);
     sfRenderWindow_drawSprite(main->window, quests->background->sprite, NULL);
     draw_text(main, quests->text, (sfVector2f){30, 20}, 25);
+    custom_quests_render(main);
 }
