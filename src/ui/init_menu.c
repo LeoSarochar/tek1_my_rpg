@@ -64,11 +64,6 @@ void init_screen_menu(main_t *struct_main)
         struct_main->s_menu.bgt_menu[i] = CFF(name, NULL);
         (name[28] < '9') ? name[28]++ : (name[28] = '0', name[27]++);
     }
-    struct_main->sound.button_sound = sfSound_create();
-    struct_main->sound.menu_music = SMFF("ressources/ui/sound/menu.ogg");
-    struct_main->sound.buffer_button = SBFF("ressources/ui/sound/button.ogg");
-    SSB(struct_main->sound.button_sound, struct_main->sound.buffer_button);
-    struct_main->sound.bol_menu_music = 0;
     init_button_menu(struct_main);
     init_button_pause(struct_main);
     struct_main->s_menu.bol_menu = 1;
