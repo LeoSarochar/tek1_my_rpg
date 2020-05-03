@@ -39,6 +39,7 @@ typedef struct main_s {
     particle_t *part2;
 } main_t;
 
+void disp_option_pause(main_t *glob);
 void exit_cmb(main_t *glob);
 void enter_combat(main_t *glob);
 void init_option(main_t *glob);
@@ -83,5 +84,7 @@ void find_item2(main_t *glob, sfVector2i cursor, int i);
 void find_wear2(main_t *glob, sfVector2i cursor, int i);
 int my_strlen(char const *str);
 int assign_num(main_t *glob);
+void handle_music_pause(main_t *global);
+char *nbr_str(long nb);
 
 #endif //MY_MAIN_H_

@@ -42,7 +42,7 @@ void screen_menu_order(main_t *glob)
 {
     static int realesed = 0;
     static int bol = 0;
-    
+
     mouse_position(glob, glob->window);
     if (glob->s_menu.state_button != 0) {
         (bol == 0) ? sfSound_play(glob->sound.button_sound), bol++ : 0;
@@ -53,8 +53,7 @@ void screen_menu_order(main_t *glob)
             }
     if (glob->event.type == sfEvtMouseButtonReleased)
         realesed = 0;
-    }
-    else {
+    } else {
         bol = 0;
         basic_button(glob);
     }
